@@ -6,12 +6,12 @@ body {
 	background:#fff;
 	min-width:680px;		/* Minimum width of layout - remove line if not required */
 					/* The min-width property does not work in old versions of Internet Explorer */
-	font-size:90%;
-        font-family:"Iranian Serif","XB Yas", "Yas", "Zar", "XB Zar", "B Zar", serif; 
-        float:center;
-        clear:both;
-        width: 100%;
-        text-align: justify;
+	font-size:16px;
+    float:center;
+    clear:both;
+    font-family: 'XM Roya', 'Roya' , 'B Roya' , sans-serif;
+    width: 100%;
+    text-align: justify;
 }
 
 #centerContainer { width: 80%; text-align: right; margin: 0px auto; max-width:1200px; min-width:720px;}
