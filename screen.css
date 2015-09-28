@@ -2,12 +2,19 @@ body {
 	margin:0;
 	padding:0;
 	border:0;			/* This removes the border around the viewport in old versions of IE */
-	width:100%;
+	/* width:90%; */
 	background:#fff;
-	min-width:600px;		/* Minimum width of layout - remove line if not required */
+	min-width:680px;		/* Minimum width of layout - remove line if not required */
 					/* The min-width property does not work in old versions of Internet Explorer */
 	font-size:90%;
+        font-family:"Iranian Serif","XB Yas", "Yas", "Zar", "XB Zar", "B Zar", serif; 
+        float:center;
+        clear:both;
+        width: 100%;
+        text-align: justify;
 }
+
+#centerContainer { width: 80%; text-align: right; margin: 0px auto; max-width:1200px; min-width:720px;}
 a {
 	color:#369;
 }
@@ -35,7 +42,7 @@ img {
 /* Header styles */
 #header {
 	clear:both;
-	float:left;
+	float:right;
 	width:100%;
 }
 #header {
@@ -48,8 +55,8 @@ img {
 	margin:0;
 }
 #header ul {
-	clear:left;
-	float:left;
+	clear:right;
+	float:right;
 	width:100%;
 	list-style:none;
 	margin:10px 0 0 0;
@@ -63,15 +70,15 @@ img {
 }
 #header ul li a {
 	display:block;
-	float:left;
-	margin:0 0 0 1px;
-	padding:3px 10px;
+	float:right;
+	margin:0 0 1px 1px;
+	padding:10px 10px;
 	text-align:center;
 	background:#eee;
 	color:#000;
 	text-decoration:none;
 	position:relative;
-	left:15px;
+	right:15px;
 	line-height:1.3em;
 }
 #header ul li a:hover {
@@ -90,7 +97,7 @@ img {
 /* 'widths' sub menu */
 #layoutdims {
 	clear:both;
-	background:#eee;
+	background:#e5e500;
 	border-top:4px solid #000;
 	margin:0;
 	padding:6px 15px !important;
