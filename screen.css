@@ -6,7 +6,7 @@ body {
 	background:#fff;
 	min-width:950px;		/* Minimum width of layout - remove line if not required */
 					/* The min-width property does not work in old versions of Internet Explorer */
-	font-size:19px;
+	font-size:16px;
     float:center;
     clear:both;
     font-family: 'XM Roya', 'Roya' , 'B Roya' , sans-serif;
