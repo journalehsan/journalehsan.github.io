@@ -1,3 +1,5 @@
+@import url(http://awebfont.ir/css?id=1776);
+
 body {
 	margin:0;
 	padding:0;
@@ -6,7 +8,7 @@ body {
 	background:#fff;
 	min-width:950px;		/* Minimum width of layout - remove line if not required */
 					/* The min-width property does not work in old versions of Internet Explorer */
-	font-size:16px;
+	font-size:15px;
     float:center;
     clear:both;
     font-family: 'BBCNassim', tahoma, Arial, sans-serif;
@@ -26,7 +28,7 @@ a:hover {
 h1 {
 	margin:.8em 0 .2em 0;
 	padding:0;
-    font-size: 48px;
+    font-size: 36px;
 }
 h2, h3 {
 	margin:.8em 0 .2em 0;
