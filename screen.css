@@ -4,7 +4,7 @@ body {
 	border:0;			/* This removes the border around the viewport in old versions of IE */
 	/* width:90%; */
 	background:#fff;
-	min-width:680px;		/* Minimum width of layout - remove line if not required */
+	min-width:950px;		/* Minimum width of layout - remove line if not required */
 					/* The min-width property does not work in old versions of Internet Explorer */
 	font-size:16px;
     float:center;
@@ -14,7 +14,7 @@ body {
     text-align: justify;
 }
 
-#centerContainer { width: 80%; text-align: right; margin: 0px auto; max-width:1200px; min-width:720px;}
+#centerContainer { width: 80%; text-align: right; margin: 0px auto; max-width:1279px; min-width:920px;}
 a {
 	color:#369;
 }
