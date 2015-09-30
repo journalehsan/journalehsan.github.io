@@ -8,25 +8,23 @@
     <meta name="robots" content="index, follow" />
     <meta name="description" content="صفخهٔ شخصی احسان ترک" />
   	<meta name="keywords" content="صفحهٔ نوشته‌ها و پروژه‌های احسان ترک" />
-    <style></style>
+    <script src="jquery.js"></script> 
+    <script> 
+    $(function(){
+      $("#includedContent").load("header.html"); 
+    });
+    $(function(){
+      $("#includedFooter").load("footer.html"); 
+    });
+    $(function(){
+      $("#includedAbout").load("about.html"); 
+    });
+    </script> 
   </head>
-  <body> <div id="centerContainer">
-
-    <div id="header" dir="rtl">
-    	<center><h1>  <a href="index.html"> صفحهٔ نوشته‌ها و پروژه‌های احسان ترک </a></h1></center>
-    	<center><h2>احسان ترک برنامه‌نویس و فعّال نرم افزار آزاد / متن باز</h2></center>
-    	<ul>
-    		<li><a href="index.html" class="active"> صفحهٔ خانگی <span>(Home Page)</span> </a></li>
-    		<li><a href="page-2.htm">کتابها و مقالات <span>(منتشر شده)</span></a></li>
-    		<li><a href="page-3.htm">کتابها و مقالات <span>(در حال انتشار)</span></a></li>
-    		<li><a href="page-4.htm">شرح حال <span>(رزومه و زندگی نامه)</span></a></li>
-    		<li><a href="page-6.htm">پروژه ها <span>(در حال کار)</span></a></li>
-            <li><a href="sandbox.html"> خرید کتاب <span>(اوبونتو سرور در سندباکس)</span></a></li>
-    		<li><a href="donate.html" > فروشگاه من  <span>(کمک مالی)</span></a></li>
-    	</ul>
-    	<p id="layoutdims"><strong> (شبکه‌های اجتماعی) </strong>   :   صفحهٔ توییتر:   <a href="https://twitter.com/Mosadeghi"> Mosadeghi    </a> |    رایانامه:
-        <a href="mailto:journalehsan@gmail.com@gmail.com.com?Subject=Hello%20again" target="_top">  journalehsan@gmail.com</a></p>
-    </div>
+  <body>
+      <div id="includedContent"></div>
+      <div id="centerContainer">
+    
     <div class="colmask threecol">
     	<div class="colmid">
     		<div class="colleft">
@@ -60,26 +58,14 @@
 
     				<!-- Column 2 end -->
     			</div>
-    			<div class="col3">
+            			<div class="col3">
     				<!-- Column 3 start -->
-    				<div id="ads">
-    					<a href="http://matthewjamestaylor.com">
-    						<img src="ehsan-tork.jpg" width="125" border="0" height="125" alt="Art and Design by Matthew James Taylor" />
-    					</a>
-    				</div>
-    				<h2>معرفی کوتاه</h2>
-    				<p>
-              از سال ۸۶ به‌طور مستمر کاربر لینوکس هستم.  و قبل از اون تفننی با لینوکس آشنا بودم. برنامه‌نویس جاوا/ اندروید و C++/Qt به‌طور جدی (C# و VB در دوران جاهلیت) و آشنایی متوسط با اکثر زبان‌های برنامه‌نویسی رایج. علاقه‌مند به برنامه‌های متن‌بازم.  مثل یه آدم نرمال عاشق پول و هر چی تفریح فانم! آدم متوسطی هستم و در هر چیزی متوسط بودم  و هستم از KDE هم خوشم می آد؛ توزیع محبوبم آرچ و هر توزیعی که Pacman داره;-)
-            </p>
+                            <div id="includedAbout"></div>
     				<!-- Column 3 end -->
     			</div>
     		</div>
     	</div>
     </div>
-    <div id="footer">
-    	<p>تمامی حقوق نوشته‌ها و پروژه‌ها تحت مجوز انتشار CC by NC-ND 2.0 محفوظ است. <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND 2.0</a>. </p>
-      <p>  برخی از پروژه‌ها تحت مجوز GPL نسخهٔ دوم منتشر می‌شوند.</p>
-    </div>
-
+    <div id="includedFooter"></div>
   </div></body>
 </html>
