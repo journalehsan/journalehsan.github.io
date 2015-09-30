@@ -1,0 +1,44 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<head>
+<meta charset="UTF-8">
+<title>سرویس پرداخت آنلاین زرین پال</title>
+<link href="icon/zp.ico" rel="shortcut icon">
+<style type="text/css">
+div#container
+{
+   position: relative;
+   margin-top: 0px;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: left;
+}
+</style>
+</head>
+<body>
+
+    <link href="css/Style.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+    <h2>کمک مالی:</h3>
+    <p>اگر می‌خواهید متوجه شوم که شما کمک کرده‌اید و برای چه پروژه‌ای کمک کرده‌اید، باید آدرس ایمیل خود را نیز وارد کنید.</p>
+    <p> در آینده‌ای نزدیک اگر پول بیشتری جمع‌آوری شود، کتاب‌ها و ویدئو کست‌های بیشتری را در اینترنت قرار خواهم داد.</p>
+
+<center><div class="FForm_bg">
+<div class="fform"><form action="https://www.zarinpal.com/webservice/Simplepay" method="post" onsubmit="msg('onSubmit')" id="TransactionAddForm" target="_blank">
+<br><right>مبلغ*: </right><input type="hidden" id="TransactionAccountID" value="ZP.124785.1" name="data[Transaction][account_id]">
+<input type="text" id="TransactionAmount" value="به  تومان وارد كنيد."  onblur="if(this.value=='') this.value='به  تومان وارد كنيد.';" onfocus="if(this.value=='به  تومان وارد كنيد.') this.value='';" style="font-family: Tahoma;font-size:8pt"  name="data[Transaction][amount]" maxlength="9" size="28">
+<right>مشخصات: </right><input type="text" id="TransactionDesc" value="در صورت لزوم"  onblur="if(this.value=='') this.value='در صورت لزوم';" onfocus="if(this.value=='در صورت لزوم') this.value='';"   style="font-family: Tahoma;font-size:8pt"  name="data[Transaction][desc]" maxlength="50" size="28">
+<input type="hidden" id="TransactionRedirectUrl" value="آدرس صفحه بازگشت" name="data[Transaction][redirect_url]">
+<br>
+<p>* مبلغ به تومان است، بعد از این وارد زرین پال می شوید</p>
+<br>
+<center><left><input name="submit" type="submit" " style="font-family: Tahoma;font-size:9pt"  value="پـرداخـت "></left></center>
+</form>
+</center>
+</body>
+</html>
