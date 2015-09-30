@@ -3,9 +3,6 @@
     <title> صفحهٔ شخصی احسان ترک </title>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-      <link href='http://awebfont.ir/css?id=1939' rel='stylesheet' type='text/css'>
-      <link href='http://awebfont.ir/css?id=1801' rel='stylesheet' type='text/css'>
-      <link href='http://awebfont.ir/css?id=1776' rel='stylesheet' type='text/css'>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Scheherazade&subset=arabic,latin' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="styles/screen.css" media="screen" />
@@ -23,6 +20,14 @@
     $(function(){
       $("#includedAbout").load("include/about.html"); 
     });
+        function AWEBFONTLoadCssFile(filename) {
+            var fileref=document.createElement('link');
+            fileref.setAttribute('rel', 'stylesheet');
+            fileref.setAttribute('type', 'text/css');
+            fileref.setAttribute('href', filename);
+            document.getElementsByTagName("head")[0].appendChild(fileref);
+        }
+        AWEBFONTLoadCssFile('http://awebfont.ir/css?id=1776&mode=wl');
     </script> 
   </head>
   <body>

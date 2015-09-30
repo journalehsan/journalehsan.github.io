@@ -6,7 +6,7 @@ body {
 	background:#fff;
 	min-width:950px;		/* Minimum width of layout - remove line if not required */
 					/* The min-width property does not work in old versions of Internet Explorer */
-	font-size:18px;
+	font-size:16px;
     float:center;
     clear:both;
     font-family: 'BBCNassim', tahoma, Arial, sans-serif;
@@ -26,13 +26,11 @@ a:hover {
 h1 {
 	margin:.8em 0 .2em 0;
 	padding:0;
-    font-family: 'B Titr', tahoma, Arial, sans-serif;
     font-size: 48px;
 }
 h2, h3 {
 	margin:.8em 0 .2em 0;
 	padding:0;
-    font-family: 'P Yekan', tahoma, Arial, sans-serif;
     font-size: 25px;
 }
 p {
