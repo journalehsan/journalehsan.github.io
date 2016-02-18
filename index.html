@@ -1,80 +1,471 @@
-<html dir="rtl" lang="fa">
-  <head>
-    <title> صفحهٔ شخصی احسان ترک </title>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link href='https://fonts.googleapis.com/css?family=Scheherazade&subset=arabic,latin' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="styles/screen.css" media="screen" />
-    <meta name="robots" content="index, follow" />
-    <meta name="description" content="صفخهٔ شخصی احسان ترک" />
-  	<meta name="keywords" content="صفحهٔ نوشته‌ها و پروژه‌های احسان ترک" />
-    <script src="script/jquery.js"></script> 
-    <script> 
-    $(function(){
-      $("#includedContent").load("include/header.html"); 
-    });
-    $(function(){
-      $("#includedFooter").load("include/footer.html"); 
-    });
-    $(function(){
-      $("#includedAbout").load("include/about.html"); 
-    });
-    $(function(){
-      $("#includedPay").load("pay/index.html"); 
-    });
-    </script> 
-  </head>
-  <body>
-      <div id="includedContent"></div>
-      <div id="centerContainer">
-    
-    <div class="colmask threecol">
-    	<div class="colmid">
-    		<div class="colleft">
-    			<div class="col1">
-    				<!-- Column 1 start -->
-                    <h3>مقالات من در اینترنت</h3>
-                    <p>
-اخبار مرتبط با پایگاه اینترنتی لینوکس ریویو و دیگر مقالات در سلام دنیا!
-                    <p><a href="lr-page.html"> مطالعهٔ بیشتر</a></p>
-                </p>
-                    <h3>کتاب‌ها</h3>
-                    <p>کتاب آموزشی نصب اوبونتو سرور در سندباکس با ویرچوال باکس را از 
-                    <a href="sandbox.html"> این پیوند </a>
-                    دریافت و از قسمت سمت چپ این صفحه از آن حمایت مالی کنید.</p>
-                    </ul>
-                </hr>
-                    <h3>به زودی ...</h3>
-                    <ul>
-                        <li>پروژهٔ متن‌بازی برای خواندن متون با صدای طبیعی آغاز خواهد شد</li>
-                        <li>برای آموزش سندباکس یا موارد دیگر در گنو/لینوکس و نرم‌افزارهای آزاد/متن‌باز یک ویدئو کست راه‌اندازی می‌شود</li>
-                        <li>کتاب آموزش برنامه‌نویسی با کیوت کامل شده و در این‌جا قرار می‌گیرد</li>
-                        <li>کتاب آموزش نصب و اجرای فدورا کامل خواهد شد</li>
-                        <li>...</li>
-                    </ul>
-            <h3>پروژه‌های فعلی</h3>
-            <ul>تبدیل  قالب و اصلاح زیر نویس فارسی
-                ، برای دریافت از 
-                <a href="http://journalehsan.github.io/PersianSubtitleFixer"> این پیوند </a>
-                اقدام کنید
-                </ul>
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="fa">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>صفحهٔ شخصی احسان ترک  </title>
+    <!--REQUIRED STYLE SHEETS-->
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLE CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- VEGAS STYLE CSS -->
+    <link href="assets/scripts/vegas/jquery.vegas.min.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-rtl.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-flipped.css" rel="stylesheet" />
+    <!-- GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Ruluko' rel='stylesheet' type='text/css' />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">نوار منو</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand farsi-bold" href="http://journalehsan.github.io/">صفحه شخصی احسان ترک </a>
+            </div>
+            <!-- Collect the nav links for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#home"><span class="fa fa-home"></span>  صفحهٔ اصلی </a>
+                    </li>
+                   
+                    <li>
+                        <a href="#about"><span class="fa fa-info"></span>  درباره‌من</a>
+                    </li>
 
-    				<!-- Column 1 end -->
-    			</div>
-    			<div class="col2">
-    				<!-- Column 2 start -->
-                            <div id="includedPay"></div>
-    				<!-- Column 2 end -->
-    			</div>
-            			<div class="col3">
-    				<!-- Column 3 start -->
-                            <div id="includedAbout"></div>
-    				<!-- Column 3 end -->
-    			</div>
-    		</div>
-    	</div>
+                            <li><a href="#price-sec"><span class="fa fa-code"></span>  کارهای من</a>
+                    <li>
+
+                        <li><a href="#contact-sec"><span class="fa fa-comment-o"></span>  تماس با‌من</a>
+                    <li>
+                        <li><a href="mailto:journalehsan@gmail.com?Subject=Hello%20again"><strong><span class="glyphicon glyphicon-envelope"></span> رایانامه  </strong></a>
+                    <li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!--End Navigation -->
+
+
+    <!--Header section  -->
+    <div class="container" id="home">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="head-main">احسان ترک <br> Ehsan Tork </h1>
+                <h2 class="head-sub-main">برنامه‌نویس و فعال آزاد/ متن‌باز</h2>
+                <a class="btn btn-danger btn-lg " href="#about">مطالعه بیشتر </a>  <a class="btn btn-default btn-lg" href="#contact-sec">تماس با من </a>
+                <div class="head-last"></div>
+
+            </div>
+
+
+        </div>
     </div>
-    <div id="includedFooter"></div>
-  </div></body>
+    <!--End Header section  -->
+
+
+    <!--words Section-->
+    <section class="for-full-back color-white" id="about">
+        <div class="container">
+            <section>
+            <div class="row text-center">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1>من کی‌ام؟</h1>
+                    <h4>
+                        <p> <span class="fa fa-info-circle" ></span>
+                            از سال ۸۶ به‌طور مستمر کاربر لینوکس هستم 
+                            و قبل از اون تفننی با لینوکس آشنا بودم. </p>
+                             برنامه‌نویس جاوا/ اندروید و C++/Qt به‌طور جدی (C# و VB در دوران جاهلیت) و آشنایی متوسط با اکثر زبان‌های برنامه‌نویسی رایج. علاقه‌مند به برنامه‌های متن‌بازم. مثل یه آدم نرمال عاشق پول و هر چی تفریح فانم! آدم متوسطی هستم و در هر چیزی متوسط بودم و هستم از KDE هم خوشم می آد؛ توزیع محبوبم آرچ و هر توزیعی که Pacman داره <span class="fa fa-smile-o"></span>
+                       
+                    </h4>
+                    <h1 class="ltr-texts">Who am i?</h1>
+                    <h4 class="ltr-texts">
+                        <p> <span class="fa fa-info-circle" ></span> 
+                            I'm Programmer and Software Developer for Some Open Source and Free Software I Study Programming Engineering. My Favorite OS is GNU/Linux and my main distribution is Arch Linux. I love pacman and flexibility of it.</p>
+                        
+                            <p>I'm a fan of Social Democrats at all :) and Reformists in Iran. I love Science and Technology and like help people to learn something about OSS.</p>
+
+                            <p>I develop some app in Java and Ubuntu Touch and my favorite language is C/C++ and perhaps i love Qt. Java is Fine and i enjoy programming with Java but C++ is more powerful than the Java for me. I can't programming in Vala at all and i hate this Crap!</p>
+
+                            <p>I love python too but it's a little confusing for me when i try to write code in C++ and Python in a same time. Because of semicolon :)</p>
+
+                            <p>I'm using Linux since 2008. My first distribution was Red hat 6.</p>
+                    </h4>
+                </div>
+
+            </div>
+
+            <div class="row text-center space-pad">
+                <div class="col-md-3 ">
+
+                    <div class="about-div">
+
+                        <i class="fa fa-html5 fa-4x main-color-red"></i>
+
+
+                        <h2 class="rtl-texts">طراحی UX / UI </h2>
+                       
+                           <ul class="rtl-texts none-circle">
+                               <li>طراحی واکنش‌گرا</li>
+                               <li>طراحی مدرن و Flat</li>
+                               <li>طراحی قالب ورد‌پرس و دروپال</li>
+                               <li>طراحی بهینه برای موتور‌های جستجو</li>
+                               <li>طراحی کاربرپسند</li>
+                           </ul>
+                    </div>
+
+                </div>
+                <div class="col-md-3 ">
+
+                    <div class="about-div">
+
+                        <i class="fa fa-desktop fa-4x main-color-red"></i>
+
+
+                        <h2 class="rtl-texts">توسعه نرم‌افزار</h2>
+                        <ul class="rtl-texts none-circle">
+                            <li>توسعه نرم‌افزار با استفاده از Qt</li>
+                            <li>توسعه نرم‌افزار با جاوا</li>
+                            <li>توسعه‌نرم‌آفزار با GO</li>
+                            <li> وسعه‌دهنده یونیکس</li>
+                            <li>توسعه نرم‌افزار سیستمی و کاربردی</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <div class="col-md-3">
+
+                    <div class="about-div">
+
+                        <i class="fa fa-film fa-4x main-color-red"></i>
+
+
+                        <h2 class="rtl-texts">مشاوره</h2>
+                        <ul class="rtl-texts none-circle">
+                           <li>بازایابی اینترنتی</li>
+                           <li>تبلیغات اینترنتی</li>
+                           <li>بازاریابی شبکه‌های اجتماعی </li>
+                           <li>مشاوره حقوقی نرم‌افزار آزاد</li>
+                           <li>مشاوره تخصصی نرم‌افزار آزاد</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <div class="col-md-3 ">
+
+                    <div class="about-div">
+
+                        <i class="fa fa-globe fa-4x main-color-red"></i>
+
+
+                        <h2 class="rtl-texts">توسعه‌دهنده وب </h2>
+                        <ul class="rtl-texts none-circle">
+                            <li>توسعه‌نرم‌افزار با PHP</li>
+                            <li>توسعه‌نرم‌افزار با Go</li>
+                            <li>توسعه دهنده پایتون</li>
+                            <li>نصب و پیکربندی سرور  </li>
+                            <li>توسعه کتابخانه‌های رایگان </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2>نر‌م‌افزار آزاد/متن‌باز</h2>
+                    <h3> توسعه نرم‌افزار آزاد/متن‌باز باعث می‌شود که مشارکت در پزوژه‌های بزرگ را یادبگیریم.</h3>
+                </div>
+
+            </div>
+        
+
+
+    </section>
+
+    <section class="for-full-back " id="Parallax-one">
+        <div class="container">
+
+            <div class="row text-center for-parallax-one">
+                <div class="col-md-6 ">
+                    <h3>برنامه‌نویسی</h3>
+                    <h4>
+                        <strong>ذهن خود را با نوشتن نرم‌افزارآزاد/ متن‌باز <br />
+                        باز نگاه دارید. 
+                        </strong>
+                    </h4>
+                </div>
+                <div class="col-md-6 ">
+                    <h3>واکنش‌گرا</h3>
+                    <h4>
+                        <strong>با طراحی واکنش‌گرا
+                        <br />
+                        با تکنولوژی روز همراه باشید.
+                        </strong>
+                    </h4>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!--./parallax one-->
+    <!--End words Section-->
+
+
+
+
+    <!-- Pricing Section -->
+
+    <section class="for-full-back color-white " id="price-sec">
+        <div class="container">
+            <div class="row text-left">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="page-header">کارهای من</h1>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h3> مقالات من در اینترنت</h3>
+                        </div> 
+                        <div class="panel-body">
+                            <h4>اخبار مرتبط با پایگاه اینترنتی لینوکس ریویو و دیگر مقالات در سلام دنیا!</h4>
+                           <h3 class="page-header"> پایگاه اینترنتی LinuxReview</h3>
+                           <h4>
+                               پایگاه لینوکس ریویو یکی از آن پایگاه‌های جامعه‌محور و پر جنب و جوش در بین کاربران گنو/لینوکس ایران بود. باوجوداین همواره این پایگاه فرازوفرودهایی را در فعالیت خود داشته که باعث شده است کاربران آن همواره در حال افزایش یا کاهش بوده و فعالیت آن سینوسی شکل باشد. بعدازآنکه مجلات و پایگاه‌های مختلف یک به یک آمدند و چه بی‌سر و صدا و چه با سروصدا اینک از بین ما رفته‌اند، پایگاه لینوکس ریویو همواره هرچند کج دار و مریض امّا سرپا بوده است.
+
+                           </h4>
+                        <p class="text-right"><a href="http://linuxreview.ir/author/finaprp/" class="btn btn-primary"><span class="fa fa-globe"></span> مطالب من در لینوکس ریویو</a></p>
+
+                        <h3 class="page-header">پایگاه سلام دنیا!</h3>
+                        <h4>
+                            برخی مقالات من در این پایگاه ثبت شده است، برای مشاهدهٔ آنان به این پیوند مراجعه کنید.
+
+                        </h4>
+                           
+                            <p class="text-right"><a href="http://salam-donya.com/author/tork/" class="btn btn-primary"><span class="fa fa-globe"></span> مطالب من در سلام دنیا!</a></p>
+                        </div> 
+                    </div>
+                    
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                           <h3> کتاب‌ها</h3>
+                        </div> 
+                        <div class="panel-body">
+                            <h3>شرایط دریافت نسخهٔ PDF و چاپی کتاب:</h3>
+                    <p>
+                        اگر می‌خواهید کتاب را به صورت PDF دریافت کنید، می‌توانید مبلقی را از 
+                        <a class="btn btn-default" href="pay.html">این پیوند</a>
+                        پرداخت کنید تا نسخهٔ PDF برایتان ارسال شود. 
+                        <pdf>
+                            اگر مبلغ پداختی شما بیش از 20,000 تومان باشد، نسخهٔ چاپی نیز ارسال می‌شود.
+                        </pdf>
+                    </p>
+                        <h3 class="page-header">دربارهٔ کتاب:</h3>
+                        <p class="rtl-texts">
+                            امروزه اینترنت موجب گسترش دانش و نشر دانش شده است، به صورتی که اکثر افراد می‌توانند داشته‌ها و دانسته‌های خود را در این بستر ارتباطی و رسانهٔ  جمعی که خود از قابلیت پوشش دادن به نیازهای چندرسانه‌ای کاربران  برخوردار است، با دیگران در میان بگزارند. این مجموعهٔ آموزشی که در حال حاضر در قسمت آخر آن هستیم نیز برای این موضوع نوشته شده است، تا کاربرانی که قصد دارند به توسعهٔ نرم‌افزار تحت وب یا طراحی صفحات وب پردازند، با اندک هزینه‌ای محیطی ارزان و ساده را برای اجرای نرم‌افزار و کدهای خود ایجاد کنند.  با استفاده از این محیط سندباکس به راحتی می‌توان تمامی پروژه‌های مختلف را اجرا کرد.
+                        </p>
+                        <p class="text-center"> <img class="embed-responsive img-rounded" src="assets/img/book-front.jpeg" alt="Sandbox Book" height="60%" width="40%"> </p> 
+                        <p>با این وجود اگر از یک رزبری‌پای نیز استفاده می‌کنید، می‌توانید با استفاده از یک سوئیچ یا یک مودم که در منزل دارید، شبکه‌ای بی‌سیم در منزل خود ایجاد کنید، و رزبری‌پای را به آن متصل کنید، سپس اوبونتو سرور را بر اساس آموزشی که در این مطلب داده شد نصب کرده و با استفاده از انتقال درگاه یا پورت فورواردینگ، درگاه‌هایی را که در ویرچوال‌باکس انتقال دادیم، به صورتی انتقال دهید که در تمامی شبکهٔ محلی خود بتوانید به آنان متصل شوید. (این مقاله می‌تواند برای برخی مواقع مفید باشد) بعد از این شما از یک محیط توسعه برخوردار می‌شوید که هر وقت و هرگاه خواستید می‌توانید به آن متصل شوید. البته در این حالت برای ذخیره اطلاعات پر حجم به یک دیسک سخت با ظرفیت مناسب نیز نیاز خواهید داشت.</p>
+                        <p class="rtl-texts">
+کدهای لاتک این کتاب از طریق 
+<a class="btn btn-default" href="https://journalehsan.github.io/Sandbox-Book/">                            این پیوند از گیت‌هاب
+</a>                           قابل دریافت است.
+                    </p><p>
+کدهایی که برای ایجاد پی‌دی‌اف در زی‌لاتک نوشته شده‌اند را نیز به صورت کامل در پایگاه اینترنتی گیت‌هاب بارگزاری می‌کنم تا در صورت نیاز بتوانید آن را برای نیاز خودتان تغییر دهید، همچنین در آینده نسخهٔ وبی از آن نیز ممکن است عرضه شود. اگر از سیستم‌عامل گنو/لینوکس استفاده می‌کنید، نرم‌افزار «TeXStudio» نرم‌افزار خوبی برای نوشتن و گرفتن خروجی پی‌دی‌اف از کدهای لاتک و زی‌لاتک به شمار می‌آید،خودم شخصاً نتوانستم از طریق نرم‌افزارهای دیگر در نو/لینوکس این کار را انجام دهم. توزیع من برای نوشتن لاتک و زی‌لاتک، توزیع آرچ لینوکس است و از نرم‌افزارهای پیش‌فرض موجود در داخل مخازن آرچ استفاده کرده‌ام.
+                        </p>
+                            <p class="text-right"><a href="/maghalat.html" class="btn btn-success"><span class="fa fa-download"></span> دانلود کتاب </a></p>
+                        </div> 
+                    </div>
+                    
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                           <h3> به زودی ...</h3>
+                        </div> 
+                        <div class="panel-body">
+                            <h4>
+                            <ul>
+                                <li>.پروژهٔ متن‌بازی برای خواندن متون با صدای طبیعی آغاز خواهد شد</li>
+                                <li>برای آموزش سندباکس یا موارد دیگر در گنو/لینوکس و نرم‌افزارهای آزاد/متن‌باز یک ویدئو کست راه‌اندازی می‌شود</li>
+                                <li>کتاب آموزش برنامه‌نویسی با کیوت کامل شده و در این‌جا قرار می‌گیرد</li>
+                                <li>.کتاب آموزش نصب و اجرای فدورا کامل خواهد شد</li>
+                            </ul>
+
+                           </h4>
+                            <p class="text-right"><a href="/maghalat.html" class="btn btn-warning"> مطالعهٔ بیشتر</a></p>
+                        </div> 
+                    </div>
+                    
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                           <h3>پروژه‌های فعلی</h3>
+                        </div> 
+                        <div class="panel-body">
+                            <h4>
+                            <ul>
+                                <li>تبدیل قالب و اصلاح زیر نویس فارسی ، برای دریافت از
+                                 <a class="btn btn-default" href="http://journalehsan.github.io/PersianSubtitleFixer"> این پیوند </a>
+                                  اقدام کنید.</li>
+                                <li>...</li>
+                                
+                            </ul>
+
+                           </h4>
+                            <p class="text-right"><a href="/maghalat.html" class="btn btn-info"> مطالعهٔ بیشتر</a></p>
+                        </div> 
+                    </div>
+                    
+                </div>
+
+            </div>
+            <div class="row text-center">
+
+                <div class="col-md-12 ">
+                
+                
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="for-full-back for-parallax-two" id="Parallax-two">
+        <div class="container">
+
+            <div class="row text-center">
+                <div class="col-md-8 col-md-offset-2 ">
+                    <h1>ادای هکرها را در نیاورید!</h1>
+                    <h2>
+                        <p>
+                            با استفاده از توزیع‌های KoliLinux و ... شما هیچ وقت به یک هکر تبدیل نخواهید شد.
+                            
+                            عمرا ....
+                        </p>
+                    </h2>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+    <!--./parallax two-->
+    <!--End Pricing Section -->
+
+    <!-- Contact Section -->
+    <section class="for-full-back color-white " id="contact-sec">
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-md-5 contact-cls">
+                    <h3>شبکه‌های اجتماعی </h3>
+                    <div id="social-icon">
+                        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                        <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                        <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+                        <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+                        <a href="#"><i class="fa fa-pinterest fa-2x"></i></a>
+                    </div>
+                    <div>
+                        <span><i class="fa fa-home"></i>&nbsp; آدرس: شهر تهران</span>
+                        <br />
+                        <span><i class="fa fa-phone"></i>&nbsp;شماره همراه : 0918901535</span>
+                        <br />
+                        <span><i class="fa fa-envelope-o"></i>&nbsp;رایانامه: journalehsan@gmil.com</span>
+                        <br />
+                        <span><i class="fa fa-envelope-o"></i>&nbsp;رایانامه: journalehsan@yahoo.com</span>
+                        <br />
+                        <span><i class="fa fa-globe"></i>&nbsp;وب‌سایت : www.journalehsan.github.io</span>
+                        <br />
+                    </div>
+                    <br />
+                    
+                </div>
+                <div class="col-md-7">
+                    <h2>تماس با من</h2>
+                    <h4><p> برای اینکه با من تماس بگیرید می‌توانید از این قسمت پیام خود را برای 
+                      <kbd>احسان ترک</kbd>
+                        نوشته و سپس با استفاده از کلید ارسال ، پیام خود را ارسال کنید.</p>
+                       <p class="alert alert-warning">
+                          <span class="fa fa-minus-circle"></span> لطفا پیام‌های ارسالی به دور از تبلیغات و اسپم باشد. 
+                       </p>
+                    </h4>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" required="required" placeholder="نام">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" required="required" placeholder="@ ایمیل">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <textarea name="message" id="message" required="required" class="form-control" rows="3" placeholder="متن پیغام"></textarea>
+                                </div>
+                                <div class="form-group">
+                                   <p class="text-right"><button type="submit" class="btn btn-primary">ارسال ایمیل</button></p> 
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--End Contact Section -->
+    <!--footer Section -->
+    <div class="for-full-back navbar-fixed-bottom" id="footer">
+         journalehsan@github.io احسان ترک، بدون کپی‌رایت و با مجوز CCbyNC 3.0
+         
+    </div>
+    <!--End footer Section -->
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY  -->
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP CORE SCRIPT   -->
+    <script src="assets/plugins/bootstrap.js"></script>
+    <!-- VEGAS SLIDESHOW SCRIPTS -->
+    <script src="assets/plugins/vegas/jquery.vegas.min.js"></script>
+    <script src="assets/plugins/jquery.parallax-1.1.3.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+        </div></section>
+</body>
 </html>
