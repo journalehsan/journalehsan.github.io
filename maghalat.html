@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link dir="rtl" rel="stylesheet" href="../assets/css/styles.css">
     <title>Ehsan Tork</title>
     <style>
         * {
@@ -17,69 +18,218 @@
             font-family: Arial, Helvetica, sans-serif;
             background-color: #f0f0f0;
         }
+        /* Add some padding and background color to the header */
         
-        .container {
-            max-width: 960px;
+        header {
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        /* Center the header content and make it responsive */
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        /* Style the logo and the site title */
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .site-title {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        /* Style the navigation menu */
+        
+        .nav-menu {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav-menu li {
+            margin-left: 20px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .nav-menu a:hover {
+            color: #0099ff;
+        }
+        /* Add some margin and background color to the main section */
+        
+        main {
+            margin: 20px;
+            background-color: #fff;
+        }
+        /* Center the main content and make it responsive */
+        
+        .main-content {
+            max-width: 1200px;
             margin: 0 auto;
         }
+        /* Style the introduction section */
         
-        .header {
-            background-color: #333333;
-            color: white;
-            padding: 20px;
+        .intro {
+            padding: 40px;
         }
         
-        .header h1 {
+        .intro h1 {
+            font-size: 48px;
+        }
+        
+        .intro p {
+            font-size: 24px;
+        }
+        /* Style the skills section */
+        
+        .skills {
+            padding: 40px;
+        }
+        
+        .skills h2 {
             font-size: 36px;
         }
         
-        .header p {
+        .skills ul {
+            list-style: none;
+        }
+        /* Style the skills list items */
+        
+        .skills li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        /* Style the skill icons */
+        
+        .skills li img {
+            width: 64px;
+            height: 64px;
+            margin-right: 20px;
+        }
+        /* Style the skill titles and descriptions */
+        
+        .skills li h3 {
+            font-size: 24px;
+        }
+        
+        .skills li p {
             font-size: 18px;
         }
+        /* Style the services section */
         
-        .main {
-            background-color: white;
-            padding: 20px;
+        .services {
+            padding: 40px;
         }
         
-        .main h2 {
+        .services h2 {
+            font-size: 36px;
+        }
+        
+        .services ul {
+            list-style: none;
+        }
+        
+        .services li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        /* Style the service icons */
+        
+        .services li img {
+            width: 64px;
+            height: 64px;
+            margin-right: 20px;
+        }
+        /* Style the service titles and descriptions */
+        
+        .services li h3 {
             font-size: 24px;
-            color: #333333;
-            margin-bottom: 10px;
         }
         
-        .main p {
-            font-size: 16px;
-            color: #666666;
-            margin-bottom: 10px;
+        .services li p {
+            font-size: 18px;
         }
+        /* Style the footer */
         
-        table {
-            width: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-        }
-        
-        th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        
-        td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        
-        .footer {
-            background-color: #333333;
-            color: white;
+        footer {
             padding: 20px;
+            background-color: #f0f0f0;
+        }
+        /* Center the footer content and make it responsive */
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* Style the contact information */
+        
+        .contact-info {
+            display: flex;
+        }
+        /* Style the contact paragraphs */
+        
+        .contact-info p {
+            font-size: 18px;
+            margin-right: 20px;
+        }
+        /* Style the social media icons */
+        
+        .social-media {
+            list-style: none;
+            display: flex;
         }
         
-        .footer p {
-            font-size: 14px;
+        .social-media li {
+            margin-left: 20px;
+        }
+        
+        .social-media li img {
+            width: 32px;
+            height: 32px;
+        }
+        /* Add some media queries for responsiveness */
+        
+        @media (max-width: 768px) {
+            /* Stack the header content vertically */
+            .header-content {
+                flex-direction: column;
+            }
+            /* Hide the navigation menu */
+            .nav-menu {
+                display: none;
+            }
+            /* Adjust the font sizes */
+            .site-title {
+                font-size: 24px;
+            }
+            .intro h1 {
+                font-size: 36px;
+            }
+            .intro p {
+                font-size: 18px;
+            }
+            .skills h2,
+            .services h2 {
+                font-size: 24px;
+            }
+            .skills li h3,
+            .services li h3 {
+                font-size: 18px;
+            }
+            .skills li p,
+            .services li p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
