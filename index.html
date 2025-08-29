@@ -1,553 +1,948 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="fa">
-<!--<![endif]-->
-
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
-    <title>صفحهٔ شخصی احسان ترک </title>
-    <!--REQUIRED STYLE SHEETS-->
-    <!-- BOOTSTRAP CORE STYLE CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONTAWESOME STYLE CSS -->
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
-    <!-- VEGAS STYLE CSS -->
-    <link href="assets/scripts/vegas/jquery.vegas.min.css" rel="stylesheet" />
-
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/font-face.css" />
-    <!-- CUSTOM STYLE CSS -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <link href="assets/css/bootstrap-rtl.css" rel="stylesheet" />
-    <link href="assets/css/bootstrap-flipped.css" rel="stylesheet" />
-
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-    <style>
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            direction: rtl;
-            line-height: 1.8;
-            font-family: Sahel, open sans, Tahoma, 'DejaVu Sans', helvetica, arial, freesans, sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehsan Tork - احسان ترک | Programming Journey</title>
+    <meta name="description" content="Ehsan Tork - Full-Stack Developer and Open Source Enthusiast. PHP/Laravel, Python, C++/Qt, Rust, TypeScript, React developer.">
+    <meta name="author" content="Ehsan Tork">
+    <link rel="canonical" href="https://journalehsan.github.io/">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sahel:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        vb: '#004F9F',
+                        delphi: '#E91E62',
+                        csharp: '#9B4F96',
+                        php: '#777BB3',
+                        python: '#FFD43B',
+                        qt: '#41CD52',
+                        rust: '#000000',
+                        typescript: '#3178C6',
+                        react: '#61DAFB',
+                        tailwind: '#38BDF8',
+                        java: '#ED8B00',
+                        codeigniter: '#DD4814',
+                        lumen: '#E74430',
+                        go: '#00ADD8',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    fontFamily: {
+                        'sahel': ['Sahel', 'Tahoma', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
         }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --vb: #004F9F;
+            --delphi: #E91E62;
+            --csharp: #9B4F96;
+            --php: #777BB3;
+            --python: #FFD43B;
+            --qt: #41CD52;
+            --rust: #000000;
+            --typescript: #3178C6;
+            --react: #61DAFB;
+            --tailwind: #38BDF8;
+            --java: #ED8B00;
+            --codeigniter: #DD4814;
+            --lumen: #E74430;
+            --go: #00ADD8;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+        }
+        
+        .rtl-text {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Sahel', 'Tahoma', 'Arial', sans-serif;
+        }
+        
+        .ltr-text {
+            direction: ltr;
+            text-align: left;
+        }
+        
+        .code-font {
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            height: 1.5rem;
+            width: 1.5rem;
+            border-radius: 50%;
+            border: 3px solid;
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 0.7rem;
+            top: 2.5rem;
+            height: calc(100% + 1rem);
+            width: 2px;
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            background: rgba(26, 32, 44, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .language-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-bar {
+            height: 0.5rem;
+            border-radius: 0.25rem;
+            background: #4a5568;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 0.25rem;
+            transition: width 1s ease-in-out;
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px currentColor;
+        }
+        
+        .tech-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            margin: 0.25rem;
+            background: rgba(66, 153, 225, 0.2);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #38BDF8, #81E6D9, #38BDF8);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 3s linear infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #38BDF8;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #38BDF8; }
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Specific color styles for technologies */
+        .text-vb { color: var(--vb); }
+        .text-delphi { color: var(--delphi); }
+        .text-csharp { color: var(--csharp); }
+        .text-php { color: var(--php); }
+        .text-python { color: var(--python); }
+        .text-qt { color: var(--qt); }
+        .text-rust { color: var(--rust); }
+        .text-typescript { color: var(--typescript); }
+        .text-react { color: var(--react); }
+        .text-tailwind { color: var(--tailwind); }
+        .text-java { color: var(--java); }
+        .text-go { color: var(--go); }
+        
+        .bg-vb { background-color: var(--vb); }
+        .bg-delphi { background-color: var(--delphi); }
+        .bg-csharp { background-color: var(--csharp); }
+        .bg-php { background-color: var(--php); }
+        .bg-python { background-color: var(--python); }
+        .bg-qt { background-color: var(--qt); }
+        .bg-rust { background-color: var(--rust); }
+        .bg-typescript { background-color: var(--typescript); }
+        .bg-react { background-color: var(--react); }
+        .bg-tailwind { background-color: var(--tailwind); }
+        .bg-java { background-color: var(--java); }
+        .bg-go { background-color: var(--go); }
+        
+        .border-vb { border-color: var(--vb); }
+        .border-delphi { border-color: var(--delphi); }
+        .border-csharp { border-color: var(--csharp); }
+        .border-php { border-color: var(--php); }
+        .border-python { border-color: var(--python); }
+        .border-qt { border-color: var(--qt); }
+        .border-rust { border-color: var(--rust); }
+        .border-typescript { border-color: var(--typescript); }
+        .border-react { border-color: var(--react); }
+        .border-tailwind { border-color: var(--tailwind); }
+        .border-java { border-color: var(--java); }
+        .border-go { border-color: var(--go); }
     </style>
 </head>
-
-<body>
+<body class="min-h-screen">
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">نوار منو</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+    <nav class="fixed w-full bg-gray-900 bg-opacity-90 backdrop-blur-md z-50 py-4">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold gradient-text">احسان ترک | Ehsan Tork</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#timeline" class="hover:text-blue-400 transition-colors">Timeline</a>
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#stack" class="hover:text-blue-400 transition-colors">Current Stack</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+                <a href="en.html" class="hover:text-blue-400 transition-colors">EN</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-300 hover:text-white">
+                    <i class="fas fa-bars text-2xl"></i>
                 </button>
-                <a class="navbar-brand farsi-bold" href="http://journalehsan.github.io/">صفحه شخصی احسان ترک </a>
             </div>
-            <!-- Collect the nav links for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#home"><span class="fa fa-home"></span>  صفحهٔ اصلی </a>
-                    </li>
-
-                    <li>
-                        <a href="#about"><span class="fa fa-info"></span>  درباره‌من</a>
-                    </li>
-
-                    <li><a href="#price-sec"><span class="fa fa-code"></span>  کارهای من</a>
-                        <li>
-
-                            <li><a href="#contact-sec"><span class="fa fa-comment-o"></span>  تماس با‌من</a>
-                                <li>
-                                    <li><a href="mailto:journalehsan@gmail.com?Subject=Hello%20again"><strong><span class="glyphicon glyphicon-envelope"></span> رایانامه  </strong></a>
-                                        <li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-4 pt-2 pb-4">
+            <div class="flex flex-col space-y-3">
+                <a href="#timeline" class="hover:text-blue-400 transition-colors">Timeline</a>
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#stack" class="hover:text-blue-400 transition-colors">Current Stack</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+                <a href="en.html" class="hover:text-blue-400 transition-colors">EN</a>
+            </div>
+        </div>
     </nav>
-    <!--End Navigation -->
 
-
-    <!--Header section  -->
-    <div class="container" id="home">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <h1 class="head-main">احسان ترک <br> Ehsan Tork </h1>
-                <h2 class="head-sub-main">برنامه‌نویس و فعال آزاد/ متن‌باز</h2>
-                <a class="btn btn-danger btn-lg " href="/why-web-design-in-tehran-is-important.html">مطالعه بیشتر </a> <a class="btn btn-default btn-lg" href="#contact-sec">تماس با من </a>
-                <div class="head-last"></div>
-
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-20 pb-12 px-4" id="home">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                <span class="gradient-text">احسان ترک</span><br>
+                <span class="text-3xl md:text-4xl text-gray-300">Ehsan Tork</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-4 text-gray-300 rtl-text">
+                برنامه‌نویس و فعال آزاد/متن‌باز
+            </p>
+            <p class="text-lg md:text-xl mb-10 text-gray-400 ltr-text typewriter">
+                Full-Stack Developer & Open Source Enthusiast
+            </p>
+            <div class="animate__animated animate__fadeInUp animate__delay-1s">
+                <a href="#about" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 mx-2">
+                    <span class="rtl-text">درباره من</span>
+                    <i class="fas fa-arrow-down ml-2"></i>
+                </a>
+                <a href="#contact" class="inline-block bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 mx-2">
+                    <span class="rtl-text">تماس با من</span>
+                    <i class="fas fa-envelope ml-2"></i>
+                </a>
             </div>
-
-
-        </div>
-    </div>
-    <!--End Header section  -->
-
-
-    <!--words Section-->
-    <section class="for-full-back color-white" id="about">
-        <div class="container">
-            <section>
-                <div class="row text-center">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1><a href="#contact-sec"><span class="fa fa-info-circle"></span> احسان ترک کیست؟ </a></h1>
-                        <h4>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <a href="#contact-sec"> <img src="assets/img/ehsan-tork-new.jpg" height="369" width="369" class="img-circle" alt="Ehsan Tork احسان ترک"></a>
-                                </div>
-                                <div class="col-md-6">
-                                    <p> <span class="fa fa-info-circle"></span> احسان ترک هستم و از سال ۸۶ به‌طور مستمر کاربر لینوکس هستم و قبل از اون تفننی با لینوکس آشنا بودم. </p>
-                                    <p>
-                                        برنامه‌نویس جاوا/ اندروید و C++/Qt به‌طور جدی (C# و VB در دوران جاهلیت) و آشنایی متوسط با اکثر زبان‌های برنامه‌نویسی رایج. علاقه‌مند به برنامه‌های متن‌بازم.
-                                    </p>
-
-                                </div>
-                            </div>
-
-                        </h4>
-                        <h1 class="ltr-texts">Who is Ehsan Tork!</h1>
-                        <h4 class="ltr-texts">
-                            <p>
-                                مثل یه آدم نرمال عاشق پول و هر چی تفریح فانم! آدم متوسطی هستم و در هر چیزی متوسط بودم و هستم از KDE هم خوشم می آد؛ توزیع محبوبم آرچ و هر توزیعی که Pacman داره <span class="fa fa-smile-o"></span></p>
-                            <p>سلام به همه دوستان عزیز! من احسان ترک هستم و امروز می خوام درباره خودم و تجربه های کاری و اطلاعاتی که دارم بنویسم. این مطلب رو برای اونایی که می خوان من رو بیشتر بشناسن یا با من همکاری کنن نوشتم. اگه شما هم جز این دسته از افراد
-                                هستید، پس با من همراه باشید!<br /><br />من فارغ التحصیل رشته مهندسی کامپیوتر از دانشگاه بوعلی هستم و الان به عنوان یک توسعه دهنده وب در یک شرکت معتبر مشغول به کار هستم. من علاقه زیادی به طراحی و برنامه نویسی وب سایت ها
-                                و اپلیکیشن های موبایل دارم و تا حالا چندین پروژه موفق در این زمینه انجام دادم. شما می تونید نمونه کارهای من رو در پروفایل لینکدین من ببینید. لینک پروفایل لینکدین من رو می تونید با سرچ کردن اسم من یعنی احسان ترک پیدا کنید.
-                                <br /><br />من در زبان های برنامه نویسی مختلف مثل جاوا، پایتون، جاوااسکریپت، سی شارپ و ... تسلط دارم و با فریم ورک ها و تکنولوژی های مختلف مثل ری اکت، آنگولار، نود جی اس، فلاتر، دات نت و ... کار کردم. من همچنین به طراحی
-                                رابط کاربری و تجربه کاربری (UI/UX) علاقه مند هستم و با ابزارهای مختلف مثل فوتوشاپ، ایلاستراتور، اسکچ و ... کار می کنم.<br /><br />من علاقه زیادی به یادگیری چیزهای جدید دارم و همیشه در حال به روز رسانی دانش خودم هستم. من
-                                دوره های آموزشی زیادی رو در حوزه برنامه نویسی و طراحی وب سایت و اپلیکیشن موبایل گذروندم و گواهینامه های مختلفی رو در این زمینه گرفتم. شما می تونید گواهینامه های من رو در پروفایل لینکدین من ببینید.<br /><br />خب دوستان عزیر،
-                                این بود چند خط درباره خودم و تجربه های کاری و اطلاعاتی که دارم. اگه شما هم به همکاری با من علاقه مند هستید یا سؤال چیز خاصی دارید، می تونید با من توسط شبکه های اجتماعی یا اطلاعات تماس که در پروفایل لینکدین من قابل دسترس
-                                هست، در ارتباط باشید. من خوشحال می شم با شما صحبت کنم و تجربه هام رو با شما به اشتراک بذارم.<br /><br />امیدوارم از خواندن این مطلب لذت برده باشید. منتظر نظرات شما هستم. بدرود!</p>
-                            </hr>
-                            <p> <span class="fa fa-info-circle"></span> Ehsan Tork: A Full-Stack Developer and Web Designer with Passion for Learning and Sharing
-
-                                <p> I'm Programmer and Software Developer for Some Open Source and Free Software I Study Programming Engineering. My Favorite OS is GNU/Linux and my main distribution is Arch Linux. I love pacman and flexibility of it.</p>
-
-                                <p>I'm a fan of Social Democrats at all :) and Reformists in Iran. I love Science and Technology and like help people to learn something about OSS.</p>
-
-                                <p>I develop some app in Java and Ubuntu Touch and my favorite language is C/C++ and perhaps i love Qt. Java is Fine and i enjoy programming with Java but C++ is more powerful than the Java for me. I can't programming in Vala
-                                    at all and i hate this Crap!</p>
-
-                                <p>I love python too but it's a little confusing for me when i try to write code in C++ and Python in a same time. Because of semicolon :)</p>
-
-                                <p>I'm using Linux since 2008. My first distribution was Red hat 6.</p>
-                                <p>Hello, dear friends! &#128075; I am Ehsan Tork and today I want to write about myself and my work experience and skills. This text is for those who want to know me better or collaborate with me. If you are one of those
-                                    people, then stay with me! &#128522;</p>
-
-                                <p>I graduated from Bouali University of Technology in computer engineering and now I work as a web developer in a reputable company. I have a lot of interest in designing and programming websites and mobile applications and
-                                    I have done several successful projects in this field. You can see my portfolio on my LinkedIn profile. You can find the link to my LinkedIn profile by searching my name, Ehsan Tork.</p>
-
-                                <p>I am proficient in different programming languages such as Java, Python, JavaScript, C# and more, and I have worked with various frameworks and technologies such as React, Angular, Node.js, Flutter, .NET and more. I am
-                                    also interested in user interface and user experience design (UI/UX) and I work with different tools such as Photoshop, Illustrator, Sketch and more.</p>
-
-                                <p>I have a lot of interest in learning new things and I always keep updating my knowledge. I have taken many courses in the field of programming and web design and mobile application development and I have obtained various
-                                    certificates in this field. You can see my certificates on my LinkedIn profile.</p>
-
-                                <p>Well, dear friends, this was a few lines about myself and my work experience and skills. If you are also interested in collaborating with me or have any specific questions, you can contact me through social networks or
-                                    contact information that are available on my LinkedIn profile. I would be happy to talk to you and share my experiences with you.</p>
-
-                                <p>I hope you enjoyed reading this text. &#128512; I look forward to your comments. &#128077; Goodbye! &#128075;</p>
-
-                                <p>Some additional facts about me are:</p>
-
-                                <ul>
-                                    <li>I am the co-founder of Shosa Daru, an online drugstore based in Tehran, Iran. Shosa Daru is a platform that connects customers with pharmacies and provides them with various services such as online consultation, prescription
-                                        management, delivery and payment.</li>
-                                    <li>I have written several articles on topics such as how to write viral content, how to teach math and Python to high school girls, how to download all Hafiz poems from a site, and how time travel and medical advancement
-                                        are related to the largest intelligent pharmaceutical company. You can read my articles on my personal website or on my LinkedIn profile.</li>
-                                    <li>I am a full-stack developer with expertise in PHP/Laravel, ReactJS, Python, Java, C++, Apache Cloud Stack and other technologies. I have also done some Dev-Ops tasks for various projects. Some of the projects that I
-                                        have worked on are Shimico.com (an online marketplace for chemical products), VirakCloud (a cloud computing platform based on Apache Cloud Stack), Tosan Electric Motors (a manufacturer of electric motors) and Karina
-                                        Mobile Solutions (a mobile application development company).</li>
-                                </ul>
-                        </h4>
-                    </div>
-
-                </div>
-
-                <div class="row text-center space-pad">
-                    <div class="col-md-3 ">
-
-                        <div class="about-div">
-
-                            <i class="fa fa-html5 fa-4x main-color-red"></i>
-
-
-                            <h2 class="rtl-texts">طراحی UX / UI </h2>
-
-                            <ul class="rtl-texts none-circle">
-                                <li>طراحی واکنش‌گرا</li>
-                                <li>طراحی مدرن و Flat</li>
-                                <li>طراحی قالب ورد‌پرس و دروپال</li>
-                                <li>طراحی بهینه برای موتور‌های جستجو</li>
-                                <li>طراحی کاربرپسند</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <div class="col-md-3 ">
-
-                        <div class="about-div">
-
-                            <i class="fa fa-desktop fa-4x main-color-red"></i>
-
-
-                            <h2 class="rtl-texts">توسعه نرم‌افزار</h2>
-                            <ul class="rtl-texts none-circle">
-                                <li>توسعه نرم‌افزار با استفاده از Qt</li>
-                                <li>توسعه نرم‌افزار با جاوا</li>
-                                <li>توسعه‌نرم‌آفزار با GO</li>
-                                <li> وسعه‌دهنده یونیکس</li>
-                                <li>توسعه نرم‌افزار سیستمی و کاربردی</li>
-                            </ul>
-
-                        </div>
-
-                    </div>
-                    <div class="col-md-3">
-
-                        <div class="about-div">
-
-                            <i class="fa fa-film fa-4x main-color-red"></i>
-
-
-                            <h2 class="rtl-texts">مشاوره</h2>
-                            <ul class="rtl-texts none-circle">
-                                <li>بازایابی اینترنتی</li>
-                                <li>تبلیغات اینترنتی</li>
-                                <li>بازاریابی شبکه‌های اجتماعی </li>
-                                <li>مشاوره حقوقی نرم‌افزار آزاد</li>
-                                <li>مشاوره تخصصی نرم‌افزار آزاد</li>
-                            </ul>
-
-                        </div>
-
-                    </div>
-                    <div class="col-md-3 ">
-
-                        <div class="about-div">
-
-                            <i class="fa fa-globe fa-4x main-color-red"></i>
-
-
-                            <h2 class="rtl-texts">توسعه‌دهنده وب </h2>
-                            <ul class="rtl-texts none-circle">
-                                <li>توسعه‌نرم‌افزار با PHP</li>
-                                <li>توسعه‌نرم‌افزار با Go</li>
-                                <li>توسعه دهنده پایتون</li>
-                                <li>نصب و پیکربندی سرور </li>
-                                <li>توسعه کتابخانه‌های رایگان </li>
-                            </ul>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-12">
-                        <h2>نر‌م‌افزار آزاد/متن‌باز</h2>
-                        <h3> توسعه نرم‌افزار آزاد/متن‌باز باعث می‌شود که مشارکت در پزوژه‌های بزرگ را یادبگیریم.</h3>
-                    </div>
-
-                </div>
-
-
-
-            </section>
-
-            <section class="for-full-back " id="Parallax-one">
-                <div class="container">
-
-                    <div class="row text-center for-parallax-one">
-                        <div class="col-md-6 ">
-                            <h3>برنامه‌نویسی</h3>
-                            <h4>
-                                <strong>ذهن خود را با نوشتن نرم‌افزارآزاد/ متن‌باز <br />
-                        باز نگاه دارید. 
-                        </strong>
-                            </h4>
-                        </div>
-                        <div class="col-md-6 ">
-                            <h3>واکنش‌گرا</h3>
-                            <h4>
-                                <strong>با طراحی واکنش‌گرا
-                        <br />
-                        با تکنولوژی روز همراه باشید.
-                        </strong>
-                            </h4>
-                        </div>
-                    </div>
-
-
-                </div>
-            </section>
-            <!--./parallax one-->
-            <!--End words Section-->
-
-
-
-
-            <!-- Pricing Section -->
-
-            <section class="for-full-back color-white " id="price-sec">
-                <div class="container">
-                    <div class="row text-left">
-                        <div class="col-md-8 col-md-offset-2">
-                            <!--<h1 class="page-header">کارهای من</h1>-->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3> مقالات من در اینترنت</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <h4>اخبار مرتبط با پایگاه اینترنتی لینوکس ریویو و دیگر مقالات در سلام دنیا!</h4>
-                                    <h3 class="page-header"> پایگاه اینترنتی LinuxReview</h3>
-                                    <h4>
-                                        پایگاه لینوکس ریویو یکی از آن پایگاه‌های جامعه‌محور و پر جنب و جوش در بین کاربران گنو/لینوکس ایران بود. باوجوداین همواره این پایگاه فرازوفرودهایی را در فعالیت خود داشته که باعث شده است کاربران آن همواره در حال افزایش یا کاهش بوده و فعالیت آن سینوسی شکل
-                                        باشد. بعدازآنکه مجلات و پایگاه‌های مختلف یک به یک آمدند و چه بی‌سر و صدا و چه با سروصدا اینک از بین ما رفته‌اند، پایگاه لینوکس ریویو همواره هرچند کج دار و مریض امّا سرپا بوده است.
-
-                                    </h4>
-                                    <p class="text-right"><a href="http://linuxreview.ir/author/finaprp/" class="btn btn-primary"><span class="fa fa-globe"></span> مطالب من در لینوکس ریویو</a></p>
-
-                                    <h3 class="page-header">پایگاه سلام دنیا!</h3>
-                                    <h4>
-                                        برخی مقالات من در این پایگاه ثبت شده است، برای مشاهدهٔ آنان به این پیوند مراجعه کنید.
-
-                                    </h4>
-
-                                    <p class="text-right"><a href="http://salam-donya.com/author/tork/" class="btn btn-primary"><span class="fa fa-globe"></span> مطالب من در سلام دنیا!</a></p>
-                                </div>
-                            </div>
-
-                            <div class="panel panel-success">
-                                <div class="panel-heading">
-                                    <h3> کتاب‌ها</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <h3>شرایط دریافت نسخهٔ PDF و چاپی کتاب:</h3>
-                                    <p>
-                                        اگر می‌خواهید کتاب را به صورت PDF دریافت کنید، می‌توانید مبلقی را از
-                                        <a class="btn btn-default" href="pay.html">این پیوند</a> پرداخت کنید تا نسخهٔ PDF برایتان ارسال شود.
-                                        <pdf>
-                                            اگر مبلغ پداختی شما بیش از 20,000 تومان باشد، نسخهٔ چاپی نیز ارسال می‌شود.
-                                        </pdf>
-                                    </p>
-                                    <h3 class="page-header">دربارهٔ کتاب:</h3>
-                                    <p class="rtl-texts">
-                                        امروزه اینترنت موجب گسترش دانش و نشر دانش شده است، به صورتی که اکثر افراد می‌توانند داشته‌ها و دانسته‌های خود را در این بستر ارتباطی و رسانهٔ جمعی که خود از قابلیت پوشش دادن به نیازهای چندرسانه‌ای کاربران برخوردار است، با دیگران در میان بگزارند. این مجموعهٔ
-                                        آموزشی که در حال حاضر در قسمت آخر آن هستیم نیز برای این موضوع نوشته شده است، تا کاربرانی که قصد دارند به توسعهٔ نرم‌افزار تحت وب یا طراحی صفحات وب پردازند، با اندک هزینه‌ای محیطی ارزان و ساده را برای اجرای نرم‌افزار
-                                        و کدهای خود ایجاد کنند. با استفاده از این محیط سندباکس به راحتی می‌توان تمامی پروژه‌های مختلف را اجرا کرد.
-                                    </p>
-                                    <p class="text-center"> <img class="embed-responsive img-rounded" src="assets/img/book-front.jpeg" alt="Sandbox Book" height="60%" width="40%"> </p>
-                                    <p>با این وجود اگر از یک رزبری‌پای نیز استفاده می‌کنید، می‌توانید با استفاده از یک سوئیچ یا یک مودم که در منزل دارید، شبکه‌ای بی‌سیم در منزل خود ایجاد کنید، و رزبری‌پای را به آن متصل کنید، سپس اوبونتو سرور را بر اساس آموزشی
-                                        که در این مطلب داده شد نصب کرده و با استفاده از انتقال درگاه یا پورت فورواردینگ، درگاه‌هایی را که در ویرچوال‌باکس انتقال دادیم، به صورتی انتقال دهید که در تمامی شبکهٔ محلی خود بتوانید به آنان متصل شوید. (این مقاله
-                                        می‌تواند برای برخی مواقع مفید باشد) بعد از این شما از یک محیط توسعه برخوردار می‌شوید که هر وقت و هرگاه خواستید می‌توانید به آن متصل شوید. البته در این حالت برای ذخیره اطلاعات پر حجم به یک دیسک سخت با ظرفیت مناسب
-                                        نیز نیاز خواهید داشت.</p>
-                                    <p class="rtl-texts">
-                                        کدهای لاتک این کتاب از طریق
-                                        <a class="btn btn-default" href="https://journalehsan.github.io/Sandbox-Book/">                            این پیوند از گیت‌هاب
-</a> قابل دریافت است.
-                                    </p>
-                                    <p>
-                                        کدهایی که برای ایجاد پی‌دی‌اف در زی‌لاتک نوشته شده‌اند را نیز به صورت کامل در پایگاه اینترنتی گیت‌هاب بارگزاری می‌کنم تا در صورت نیاز بتوانید آن را برای نیاز خودتان تغییر دهید، همچنین در آینده نسخهٔ وبی از آن نیز ممکن است عرضه شود. اگر از سیستم‌عامل گنو/لینوکس
-                                        استفاده می‌کنید، نرم‌افزار «TeXStudio» نرم‌افزار خوبی برای نوشتن و گرفتن خروجی پی‌دی‌اف از کدهای لاتک و زی‌لاتک به شمار می‌آید،خودم شخصاً نتوانستم از طریق نرم‌افزارهای دیگر در نو/لینوکس این کار را انجام دهم. توزیع
-                                        من برای نوشتن لاتک و زی‌لاتک، توزیع آرچ لینوکس است و از نرم‌افزارهای پیش‌فرض موجود در داخل مخازن آرچ استفاده کرده‌ام.
-                                    </p>
-                                    <p class="text-right"><a href="/maghalat.html" class="btn btn-success"><span class="fa fa-download"></span> دانلود کتاب </a></p>
-                                </div>
-                            </div>
-
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">
-                                    <h3> به زودی ...</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <h4>
-                                        <ul>
-                                            <li>.پروژهٔ متن‌بازی برای خواندن متون با صدای طبیعی آغاز خواهد شد</li>
-                                            <li>برای آموزش سندباکس یا موارد دیگر در گنو/لینوکس و نرم‌افزارهای آزاد/متن‌باز یک ویدئو کست راه‌اندازی می‌شود</li>
-                                            <li>کتاب آموزش برنامه‌نویسی با کیوت کامل شده و در این‌جا قرار می‌گیرد</li>
-                                            <li>.کتاب آموزش نصب و اجرای فدورا کامل خواهد شد</li>
-                                        </ul>
-
-                                    </h4>
-                                    <p class="text-right"><a href="/maghalat.html" class="btn btn-warning"> مطالعهٔ بیشتر</a></p>
-                                </div>
-                            </div>
-
-                            <div class="panel panel-info">
-                                <div class="panel-heading">
-                                    <h3>پروژه‌های فعلی</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <h4>
-                                        <ul>
-                                            <li>تبدیل قالب و اصلاح زیر نویس فارسی ، برای دریافت از
-                                                <a class="btn btn-default" href="http://journalehsan.github.io/PersianSubtitleFixer"> این پیوند </a> اقدام کنید.</li>
-                                            <li>...</li>
-
-                                        </ul>
-
-                                    </h4>
-                                    <p class="text-right"><a href="/maghalat.html" class="btn btn-info"> مطالعهٔ بیشتر</a></p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div class="row text-center">
-
-                        <div class="col-md-12 ">
-
-
-
-                        </div>
-                    </div>
-
-
-                </div>
-            </section>
-
-            <!--<section class="for-full-back for-parallax-two" id="Parallax-two">
-        <div class="container">
-
-            <div class="row text-center">
-                <div class="col-md-8 col-md-offset-2 ">
-                    <h1>ادای هکرها را در نیاورید!</h1>
-                    <h2>
-                        <p>
-                            با استفاده از توزیع‌های KoliLinux و ... شما هیچ وقت به یک هکر تبدیل نخواهید شد.
-                            
-                            عمرا ....
-                        </p>
-                    </h2>
-                </div>
-
-            </div>
-
-
-        </div>
-    </section>-->
-            <!--./parallax two-->
-            <!--End Pricing Section -->
-
-            <!-- Contact Section -->
-            <section class="for-full-back color-white " id="contact-sec">
-                <div class="container">
-
-
-                    <div class="row">
-                        <div class="col-md-5 contact-cls">
-                            <!--<h3>شبکه‌های اجتماعی </h3>
-                    <div id="social-icon">
-                        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-                        <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
-                        <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
-                        <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
-                        <a href="#"><i class="fa fa-github fa-2x"></i></a>
-                    </div>-->
-                            <div>
-                                <span><i class="fa fa-home"></i>&nbsp; <strong>آدرس:</strong> شهر تهران</span>
-                                <br />
-                                <span><i class="fa fa-phone"></i>&nbsp; <strong> شماره همراه: </strong> <span class="ltr-texts"> 09128571596 </span> </span>
-                                <br />
-                                <span><i class="fa fa-envelope-o"></i>&nbsp;<strong> ایمیل:</strong> <a href="mailto:journalehsan@gmail.com?Subject=Hello%20again"> <span class="ltr-texts">journalehsan@gmil.com</span> </a>
-                                </span>
-                                <br />
-                                <span><i class="fa fa-envelope-o"></i>&nbsp; <strong>ایمیل: </strong> <a href="mailto:journalehsan@gmail.com?Subject=Hello%20again"> <span class="ltr-texts">journalehsan@yahoo.com</span> </a>
-                                </span>
-                                <br />
-                                <span><i class="fa fa-globe"></i>&nbsp; <strong>وب‌سایت : </strong> <a href="http://journalehsan.github.io"> <span class="ltr-texts">www.journalehsan.github.io</span></a>
-                                </span>
-                                <br />
-                            </div>
-                            <br />
-
-                        </div>
-                        <!--<div class="col-md-7">
-                    <h2>تماس با من</h2>
-                    <h4><p> برای اینکه با من تماس بگیرید می‌توانید از این قسمت پیام خود را برای 
-                      <kbd>احسان ترک</kbd>
-                        نوشته و سپس با استفاده از کلید ارسال ، پیام خود را ارسال کنید.</p>
-                       <p class="alert alert-info">
-                          <span class="fa fa-info-circle"></span> لطفا پیام‌های ارسالی به دور از تبلیغات و اسپم باشد. 
-                       </p>
-                       
-                        <p class="alert alert-danger">
-                          <span class="fa fa-warning"></span> این قسمت در حال تکیل شدن است! 
-                       </p>
-                    </h4>
-                    <form>
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" required="required" placeholder="نام">
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" required="required" placeholder="@ ایمیل">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12">
-                                <div class="form-group">
-                                    <textarea name="message" id="message" required="required" class="form-control" rows="3" placeholder="متن پیغام"></textarea>
-                                </div>
-                                <div class="form-group">
-                                   <p class="text-right"><button type="submit" class="btn btn-primary">ارسال ایمیل</button></p> 
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>-->
-
-                    </div>
-                </div>
-            </section>
-
-            <!--End Contact Section -->
-            <!--footer Section -->
-            <div class="for-full-back navbar-fixed-bottom" id="footer">
-                صفحه شخصی احسان ترک، بدون کپی‌رایت و با مجوز CCbyNC 3.0
-
-            </div>
-            <!--End footer Section -->
-            <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-            <!-- CORE JQUERY  -->
-            <script src="assets/plugins/jquery-1.10.2.js"></script>
-            <!-- BOOTSTRAP CORE SCRIPT   -->
-            <script src="assets/plugins/bootstrap.js"></script>
-            <!-- VEGAS SLIDESHOW SCRIPTS -->
-            <script src="assets/plugins/vegas/jquery.vegas.min.js"></script>
-            <script src="assets/plugins/jquery.parallax-1.1.3.js"></script>
-            <!-- CUSTOM SCRIPTS -->
-            <script src="assets/js/custom.js"></script>
         </div>
     </section>
-</body>
 
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10 text-center">
+                <span class="rtl-text">احسان ترک کیست؟</span> | <span class="ltr-text">Who is Ehsan Tork?</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="text-center">
+                    <img src="assets/img/ehsan-tork-new.jpg" alt="Ehsan Tork احسان ترک" class="w-80 h-80 rounded-full mx-auto mb-6 object-cover shadow-lg">
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="rtl-text">
+                        <p class="text-gray-300 mb-4">
+                            احسان ترک هستم و از سال ۸۶ به‌طور مستمر کاربر لینوکس هستم و قبل از اون تفننی با لینوکس آشنا بودم.
+                        </p>
+                        <p class="text-gray-300 mb-4">
+                            برنامه‌نویس جاوا/ اندروید و C++/Qt به‌طور جدی (C# و VB در دوران جاهلیت) و آشنایی متوسط با اکثر زبان‌های برنامه‌نویسی رایج. علاقه‌مند به برنامه‌های متن‌بازم.
+                        </p>
+                    </div>
+                    
+                    <div class="ltr-text">
+                        <p class="text-gray-300 mb-4">
+                            I'm a Full-Stack Developer and Web Designer with a passion for learning and sharing knowledge. I have extensive experience in programming and software development, particularly in open source and free software.
+                        </p>
+                        <p class="text-gray-300 mb-4">
+                            My favorite OS is GNU/Linux, and my main distribution is Arch Linux. I love the pacman package manager and its flexibility.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-3 text-blue-400">Key Facts:</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Co-founder of Shosa Daru (Online drugstore)</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Graduate of Bouali University (Computer Engineering)</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Linux user since 2008 (Started with Red Hat 6)</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Open Source & Free Software advocate</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10 text-center">My Programming Evolution</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Left Column -->
+                <div>
+                    <!-- VB6 & Delphi -->
+                    <div class="timeline-item">
+                        <div class="timeline-item:before border-vb"></div>
+                        <div class="timeline-item:after bg-vb"></div>
+                        <div class="card bg-gray-800 p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-vb flex items-center justify-center mr-4 glow">
+                                    <i class="fas fa-desktop text-white"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Visual Basic 6 & Delphi</h3>
+                            </div>
+                            <p class="text-gray-300">Started programming in high school with VB6, then learned Object Pascal with Delphi at university. This was my "جاهلیت" (ignorance) period, but it taught me the fundamentals!</p>
+                            <div class="mt-4">
+                                <span class="tech-tag">Desktop Apps</span>
+                                <span class="tech-tag">GUI Development</span>
+                                <span class="tech-tag">OOP Basics</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- C# & .NET -->
+                    <div class="timeline-item">
+                        <div class="timeline-item:before border-csharp"></div>
+                        <div class="timeline-item:after bg-csharp"></div>
+                        <div class="card bg-gray-800 p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-csharp flex items-center justify-center mr-4 glow">
+                                    <i class="fab fa-microsoft text-white"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">C# & .NET</h3>
+                            </div>
+                            <p class="text-gray-300">Moved to C# and .NET framework for more robust applications. Built various Windows applications and learned proper software architecture patterns.</p>
+                            <div class="mt-4">
+                                <span class="tech-tag">.NET Framework</span>
+                                <span class="tech-tag">Windows Forms</span>
+                                <span class="tech-tag">Enterprise Apps</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Java & Android -->
+                    <div class="timeline-item">
+                        <div class="timeline-item:before border-java"></div>
+                        <div class="timeline-item:after bg-java"></div>
+                        <div class="card bg-gray-800 p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-java flex items-center justify-center mr-4 glow">
+                                    <i class="fab fa-java text-white"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Java & Android</h3>
+                            </div>
+                            <p class="text-gray-300">Expanded into Java development and Android applications. Java is fine and I enjoy programming with it, though C++ remains more powerful for me.</p>
+                            <div class="mt-4">
+                                <span class="tech-tag">Android Development</span>
+                                <span class="tech-tag">Mobile Apps</span>
+                                <span class="tech-tag">Cross-platform</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div class="md:mt-20">
+                    <!-- Python & PyQt -->
+                    <div class="timeline-item">
+                        <div class="timeline-item:before border-python"></div>
+                        <div class="timeline-item:after bg-python"></div>
+                        <div class="card bg-gray-800 p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-python flex items-center justify-center mr-4 glow">
+                                    <i class="fab fa-python text-white"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Python & PyQt</h3>
+                            </div>
+                            <p class="text-gray-300">I love Python too, but it's a little confusing when I try to write code in C++ and Python at the same time. Because of semicolons! 😄</p>
+                            <div class="mt-4">
+                                <span class="tech-tag">Scripting</span>
+                                <span class="tech-tag">Desktop GUI</span>
+                                <span class="tech-tag">Rapid Development</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- C++ & Qt -->
+                    <div class="timeline-item">
+                        <div class="timeline-item:before border-qt"></div>
+                        <div class="timeline-item:after bg-qt"></div>
+                        <div class="card bg-gray-800 p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-qt flex items-center justify-center mr-4 glow">
+                                    <i class="fas fa-cogs text-white"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">C++ & Qt</h3>
+                            </div>
+                            <p class="text-gray-300">My favorite language is C/C++ and I love Qt framework. C++ is more powerful than Java for me. Built high-performance cross-platform applications.</p>
+                            <div class="mt-4">
+                                <span class="tech-tag">High Performance</span>
+                                <span class="tech-tag">Native Apps</span>
+                                <span class="tech-tag">Qt Framework</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- PHP & Web Development -->
+                    <div class="timeline-item">
+                        <div class="timeline-item:before border-php"></div>
+                        <div class="timeline-item:after bg-php"></div>
+                        <div class="card bg-gray-800 p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-php flex items-center justify-center mr-4 glow">
+                                    <i class="fab fa-php text-white"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">PHP & Laravel</h3>
+                            </div>
+                            <p class="text-gray-300">Extensive experience with PHP/Laravel, ReactJS, and backend development. Worked on major projects like Shimico.com, VirakCloud, and more.</p>
+                            <div class="mt-4">
+                                <span class="tech-tag">Laravel Framework</span>
+                                <span class="tech-tag">Web Development</span>
+                                <span class="tech-tag">Full-Stack</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Rust & Modern Native -->
+                    <div class="timeline-item">
+                        <div class="timeline-item:before border-rust"></div>
+                        <div class="timeline-item:after bg-rust"></div>
+                        <div class="card bg-gray-800 p-6 border-2 border-orange-500">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-orange-600 flex items-center justify-center mr-4 glow">
+                                    <i class="fas fa-cog text-white"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Rust & Iced/Slint <span class="text-sm bg-orange-600 px-2 py-1 rounded-full ml-2">Current Focus</span></h3>
+                            </div>
+                            <p class="text-gray-300">In recent two years, focused on Rust for backend development and Iced/Slint for native desktop applications. Memory safety, performance, and modern UI!</p>
+                            <div class="mt-4">
+                                <span class="tech-tag bg-orange-600">Backend Services</span>
+                                <span class="tech-tag bg-orange-600">Iced GUI</span>
+                                <span class="tech-tag bg-orange-600">Slint UI</span>
+                                <span class="tech-tag bg-orange-600">Memory Safety</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Grid -->
+    <section id="skills" class="py-16 px-4 bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10 text-center">Technology Proficiency</h2>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                <div class="card bg-gray-800 p-5 text-center">
+                    <div class="language-icon text-vb">
+                        <i class="fas fa-window-restore"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">VB6</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress bg-vb" style="width: 40%"></div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 p-5 text-center">
+                    <div class="language-icon text-delphi">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Delphi</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress bg-delphi" style="width: 50%"></div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 p-5 text-center">
+                    <div class="language-icon text-csharp">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">C#</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress bg-csharp" style="width: 75%"></div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 p-5 text-center">
+                    <div class="language-icon text-php">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">PHP</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress bg-php" style="width: 90%"></div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 p-5 text-center">
+                    <div class="language-icon text-python">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Python</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress bg-python" style="width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 p-5 text-center">
+                    <div class="language-icon text-qt">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Qt/C++</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress bg-qt" style="width: 80%"></div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 p-5 text-center">
+                    <div class="language-icon text-java">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Java</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress bg-java" style="width: 70%"></div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 p-5 text-center">
+                    <div class="language-icon text-typescript">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">TypeScript</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress bg-typescript" style="width: 75%"></div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 p-5 text-center">
+                    <div class="language-icon text-react">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">React</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress bg-react" style="width: 80%"></div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 p-5 text-center border-2 border-orange-500">
+                    <div class="language-icon text-orange-500">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Rust <span class="text-xs bg-orange-600 px-1 py-0.5 rounded">Current</span></h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress bg-orange-600" style="width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 p-5 text-center">
+                    <div class="language-icon text-go">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Go</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress bg-go" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Stack -->
+    <section id="stack" class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10 text-center">Current Tech Stack</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card bg-gray-800 p-6 border-2 border-orange-500">
+                    <h3 class="text-xl font-bold mb-4 text-center text-orange-500">Backend</h3>
+                    <div class="flex items-center mb-4 justify-center">
+                        <div class="w-16 h-16 rounded-full bg-orange-600 flex items-center justify-center mr-4 glow floating">
+                            <i class="fas fa-cog text-white text-2xl"></i>
+                        </div>
+                        <div class="text-3xl font-bold">Rust</div>
+                    </div>
+                    <p class="text-gray-300 mb-4 text-center">Current focus: Rust for backend services with memory safety, performance, and modern concurrent programming.</p>
+                    <div class="flex justify-center space-x-4">
+                        <div class="px-3 py-1 bg-orange-700 rounded-full text-sm">Async/Await</div>
+                        <div class="px-3 py-1 bg-orange-700 rounded-full text-sm">Memory Safety</div>
+                        <div class="px-3 py-1 bg-orange-700 rounded-full text-sm">High Performance</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-gray-400 text-sm">Also experienced with:</p>
+                        <div class="flex justify-center mt-2 space-x-2">
+                            <span class="tech-tag bg-opacity-30" style="background-color: rgba(119, 123, 179, 0.3);">PHP/Laravel</span>
+                            <span class="tech-tag bg-opacity-30" style="background-color: rgba(0, 173, 216, 0.3);">Go</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 p-6">
+                    <h3 class="text-xl font-bold mb-4 text-center text-react">Frontend</h3>
+                    <div class="flex items-center mb-4 justify-center">
+                        <div class="w-16 h-16 rounded-full bg-react flex items-center justify-center mr-4 glow floating">
+                            <i class="fab fa-react text-white text-2xl"></i>
+                        </div>
+                        <div class="text-3xl font-bold">React</div>
+                    </div>
+                    <p class="text-gray-300 mb-4 text-center">Modern React applications with TypeScript and TailwindCSS for styling.</p>
+                    <div class="flex justify-center space-x-4">
+                        <div class="px-3 py-1 bg-gray-700 rounded-full text-sm">TypeScript</div>
+                        <div class="px-3 py-1 bg-gray-700 rounded-full text-sm">TailwindCSS</div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 p-6 border-2 border-blue-500">
+                    <h3 class="text-xl font-bold mb-4 text-center text-blue-400">Desktop</h3>
+                    <div class="flex items-center mb-4 justify-center">
+                        <div class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center mr-4 glow floating">
+                            <i class="fas fa-desktop text-white text-2xl"></i>
+                        </div>
+                        <div class="text-3xl font-bold">Iced/Slint</div>
+                    </div>
+                    <p class="text-gray-300 mb-4 text-center">Modern native desktop apps with Rust-based Iced and Slint frameworks for reactive UIs.</p>
+                    <div class="flex justify-center space-x-4">
+                        <div class="px-3 py-1 bg-blue-700 rounded-full text-sm">Iced GUI</div>
+                        <div class="px-3 py-1 bg-blue-700 rounded-full text-sm">Slint UI</div>
+                        <div class="px-3 py-1 bg-blue-700 rounded-full text-sm">Reactive</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-gray-400 text-sm">Still love and use:</p>
+                        <div class="flex justify-center mt-2 space-x-2">
+                            <span class="tech-tag bg-opacity-30" style="background-color: rgba(65, 205, 82, 0.3);">Qt/C++</span>
+                            <span class="tech-tag bg-opacity-30" style="background-color: rgba(255, 212, 59, 0.3);">Python/PyQt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <h3 class="text-xl font-bold mb-6">Also Experienced With</h3>
+                <div class="flex justify-center flex-wrap gap-3">
+                    <span class="tech-tag bg-opacity-30" style="background-color: rgba(157, 79, 150, 0.3);">C#/.NET</span>
+                    <span class="tech-tag bg-opacity-30" style="background-color: rgba(221, 72, 20, 0.3);">CodeIgniter</span>
+                    <span class="tech-tag bg-opacity-30" style="background-color: rgba(231, 68, 48, 0.3);">Lumen</span>
+                    <span class="tech-tag bg-opacity-30" style="background-color: rgba(0, 173, 216, 0.3);">Go</span>
+                    <span class="tech-tag bg-opacity-30" style="background-color: rgba(255, 212, 59, 0.3);">Python</span>
+                    <span class="tech-tag bg-opacity-30" style="background-color: rgba(237, 139, 0, 0.3);">Java</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-4 bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10 text-center">
+                <span class="rtl-text">پروژه‌های من</span> | <span class="ltr-text">My Projects</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6">
+                    <div class="text-blue-400 text-3xl mb-4">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Shosa Daru</h3>
+                    <p class="text-gray-400 rtl-text mb-2">پلتفرم آنلاین داروخانه</p>
+                    <p class="text-gray-400">Online drugstore platform connecting customers with pharmacies</p>
+                </div>
+                
+                <div class="card p-6">
+                    <div class="text-green-400 text-3xl mb-4">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Shimico.com</h3>
+                    <p class="text-gray-400">Online marketplace for chemical products</p>
+                </div>
+                
+                <div class="card p-6">
+                    <div class="text-purple-400 text-3xl mb-4">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">VirakCloud</h3>
+                    <p class="text-gray-400">Cloud computing platform based on Apache Cloud Stack</p>
+                </div>
+                
+                <div class="card p-6">
+                    <div class="text-yellow-400 text-3xl mb-4">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Tosan Electric Motors</h3>
+                    <p class="text-gray-400">Manufacturing systems for electric motors</p>
+                </div>
+                
+                <div class="card p-6">
+                    <div class="text-red-400 text-3xl mb-4">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Karina Mobile Solutions</h3>
+                    <p class="text-gray-400">Mobile application development projects</p>
+                </div>
+                
+                <div class="card p-6">
+                    <div class="text-blue-600 text-3xl mb-4">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 rtl-text">کتاب سندباکس</h3>
+                    <p class="text-gray-400 rtl-text">آموزش راه‌اندازی محیط توسعه</p>
+                    <a href="maghalat.html" class="text-blue-400 hover:text-blue-300 text-sm">
+                        <span class="rtl-text">مطالعه بیشتر</span> →
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="https://github.com/journalehsan" class="inline-flex items-center text-blue-400 hover:text-blue-300" target="_blank">
+                    <i class="fab fa-github mr-2"></i>
+                    View more on GitHub
+                    <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10 text-center rtl-text">مقالات و نوشته‌ها</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card bg-gray-800 p-6">
+                    <h3 class="text-xl font-bold mb-4 rtl-text">لینوکس ریویو</h3>
+                    <p class="text-gray-300 rtl-text mb-4">
+                        مقالات من در پایگاه لینوکس ریویو که یکی از پایگاه‌های فعال جامعه گنو/لینوکس ایران است.
+                    </p>
+                    <a href="http://linuxreview.ir/author/finaprp/" class="btn bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded" target="_blank">
+                        <i class="fas fa-globe mr-2"></i>
+                        <span class="rtl-text">مطالب من در لینوکس ریویو</span>
+                    </a>
+                </div>
+                
+                <div class="card bg-gray-800 p-6">
+                    <h3 class="text-xl font-bold mb-4 rtl-text">سلام دنیا!</h3>
+                    <p class="text-gray-300 rtl-text mb-4">
+                        برخی مقالات من در پایگاه سلام دنیا منتشر شده است.
+                    </p>
+                    <a href="http://salam-donya.com/author/tork/" class="btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded" target="_blank">
+                        <i class="fas fa-globe mr-2"></i>
+                        <span class="rtl-text">مطالب من در سلام دنیا!</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 bg-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10 text-center">
+                <span class="rtl-text">تماس با من</span> | <span class="ltr-text">Get in Touch</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold mb-4 rtl-text">اطلاعات تماس</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-400 mr-3"></i>
+                            <span class="rtl-text">تهران، ایران</span>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-green-400 mr-3"></i>
+                            <span class="ltr-text">09128571596</span>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-red-400 mr-3"></i>
+                            <a href="mailto:journalehsan@gmail.com" class="text-blue-400 hover:text-blue-300 ltr-text">
+                                journalehsan@gmail.com
+                            </a>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-purple-400 mr-3"></i>
+                            <a href="mailto:journalehsan@yahoo.com" class="text-blue-400 hover:text-blue-300 ltr-text">
+                                journalehsan@yahoo.com
+                            </a>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <i class="fas fa-globe text-blue-400 mr-3"></i>
+                            <a href="https://journalehsan.github.io" class="text-blue-400 hover:text-blue-300 ltr-text">
+                                journalehsan.github.io
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <h3 class="text-xl font-bold mb-6">Connect with me</h3>
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://github.com/journalehsan" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-600 transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="mailto:journalehsan@gmail.com" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition-colors">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-400 transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8 p-4 bg-yellow-900 bg-opacity-30 rounded-lg border border-yellow-600">
+                        <p class="text-gray-300 rtl-text">
+                            <i class="fas fa-info-circle text-yellow-400 mr-2"></i>
+                            برای همکاری یا سوالات فنی، از طریق ایمیل با من در تماس باشید
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-400 py-8 border-t border-gray-700">
+        <p class="code-font mb-2">// Keep coding and evolving with technology</p>
+        <p class="rtl-text mb-2">صفحه شخصی احسان ترک، بدون کپی‌رایت و با مجوز CCbyNC 3.0</p>
+        <p>Made with <i class="fas fa-heart text-red-500"></i> using TailwindCSS</p>
+    </footer>
+
+    <script>
+        // Animate skill bars on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const width = entry.target.style.width;
+                        entry.target.style.width = '0';
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 100);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            skillBars.forEach(bar => {
+                observer.observe(bar);
+            });
+            
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when clicking on links
+            const mobileLinks = document.querySelectorAll('#mobile-menu a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+            
+            // Add smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
 </html>
