@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ehsan Tork - Programming Journey</title>
-    <meta name="description" content="Ehsan Tork - Full-Stack Developer and Open Source Enthusiast. From Visual Basic 6 to modern Rust and TypeScript technologies.">
+    <title>Ehsan Tork - Proqramlaşdırma Səyahəti</title>
+    <meta name="description" content="Ehsan Tork - Full-Stack Developer və Açıq Mənbə Həvəskarı. Visual Basic 6-dan müasir Rust və TypeScript texnologiyalarına qədər.">
     <meta name="author" content="Ehsan Tork">
     <link rel="canonical" href="https://journalehsan.github.io/">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -124,47 +124,6 @@
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
         }
         
-        .language-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .skill-bar {
-            height: 0.5rem;
-            border-radius: 0.25rem;
-            background: #4a5568;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            border-radius: 0.25rem;
-            transition: width 1s ease-in-out;
-        }
-        
-        .glow {
-            box-shadow: 0 0 15px currentColor;
-        }
-        
-        .tech-tag {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.875rem;
-            margin: 0.25rem;
-            background: rgba(66, 153, 225, 0.2);
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
         .gradient-text {
             background: linear-gradient(90deg, #38BDF8, #81E6D9, #38BDF8);
             background-size: 200% auto;
@@ -198,47 +157,6 @@
             50% { border-color: #38BDF8; }
         }
         
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        .rust-terminal {
-            background-color: #1e1e1e;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            font-family: 'Fira Code', monospace;
-            overflow: hidden;
-        }
-        
-        .terminal-line {
-            margin-bottom: 0.5rem;
-            opacity: 0;
-            animation: fadeIn 0.5s forwards;
-        }
-        
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-        
-        .terminal-prompt {
-            color: #3ebc6c;
-        }
-        
-        .terminal-command {
-            color: #e2e8f0;
-        }
-        
-        .terminal-output {
-            color: #9baec8;
-        }
-        
-        .terminal-comment {
-            color: #63676e;
-        }
-        
         .company-logo {
             width: 60px;
             height: 60px;
@@ -250,23 +168,95 @@
             color: white;
             margin-right: 16px;
         }
+        
+        .tech-tag {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            margin: 0.25rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .language-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-bar {
+            width: 100%;
+            height: 0.5rem;
+            background: rgba(75, 85, 99, 0.5);
+            border-radius: 0.25rem;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 0.25rem;
+            transition: width 1s ease-in-out;
+        }
+        
+        .rust-terminal {
+            background: #1a1a1a;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            font-family: 'Fira Code', monospace;
+            border: 1px solid #333;
+        }
+        
+        .terminal-line {
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        
+        .terminal-prompt {
+            color: #00ff00;
+            margin-right: 0.5rem;
+        }
+        
+        .terminal-command {
+            color: #ffffff;
+        }
+        
+        .terminal-output {
+            color: #888888;
+        }
+        
+        .terminal-comment {
+            color: #63676e;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen">
     <!-- Navigation -->
     <nav class="fixed w-full bg-gray-900 bg-opacity-90 z-50 py-4">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold gradient-text">Ehsan Tork's Journey</a>
+            <a href="#" class="text-xl font-bold gradient-text">Ehsan Tork'un Səyahəti</a>
             <div class="hidden md:flex space-x-8">
-                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
-                <a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a>
-                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
-                <a href="#rust" class="hover:text-blue-400 transition-colors">Rust Love</a>
-                <a href="#stack" class="hover:text-blue-400 transition-colors">Current Stack</a>
-                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
-                <a href="index.html" class="hover:text-blue-400 transition-colors">فا</a>
-                <a href="az.html" class="hover:text-blue-400 transition-colors">AZ</a>
+                <a href="#about" class="hover:text-blue-400 transition-colors">Haqqında</a>
+                <a href="#experience" class="hover:text-blue-400 transition-colors">Təcrübə</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Bacarıqlar</a>
+                <a href="#rust" class="hover:text-blue-400 transition-colors">Rust Sevgim</a>
+                <a href="#stack" class="hover:text-blue-400 transition-colors">Hazırkı Stack</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Layihələr</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Əlaqə</a>
+                <a href="index.html" class="hover:text-blue-400 transition-colors">EN</a>
+                <a href="fa.html" class="hover:text-blue-400 transition-colors">فا</a>
             </div>
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-gray-300 hover:text-white">
@@ -276,15 +266,15 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-4 pt-2 pb-4">
             <div class="flex flex-col space-y-3">
-                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
-                <a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a>
-                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
-                <a href="#rust" class="hover:text-blue-400 transition-colors">Rust Love</a>
-                <a href="#stack" class="hover:text-blue-400 transition-colors">Current Stack</a>
-                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
-                <a href="fa.html" class="hover:text-blue-400 transition-colors">فا</a>
-                <a href="az.html" class="hover:text-blue-400 transition-colors">AZ</a>
+                <a href="#about" class="hover:text-blue-400 transition-colors">Haqqında</a>
+                <a href="#experience" class="hover:text-blue-400 transition-colors">Təcrübə</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Bacarıqlar</a>
+                <a href="#rust" class="hover:text-blue-400 transition-colors">Rust Sevgim</a>
+                <a href="#stack" class="hover:text-blue-400 transition-colors">Hazırkı Stack</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Layihələr</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Əlaqə</a>
+                <a href="en.html" class="hover:text-blue-400 transition-colors">EN</a>
+                <a href="index.html" class="hover:text-blue-400 transition-colors">فا</a>
             </div>
         </div>
     </nav>
@@ -296,18 +286,18 @@
                 <span class="gradient-text">Ehsan Tork</span>
             </h1>
             <p class="text-xl md:text-2xl mb-4 text-gray-300">
-                Full-Stack Developer & Open Source Enthusiast
+                Full-Stack Developer və Açıq Mənbə Həvəskarı
             </p>
             <p class="text-lg md:text-xl mb-10 text-gray-400 typewriter">
-                From Visual Basic 6 to Rust and TypeScript
+                Visual Basic 6-dan Rust və TypeScript-ə qədər
             </p>
             <div class="animate__animated animate__fadeInUp animate__delay-1s">
                 <a href="#about" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 mx-2">
-                    About Me
+                    Haqqımda
                     <i class="fas fa-arrow-down ml-2"></i>
                 </a>
                 <a href="#contact" class="inline-block bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 mx-2">
-                    Get in Touch
+                    Əlaqə saxla
                     <i class="fas fa-envelope ml-2"></i>
                 </a>
             </div>
@@ -317,7 +307,7 @@
     <!-- About Section -->
     <section id="about" class="py-16 px-4 bg-gray-900">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-10 text-center">Who am I?</h2>
+            <h2 class="text-3xl font-bold mb-10 text-center">Mən kiməm?</h2>
             
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="text-center">
@@ -328,29 +318,29 @@
                     <div>
                         <p class="text-gray-300 mb-4">
                             <i class="fas fa-info-circle text-blue-400 mr-2"></i>
-                            <strong>Ehsan Tork:</strong> A Full-Stack Developer and Web Designer with Passion for Learning and Sharing
+                            <strong>Ehsan Tork:</strong> Öyrənmə və paylaşma ehtirasına malik Full-Stack Developer və Veb Dizayner
                         </p>
                         <p class="text-gray-300 mb-4">
-                            I'm a programmer and software developer focused on Open Source and Free Software. My favorite OS is GNU/Linux and my main distribution is Arch Linux. I love pacman and its flexibility.
+                            Mən Açıq Mənbə və Azad Proqram təminatına yönəlmiş proqramçı və proqram təminatı developeriyəm. Sevimli ƏS-im GNU/Linux-dur və əsas distribusiyam Arch Linux-dur. Pacman və onun çevikliyini sevirəm.
                         </p>
                         <p class="text-gray-300 mb-4">
-                            My favorite language is C/C++ and I love Qt. Java is fine and I enjoy programming with Java, but C++ is more powerful than Java for me. In recent years, I've been focusing on Rust for backend development and Iced/Slint for native desktop applications.
+                            Sevimli dilim C/C++-dır və Qt-ni sevirəm. Java yaxşıdır və Java ilə proqramlaşdırmaqdan həzz alıram, lakin C++ mənim üçün Java-dan daha güclüdür. Son illərdə backend inkişafı üçün Rust və yerli desktop tətbiqləri üçün Iced/Slint üzərində fokuslanmışam.
                         </p>
                         <p class="text-gray-300 mb-4">
-                            I love Python too, but it's a little confusing when I try to write code in C++ and Python at the same time. Because of semicolons! 😄
+                            Python-u da sevirəm, lakin eyni zamanda C++ və Python kodları yazmaq istədiyim zaman bir az çaşqınlıq yaradır. Nöqtəli vergüllər səbəbindən! 😄
                         </p>
                         <p class="text-gray-300 mb-4">
-                            I've been using Linux since 2008. My first distribution was Red Hat 6.
+                            2008-ci ildən Linux istifadə edirəm. İlk distribusiyam Red Hat 6 idi.
                         </p>
                     </div>
                     
                     <div class="bg-gray-800 p-4 rounded-lg">
-                        <h3 class="text-lg font-semibold mb-3 text-blue-400">Key Facts:</h3>
+                        <h3 class="text-lg font-semibold mb-3 text-blue-400">Əsas Faktlar:</h3>
                         <ul class="space-y-2 text-gray-300">
-                            <li><i class="fas fa-check text-green-400 mr-2"></i>Co-founder of Shosa Daru, an online drugstore based in Tehran, Iran</li>
-                            <li><i class="fas fa-check text-green-400 mr-2"></i>Graduate of Bouali University in Computer Engineering</li>
-                            <li><i class="fas fa-check text-green-400 mr-2"></i>Linux user since 2008 (Started with Red Hat 6)</li>
-                            <li><i class="fas fa-check text-green-400 mr-2"></i>Open Source & Free Software advocate</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Shosa Daru-nun həmtəsisçisi, Tehran, İranda onlayn aptekxana</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Buali Universitetinin Kompüter Mühəndisliyi məzunu</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>2008-ci ildən Linux istifadəçisi (Red Hat 6 ilə başladım)</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>Açıq Mənbə və Azad Proqram təminatı müdafiəçisi</li>
                         </ul>
                     </div>
                 </div>
@@ -361,11 +351,38 @@
     <!-- Experience Section -->
     <section id="experience" class="py-16 px-4">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-10 text-center">Professional Experience</h2>
+            <h2 class="text-3xl font-bold mb-10 text-center">Peşəkar Təcrübə</h2>
             
             <div class="relative">
                 <!-- Vertical Timeline Line -->
                 <div class="absolute left-8 top-0 h-full w-1 bg-blue-500 ml-4 -z-10"></div>
+                
+                <!-- Irancell ICI -->
+                <div class="timeline-item">
+                    <div class="timeline-item:before border-irancell bg-irancell"></div>
+                    <div class="timeline-item:after bg-irancell"></div>
+                    <div class="card p-6 ml-4">
+                        <div class="flex items-center mb-4">
+                            <div class="company-logo bg-irancell">
+                                <i class="fas fa-signal"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Irancell ICI</h3>
+                                <p class="text-gray-400">2022 - Hazır</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4">Hazırda Irancell-də vendor olaraq işləyirəm, Python/PySide, Laravel, backend üçün Rust, frontend üçün React və TypeScript, və Linux, Windows və Mac-da client tərəf tətbiqləri üçün Iced/Slint istifadə edərək həllər hazırlayıram. Həmçinin xidmətlər üçün .NET Core istifadə edirəm.</p>
+                        <div class="mb-4">
+                            <h4 class="font-bold text-gray-300 mb-2">Hazırkı Texnoloji Stack:</h4>
+                            <ul class="list-disc list-inside text-gray-400 space-y-1">
+                                <li>Backend: Rust, Laravel, Python</li>
+                                <li>Frontend: React, TypeScript</li>
+                                <li>Desktop: Iced, Slint, PySide</li>
+                                <li>Xidmətlər: .NET Core</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Ahoora Advertisements -->
                 <div class="timeline-item">
@@ -377,17 +394,17 @@
                                 <i class="fas fa-ad"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold">Ahoora Advertisements</h3>
-                                <p class="text-gray-400">2010 - Hamadan, Iran</p>
+                                <h3 class="text-xl font-bold">Ahoora Reklamları</h3>
+                                <p class="text-gray-400">2010 - Həmədan, İran</p>
                             </div>
                         </div>
-                        <p class="text-gray-300 mb-4">My first full-time job at an advertisement solutions company where I developed websites using WordPress/PHP and ASP.NET with Dreamweaver/Aptana Studio. Created e-books and multimedia software using VB/C# and Delphi.</p>
+                        <p class="text-gray-300 mb-4">Reklam həlləri şirkətində ilk tam iş günüm, WordPress/PHP və ASP.NET istifadə edərək Dreamweaver/Aptana Studio ilə veb saytlar hazırladım. VB/C# və Delphi istifadə edərək e-kitablar və multimedia proqram təminatları yaratdım.</p>
                         <div class="mb-4">
-                            <h4 class="font-bold text-gray-300 mb-2">Key Projects:</h4>
+                            <h4 class="font-bold text-gray-300 mb-2">Əsas Layihələr:</h4>
                             <ul class="list-disc list-inside text-gray-400 space-y-1">
-                                <li>Cross-platform e-books with HTML content displayed in custom Windows applications</li>
-                                <li>Multimedia CD collections (e.g., Harry Potter) with autorun functionality</li>
-                                <li>Hybrid applications mixing HTML and software similar to Electron</li>
+                                <li>Xüsusi Windows tətbiqlərində HTML məzmunu göstərilən cross-platform e-kitablar</li>
+                                <li>Autorun funksiyası olan multimedia CD kolleksiyaları (məsələn, Harry Potter)</li>
+                                <li>HTML və proqram təminatını Electron kimi qarışdıran hibrid tətbiqlər</li>
                             </ul>
                         </div>
                         <div class="flex flex-wrap">
@@ -412,15 +429,15 @@
                                 <i class="fas fa-university"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold">Islamic Azad University</h3>
-                                <p class="text-gray-400">Part-time - Hamadan, Iran</p>
+                                <h3 class="text-xl font-bold">İslami Azad Universiteti</h3>
+                                <p class="text-gray-400">Yarım iş günü - Həmədan, İran</p>
                             </div>
                         </div>
-                        <p class="text-gray-300 mb-4">Provided IT support for systems and servers at the university's Hamadan branch.</p>
+                        <p class="text-gray-300 mb-4">Universitetin Həmədan filialında sistemlər və serverlər üçün IT dəstəyi təmin etdim.</p>
                         <div class="flex flex-wrap">
-                            <span class="tech-tag">IT Support</span>
-                            <span class="tech-tag">Server Management</span>
-                            <span class="tech-tag">System Administration</span>
+                            <span class="tech-tag">IT Dəstəyi</span>
+                            <span class="tech-tag">Server İdarəetməsi</span>
+                            <span class="tech-tag">Sistem Administrasiyası</span>
                         </div>
                     </div>
                 </div>
@@ -435,22 +452,22 @@
                                 <i class="fas fa-sms"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold">Vada Company</h3>
-                                <p class="text-gray-400">2015 - Tehran, Iran</p>
+                                <h3 class="text-xl font-bold">Vada Şirkəti</h3>
+                                <p class="text-gray-400">2015 - Tehran, İran</p>
                             </div>
                         </div>
-                        <p class="text-gray-300 mb-4">Worked at a VAS (Value Added Service) company managing SMS gateways, monitoring sent/unsubscription actions, and handling daily message campaigns.</p>
+                        <p class="text-gray-300 mb-4">VAS (Əlavə Dəyər Xidməti) şirkətində SMS gateway-ləri idarə edərək, göndərilən/abunəlikdən çıxma əməliyyatlarını izləyərək və gündəlik mesaj kampaniyalarını idarə edərək işlədim.</p>
                         <div class="mb-4">
-                            <h4 class="font-bold text-gray-300 mb-2">Responsibilities:</h4>
+                            <h4 class="font-bold text-gray-300 mb-2">Məsuliyyətlər:</h4>
                             <ul class="list-disc list-inside text-gray-400 space-y-1">
-                                <li>Managed SMS gateway operations</li>
-                                <li>Monitored subscription and unsubscription actions</li>
-                                <li>Developed advertising SMS campaigns</li>
+                                <li>SMS gateway əməliyyatlarını idarə etdim</li>
+                                <li>Abunəlik və abunəlikdən çıxma əməliyyatlarını izlədim</li>
+                                <li>Reklam SMS kampaniyaları hazırladım</li>
                             </ul>
                         </div>
                         <div class="flex flex-wrap">
                             <span class="tech-tag">SMS Gateway</span>
-                            <span class="tech-tag">Telecom</span>
+                            <span class="tech-tag">Telekom</span>
                             <span class="tech-tag">VAS</span>
                         </div>
                     </div>
@@ -466,16 +483,16 @@
                                 <i class="fas fa-mobile-alt"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold">Karina Mobile Solution</h3>
-                                <p class="text-gray-400">2015-2017 - Tehran, Iran</p>
+                                <h3 class="text-xl font-bold">Karina Mobil Həll</h3>
+                                <p class="text-gray-400">2015-2017 - Tehran, İran</p>
                             </div>
                         </div>
-                        <p class="text-gray-300 mb-4">Worked on developing a Google AdSense-like platform. Built websites using WordPress and developed plugins.</p>
+                        <p class="text-gray-300 mb-4">Google AdSense-ə bənzər platforma hazırladım. WordPress istifadə edərək veb saytlar qurdum və plugin-lər hazırladım.</p>
                         <div class="flex flex-wrap">
                             <span class="tech-tag">WordPress</span>
                             <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">Plugin Development</span>
-                            <span class="tech-tag">Ad Platform</span>
+                            <span class="tech-tag">Plugin İnkişafı</span>
+                            <span class="tech-tag">Reklam Platforması</span>
                         </div>
                     </div>
                 </div>
@@ -494,7 +511,7 @@
                                 <p class="text-gray-400">2017-2019</p>
                             </div>
                         </div>
-                        <p class="text-gray-300 mb-4">Developed Laravel backend and Python services to communicate with electronic motorcycles. Created Android applications using Qt/C++.</p>
+                        <p class="text-gray-300 mb-4">Elektrik motosiklləri ilə əlaqə üçün Laravel backend və Python xidmətləri hazırladım. Qt/C++ istifadə edərək Android tətbiqləri yaratdım.</p>
                         <div class="flex flex-wrap">
                             <span class="tech-tag">Laravel</span>
                             <span class="tech-tag">Python</span>
@@ -516,26 +533,26 @@
                                 <i class="fas fa-desktop"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold">Pishkhan Iranian</h3>
+                                <h3 class="text-xl font-bold">Pishkhan İran</h3>
                                 <p class="text-gray-400">2019-2021</p>
                             </div>
                         </div>
-                        <p class="text-gray-300 mb-4">Developed websites and web applications for governmental offices, including registration systems and payment solutions. Created a self-hosted login system using Office ID.</p>
+                        <p class="text-gray-300 mb-4">Hökumət ofisləri üçün veb saytlar və veb tətbiqlər hazırladım, o cümlədən qeydiyyat sistemləri və ödəniş həlləri. Office ID istifadə edərək öz-özünə host edilən giriş sistemi yaratdım.</p>
                         <div class="mb-4">
-                            <h4 class="font-bold text-gray-300 mb-2">Key Projects:</h4>
+                            <h4 class="font-bold text-gray-300 mb-2">Əsas Layihələr:</h4>
                             <ul class="list-disc list-inside text-gray-400 space-y-1">
-                                <li>Government physical e-dashboards</li>
-                                <li>POS integration with C# services and Firefox extensions</li>
-                                <li>Certificate verification and storage in physical tokens</li>
-                                <li>Single sign-on solution with Office ID</li>
+                                <li>Hökumət fiziki e-dashboard-ları</li>
+                                <li>C# xidmətləri və Firefox genişləndirmələri ilə POS inteqrasiyası</li>
+                                <li>Fiziki token-larda sertifikat yoxlanması və saxlanması</li>
+                                <li>Office ID ilə tək giriş həlli</li>
                             </ul>
                         </div>
                         <div class="flex flex-wrap">
                             <span class="tech-tag">C#</span>
                             <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Firefox Extension</span>
-                            <span class="tech-tag">POS Systems</span>
-                            <span class="tech-tag">Security</span>
+                            <span class="tech-tag">Firefox Genişləndirməsi</span>
+                            <span class="tech-tag">POS Sistemləri</span>
+                            <span class="tech-tag">Təhlükəsizlik</span>
                             <span class="tech-tag">SSO</span>
                         </div>
                     </div>
@@ -552,15 +569,15 @@
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold">Taknet</h3>
-                                <p class="text-gray-400">2021 (6 months)</p>
+                                <p class="text-gray-400">2021 (6 ay)</p>
                             </div>
                         </div>
-                        <p class="text-gray-300 mb-4">Worked on Virak Cloud, a Digital Ocean-like cloud solution using Python, PHP/Laravel, and React.</p>
+                        <p class="text-gray-300 mb-4">Virak Cloud üzərində işlədim, Digital Ocean-a bənzər bulud həlli, Python, PHP/Laravel və React istifadə edərək.</p>
                         <div class="flex flex-wrap">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Laravel</span>
                             <span class="tech-tag">React</span>
-                            <span class="tech-tag">Cloud Computing</span>
+                            <span class="tech-tag">Bulud Hesablama</span>
                         </div>
                     </div>
                 </div>
@@ -579,11 +596,11 @@
                                 <p class="text-gray-400">2021-2022</p>
                             </div>
                         </div>
-                        <p class="text-gray-300 mb-4">Worked on a chemical market startup with a poorly designed Laravel codebase. Improved the spaghetti code step by step despite time constraints.</p>
+                        <p class="text-gray-300 mb-4">Pis dizayn edilmiş Laravel kod bazası olan kimya bazarı startup-ında işlədim. Vaxt məhdudiyyətlərinə baxmayaraq spaghetti kodu addım-addım təkmilləşdirdim.</p>
                         <div class="flex flex-wrap">
                             <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">Legacy Code</span>
-                            <span class="tech-tag">Refactoring</span>
+                            <span class="tech-tag">Köhnə Kod</span>
+                            <span class="tech-tag">Refaktorinq</span>
                         </div>
                     </div>
                 </div>
@@ -602,12 +619,12 @@
                                 <p class="text-gray-400">2022</p>
                             </div>
                         </div>
-                        <p class="text-gray-300 mb-4">Developed gift card solutions (Kadona) for Parsian Bank and an online shop using Laravel.</p>
+                        <p class="text-gray-300 mb-4">Parsian Bank üçün hədiyyə kart həlləri (Kadona) və Laravel istifadə edərək onlayn mağaza hazırladım.</p>
                         <div class="flex flex-wrap">
                             <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">E-commerce</span>
-                            <span class="tech-tag">Payment Systems</span>
-                            <span class="tech-tag">Gift Cards</span>
+                            <span class="tech-tag">E-ticarət</span>
+                            <span class="tech-tag">Ödəniş Sistemləri</span>
+                            <span class="tech-tag">Hədiyyə Kartları</span>
                         </div>
                     </div>
                 </div>
@@ -623,17 +640,17 @@
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold">Irancell ICI</h3>
-                                <p class="text-gray-400">2022 - Present</p>
+                                <p class="text-gray-400">2022 - Hazır</p>
                             </div>
                         </div>
-                        <p class="text-gray-300 mb-4">Currently working as a vendor at Irancell, developing solutions using Python/PySide, Laravel, Rust for backend, React and TypeScript for frontend, and Iced/Slint for client-side applications across Linux, Windows, and Mac. Also using .NET Core for services.</p>
+                        <p class="text-gray-300 mb-4">Hazırda Irancell-də vendor olaraq işləyirəm, Python/PySide, Laravel, backend üçün Rust, frontend üçün React və TypeScript, və Linux, Windows və Mac-da client tərəf tətbiqləri üçün Iced/Slint istifadə edərək həllər hazırlayıram. Həmçinin xidmətlər üçün .NET Core istifadə edirəm.</p>
                         <div class="mb-4">
-                            <h4 class="font-bold text-gray-300 mb-2">Current Tech Stack:</h4>
+                            <h4 class="font-bold text-gray-300 mb-2">Hazırkı Texnologiya Stack-i:</h4>
                             <ul class="list-disc list-inside text-gray-400 space-y-1">
                                 <li>Backend: Rust, Laravel, Python</li>
                                 <li>Frontend: React, TypeScript</li>
                                 <li>Desktop: Iced, Slint, PySide</li>
-                                <li>Services: .NET Core</li>
+                                <li>Xidmətlər: .NET Core</li>
                             </ul>
                         </div>
                         <div class="flex flex-wrap">
@@ -656,7 +673,7 @@
     <!-- Rust Love Section -->
     <section id="rust" class="py-16 px-4 bg-gray-900">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-10 text-center">Why I Love Rust</h2>
+            <h2 class="text-3xl font-bold mb-10 text-center">Niyə Rust-ı Sevirəm</h2>
             
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div>
@@ -696,37 +713,37 @@
                 
                 <div>
                     <div class="card bg-gray-800 p-6 mb-6">
-                        <h3 class="text-xl font-bold mb-4 text-rust">Rust Advantages</h3>
+                        <h3 class="text-xl font-bold mb-4 text-rust">Rust Üstünlükləri</h3>
                         <ul class="space-y-3">
                             <li class="flex items-start">
                                 <i class="fas fa-shield-alt text-rust mr-3 mt-1"></i>
-                                <span>Memory safety without garbage collection</span>
+                                <span>Zibil yığımı olmadan yaddaş təhlükəsizliyi</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-tachometer-alt text-rust mr-3 mt-1"></i>
-                                <span>Blazing fast performance</span>
+                                <span>Çox sürətli performans</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-cubes text-rust mr-3 mt-1"></i>
-                                <span>Excellent package ecosystem (Cargo)</span>
+                                <span>Əla paket ekosistemi (Cargo)</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-code text-rust mr-3 mt-1"></i>
-                                <span>Expressive and modern syntax</span>
+                                <span>İfadəli və müasir sintaksis</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-bug text-rust mr-3 mt-1"></i>
-                                <span>Helpful compiler errors</span>
+                                <span>Köməkçi kompilyator xətaları</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-sync-alt text-rust mr-3 mt-1"></i>
-                                <span>Fearless concurrency</span>
+                                <span>Qorxusuz konkurentlik</span>
                             </li>
                         </ul>
                     </div>
                     
                     <div class="card bg-gray-800 p-6">
-                        <h3 class="text-xl font-bold mb-4 text-rust">Rust Ecosystem</h3>
+                        <h3 class="text-xl font-bold mb-4 text-rust">Rust Ekosistemi</h3>
                         <div class="flex flex-wrap">
                             <span class="tech-tag">Tokio</span>
                             <span class="tech-tag">Actix</span>
@@ -745,7 +762,7 @@
     <!-- Skills Grid -->
     <section id="skills" class="py-16 px-4">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-10 text-center">Technology Proficiency</h2>
+            <h2 class="text-3xl font-bold mb-10 text-center">Texnologiya Bacarıqları</h2>
             
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                 <div class="card bg-gray-800 p-5 text-center">
@@ -772,7 +789,7 @@
                     <div class="language-icon text-csharp">
                         <i class="fab fa-microsoft"></i>
                     </div>
-                    <h3 class="font-bold mb-2">C#</h3>
+                    <h3 class="text-xl font-bold mb-2">C#</h3>
                     <div class="skill-bar">
                         <div class="skill-progress bg-csharp" style="width: 70%"></div>
                     </div>
@@ -800,17 +817,17 @@
                 
                 <div class="card bg-gray-800 p-5 text-center">
                     <div class="language-icon text-qt">
-                        <i class="fas fa-tablet-alt"></i>
+                        <i class="fas fa-desktop"></i>
                     </div>
                     <h3 class="font-bold mb-2">Qt</h3>
                     <div class="skill-bar">
-                        <div class="skill-progress bg-qt" style="width: 65%"></div>
+                        <div class="skill-progress bg-qt" style="width: 75%"></div>
                     </div>
                 </div>
                 
                 <div class="card bg-gray-800 p-5 text-center">
                     <div class="language-icon text-rust">
-                        <i class="fas fa-cog"></i>
+                        <i class="fas fa-crab"></i>
                     </div>
                     <h3 class="font-bold mb-2">Rust</h3>
                     <div class="skill-bar">
@@ -820,7 +837,7 @@
                 
                 <div class="card bg-gray-800 p-5 text-center">
                     <div class="language-icon text-typescript">
-                        <i class="fas fa-t"></i>
+                        <i class="fab fa-js-square"></i>
                     </div>
                     <h3 class="font-bold mb-2">TypeScript</h3>
                     <div class="skill-bar">
@@ -840,228 +857,179 @@
                 
                 <div class="card bg-gray-800 p-5 text-center">
                     <div class="language-icon text-tailwind">
-                        <i class="fas fa-wind"></i>
+                        <i class="fas fa-palette"></i>
                     </div>
-                    <h3 class="font-bold mb-2">Tailwind</h3>
+                    <h3 class="font-bold mb-2">TailwindCSS</h3>
                     <div class="skill-bar">
-                        <div class="skill-progress bg-tailwind" style="width: 95%"></div>
+                        <div class="skill-progress bg-tailwind" style="width: 90%"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Current Stack -->
+    <!-- Current Stack Section -->
     <section id="stack" class="py-16 px-4 bg-gray-900">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-10 text-center">Current Tech Stack</h2>
+            <h2 class="text-3xl font-bold mb-10 text-center">Hazırkı Texnologiya Stack-im</h2>
             
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="card bg-gray-800 p-6">
-                    <h3 class="text-xl font-bold mb-4 text-center text-rust">Backend</h3>
-                    <div class="flex items-center mb-4 justify-center">
-                        <div class="w-16 h-16 rounded-full bg-rust flex items-center justify-center mr-4 glow floating">
-                            <i class="fas fa-cog text-white text-2xl"></i>
+                    <div class="text-center mb-4">
+                        <i class="fas fa-server text-4xl text-rust mb-3"></i>
+                        <h3 class="text-xl font-bold">Backend</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span>Rust</span>
+                            <span class="text-rust font-bold">90%</span>
                         </div>
-                        <div class="text-4xl font-bold">Rust</div>
-                    </div>
-                    <p class="text-gray-300 mb-4 text-center">My preferred backend language for its performance, safety, and expressiveness.</p>
-                    <div class="flex justify-center space-x-4">
-                        <div class="px-3 py-1 bg-gray-700 rounded-full text-sm">Microservices</div>
-                        <div class="px-3 py-1 bg-gray-700 rounded-full text-sm">APIs</div>
-                        <div class="px-3 py-1 bg-gray-700 rounded-full text-sm">Systems Programming</div>
-                    </div>
-                    <div class="mt-6 text-center">
-                        <p class="text-gray-400">Also using for specific tasks:</p>
-                        <div class="flex justify-center mt-2 space-x-3">
-                            <span class="tech-tag bg-opacity-30" style="background-color: rgba(157, 79, 150, 0.3);">C#/.NET</span>
-                            <span class="tech-tag bg-opacity-30" style="background-color: rgba(119, 123, 179, 0.3);">Lumen</span>
-                            <span class="tech-tag bg-opacity-30" style="background-color: rgba(0, 173, 216, 0.3);">Go</span>
+                        <div class="flex items-center justify-between">
+                            <span>Laravel</span>
+                            <span class="text-php font-bold">85%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Python</span>
+                            <span class="text-python font-bold">80%</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="card bg-gray-800 p-6">
-                    <h3 class="text-xl font-bold mb-4 text-center text-typescript">Frontend</h3>
-                    <div class="flex items-center mb-4 justify-center">
-                        <div class="w-16 h-16 rounded-full bg-typescript flex items-center justify-center mr-4 glow floating">
-                            <i class="fas fa-code text-white text-2xl"></i>
+                    <div class="text-center mb-4">
+                        <i class="fas fa-laptop-code text-4xl text-react mb-3"></i>
+                        <h3 class="text-xl font-bold">Frontend</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span>React</span>
+                            <span class="text-react font-bold">80%</span>
                         </div>
-                        <div class="text-4xl font-bold">TypeScript</div>
-                    </div>
-                    <p class="text-gray-300 mb-4 text-center">With React for building complex UIs and TailwindCSS for styling.</p>
-                    <div class="flex justify-center space-x-4">
-                        <div class="px-3 py-1 bg-gray-700 rounded-full text-sm">React</div>
-                        <div class="px-3 py-1 bg-gray-700 rounded-full text-sm">TailwindCSS</div>
-                        <div class="px-3 py-1 bg-gray-700 rounded-full text-sm">SPAs</div>
-                    </div>
-                    <div class="mt-6 text-center">
-                        <p class="text-gray-400">Previously used:</p>
-                        <div class="flex justify-center mt-2 space-x-3">
-                            <span class="tech-tag bg-opacity-30" style="background-color: rgba(237, 139, 0, 0.3);">Java</span>
-                            <span class="tech-tag bg-opacity-30" style="background-color: rgba(221, 72, 20, 0.3);">CodeIgniter</span>
-                            <span class="tech-tag bg-opacity-30" style="background-color: rgba(231, 68, 48, 0.3);">Bootstrap</span>
+                        <div class="flex items-center justify-between">
+                            <span>TypeScript</span>
+                            <span class="text-typescript font-bold">85%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>TailwindCSS</span>
+                            <span class="text-tailwind font-bold">90%</span>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 grid md:grid-cols-2 gap-8">
-                <div class="card bg-gray-800 p-6">
-                    <h3 class="text-xl font-bold mb-4 text-center" style="color: var(--slint);">UI Frameworks</h3>
-                    <div class="flex items-center mb-4 justify-center">
-                        <div class="w-16 h-16 rounded-full flex items-center justify-center mr-4 glow floating" style="background-color: var(--slint);">
-                            <i class="fas fa-paint-brush text-white text-2xl"></i>
-                        </div>
-                        <div class="text-3xl font-bold" style="color: var(--slint);">Slint</div>
-                    </div>
-                    <p class="text-gray-300 mb-4 text-center">For fancy and small widgets like iOS widgets. Perfect for self-care app mini widgets.</p>
                 </div>
                 
                 <div class="card bg-gray-800 p-6">
-                    <h3 class="text-xl font-bold mb-4 text-center" style="color: var(--iced);">Performance UI</h3>
-                    <div class="flex items-center mb-4 justify-center">
-                        <div class="w-16 h-16 rounded-full flex items-center justify-center mr-4 glow floating" style="background-color: var(--iced);">
-                            <i class="fas fa-tachometer-alt text-white text-2xl"></i>
-                        </div>
-                        <div class="text-3xl font-bold" style="color: var(--iced);">Iced</div>
+                    <div class="text-center mb-4">
+                        <i class="fas fa-desktop text-4xl text-qt mb-3"></i>
+                        <h3 class="text-xl font-bold">Desktop</h3>
                     </div>
-                    <p class="text-gray-300 mb-4 text-center">For main applications where speed is critical. Excellent performance for complex UIs.</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span>Iced</span>
+                            <span class="text-rust font-bold">85%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Slint</span>
+                            <span class="text-rust font-bold">80%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>PySide</span>
+                            <span class="text-python font-bold">75%</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 px-4 bg-gray-900">
+    <section id="projects" class="py-16 px-4">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-10 text-center">Project Highlights</h2>
+            <h2 class="text-3xl font-bold mb-10 text-center">Layihə Vurğuları</h2>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card p-6">
-                    <div class="text-blue-400 text-3xl mb-4">
-                        <i class="fas fa-pills"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card bg-gray-800 p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-pills text-4xl text-blue-400 mb-3"></i>
+                        <h3 class="text-xl font-bold">Shosa Daru</h3>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Shosa Daru</h3>
-                    <p class="text-gray-400">Co-founded online drugstore platform connecting customers with pharmacies in Tehran, Iran</p>
+                    <p class="text-gray-300 mb-4">Tehran, İranda onlayn aptekxana platforması. Co-founder kimi işlədim və veb həllini hazırladım.</p>
+                    <div class="flex flex-wrap">
+                        <span class="tech-tag">Laravel</span>
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
                 </div>
                 
-                <div class="card p-6">
-                    <div class="text-green-400 text-3xl mb-4">
-                        <i class="fas fa-shopping-cart"></i>
+                <div class="card bg-gray-800 p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-flask text-4xl text-cyan-400 mb-3"></i>
+                        <h3 class="text-xl font-bold">Shimico.com</h3>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Shimico.com</h3>
-                    <p class="text-gray-400">Online marketplace for chemical products with advanced search and catalog features</p>
+                    <p class="text-gray-300 mb-4">Kimya bazarı startup-ı üçün veb platforma. Mövcud Laravel kodunu təkmilləşdirdim.</p>
+                    <div class="flex flex-wrap">
+                        <span class="tech-tag">Laravel</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">jQuery</span>
+                    </div>
                 </div>
                 
-                <div class="card p-6">
-                    <div class="text-purple-400 text-3xl mb-4">
-                        <i class="fas fa-cloud"></i>
+                <div class="card bg-gray-800 p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-cloud text-4xl text-blue-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">VirakCloud</h3>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">VirakCloud</h3>
-                    <p class="text-gray-400">Cloud computing platform based on Apache Cloud Stack for enterprise solutions</p>
+                    <p class="text-gray-300 mb-4">Digital Ocean-a bənzər bulud həlləri platforması. Python və Laravel backend, React frontend.</p>
+                    <div class="flex flex-wrap">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Laravel</span>
+                        <span class="tech-tag">React</span>
+                    </div>
                 </div>
                 
-                <div class="card p-6">
-                    <div class="text-yellow-400 text-3xl mb-4">
-                        <i class="fas fa-cog"></i>
+                <div class="card bg-gray-800 p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-motorcycle text-4xl text-red-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">Tosan Electric Motors</h3>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Tosan Electric Motors</h3>
-                    <p class="text-gray-400">Manufacturing systems and automation for electric motor production</p>
+                    <p class="text-gray-300 mb-4">Elektrik motosiklləri üçün IoT həlləri. Laravel backend, Python xidmətləri, Qt/C++ Android tətbiqləri.</p>
+                    <div class="flex flex-wrap">
+                        <span class="tech-tag">Laravel</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Qt/C++</span>
+                    </div>
                 </div>
                 
-                <div class="card p-6">
-                    <div class="text-red-400 text-3xl mb-4">
-                        <i class="fas fa-mobile-alt"></i>
+                <div class="card bg-gray-800 p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-mobile-alt text-4xl text-yellow-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">Karina Mobile Solutions</h3>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Karina Mobile Solutions</h3>
-                    <p class="text-gray-400">Mobile application development company specializing in Android apps</p>
+                    <p class="text-gray-300 mb-4">Google AdSense-ə bənzər reklam platforması. WordPress əsaslı həllər və custom plugin-lər.</p>
+                    <div class="flex flex-wrap">
+                        <span class="tech-tag">WordPress</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">Plugin Development</span>
+                    </div>
                 </div>
                 
-                <div class="card p-6">
-                    <div class="text-blue-600 text-3xl mb-4">
-                        <i class="fas fa-book"></i>
+                <div class="card bg-gray-800 p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-book text-4xl text-green-500 mb-3"></i>
+                        <h3 class="text-xl font-bold">Sandbox Development Book</h3>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Sandbox Development Book</h3>
-                    <p class="text-gray-400">Technical book on setting up development environments and sandbox systems</p>
+                    <p class="text-gray-300 mb-4">Proqramlaşdırma və texnologiya haqqında təcrübə və məsləhətlər toplusu.</p>
+                    <div class="flex flex-wrap">
+                        <span class="tech-tag">Technical Writing</span>
+                        <span class="tech-tag">Programming</span>
+                        <span class="tech-tag">Best Practices</span>
+                    </div>
                 </div>
             </div>
             
             <div class="text-center mt-10">
-                <a href="https://github.com/journalehsan" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300">
+                <a href="https://github.com/journalehsan" target="_blank" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105">
                     <i class="fab fa-github mr-2"></i>
-                    View more on GitHub
-                    <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                    GitHub Profilimə Baxın
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Articles & Philosophy Section -->
-    <section class="py-16 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-10 text-center">Articles & Philosophy</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="card bg-gray-800 p-6">
-                    <h3 class="text-xl font-bold mb-4">Linux Review</h3>
-                    <p class="text-gray-300 mb-4">
-                        My articles on Linux Review, one of the active GNU/Linux community platforms in Iran.
-                    </p>
-                    <a href="http://linuxreview.ir/author/finaprp/" target="_blank" class="btn bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
-                        <i class="fas fa-globe mr-2"></i>
-                        Read My Articles
-                    </a>
-                </div>
-                
-                <div class="card bg-gray-800 p-6">
-                    <h3 class="text-xl font-bold mb-4">Salam Donya!</h3>
-                    <p class="text-gray-300 mb-4">
-                        Some of my articles published on Salam Donya platform.
-                    </p>
-                    <a href="http://salam-donya.com/author/tork/" target="_blank" class="btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
-                        <i class="fas fa-globe mr-2"></i>
-                        Browse Articles
-                    </a>
-                </div>
-            </div>
-            
-            <div class="bg-gray-800 p-8 rounded-lg">
-                <h3 class="text-2xl font-bold mb-6 text-center">My Philosophy</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="text-center">
-                        <h4 class="text-xl font-semibold mb-4 text-green-400">Open Source</h4>
-                        <p class="text-gray-300 mb-4">
-                            <strong>Open your Source, Open Your Mind :-)</strong>
-                        </p>
-                        <p class="text-gray-300">
-                            I believe in the power of open source software and its ability to democratize technology and knowledge.
-                        </p>
-                    </div>
-                    
-                    <div class="text-center">
-                        <h4 class="text-xl font-semibold mb-4 text-blue-400">Free Software</h4>
-                        <p class="text-gray-300 mb-4">
-                            <strong>Free Software is more than a Production Method!</strong>
-                        </p>
-                        <p class="text-gray-300">
-                            Free software represents freedom, collaboration, and the right to understand and modify the tools we use.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="mt-8 text-center">
-                    <div class="bg-yellow-900 bg-opacity-30 p-4 rounded-lg border border-yellow-600">
-                        <h4 class="text-lg font-semibold mb-2 text-yellow-400">
-                            <i class="fas fa-exclamation-triangle mr-2"></i>
-                            Stop Using Kali Linux for Show!
-                        </h4>
-                        <p class="text-gray-300">
-                            Kali Linux can't make you a hacker... Never... 
-                            Real skills come from understanding systems, not from using fancy distros.
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1069,16 +1037,16 @@
     <!-- Contact Section -->
     <section id="contact" class="py-16 px-4 bg-gray-900">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-10 text-center">Get in Touch</h2>
+            <h2 class="text-3xl font-bold mb-10 text-center">Əlaqə saxlayın</h2>
             
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="space-y-6">
-                    <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+                    <h3 class="text-xl font-bold mb-4">Əlaqə Məlumatları</h3>
                     
                     <div class="space-y-4">
                         <div class="flex items-center">
                             <i class="fas fa-map-marker-alt text-blue-400 mr-3"></i>
-                            <span>Tehran, Iran</span>
+                            <span>Tehran, İran</span>
                         </div>
                         
                         <div class="flex items-center">
@@ -1094,13 +1062,6 @@
                         </div>
                         
                         <div class="flex items-center">
-                            <i class="fas fa-envelope text-purple-400 mr-3"></i>
-                            <a href="mailto:journalehsan@yahoo.com" class="text-blue-400 hover:text-blue-300">
-                                journalehsan@yahoo.com
-                            </a>
-                        </div>
-                        
-                        <div class="flex items-center">
                             <i class="fas fa-globe text-blue-400 mr-3"></i>
                             <a href="https://journalehsan.github.io" class="text-blue-400 hover:text-blue-300">
                                 journalehsan.github.io
@@ -1110,7 +1071,7 @@
                 </div>
                 
                 <div class="text-center">
-                    <h3 class="text-xl font-bold mb-6">Connect with me</h3>
+                    <h3 class="text-xl font-bold mb-6">Mənimlə əlaqə saxlayın</h3>
                     <div class="flex justify-center space-x-6 mb-8">
                         <a href="https://github.com/journalehsan" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-600 transition-colors">
                             <i class="fab fa-github text-xl"></i>
@@ -1118,18 +1079,12 @@
                         <a href="mailto:journalehsan@gmail.com" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition-colors">
                             <i class="fas fa-envelope text-xl"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-700 transition-colors">
-                            <i class="fab fa-linkedin-in text-xl"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-400 transition-colors">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
                     </div>
                     
                     <div class="p-4 bg-blue-900 bg-opacity-30 rounded-lg border border-blue-600">
                         <p class="text-gray-300">
                             <i class="fas fa-info-circle text-blue-400 mr-2"></i>
-                            Please don't send spam 🙂 - I'm interested in technical discussions and collaboration opportunities.
+                            Zəhmət olmasa spam göndərməyin 🙂 - Texnoloji müzakirələr və əməkdaşlıq imkanları ilə maraqlanıram.
                         </p>
                     </div>
                 </div>
@@ -1139,33 +1094,14 @@
 
     <!-- Footer -->
     <footer class="text-center text-gray-400 py-8 border-t border-gray-700">
-        <p class="code-font mb-2">// Keep coding and evolving with technology</p>
-        <p class="mb-2">2016 journalehsan@github.io | Published Under CCbyNCND 3.0</p>
-        <p>Made with <i class="fas fa-heart text-red-500"></i> using TailwindCSS</p>
+        <p class="code-font mb-2">// Kodlaşmaya və texnologiya ilə inkişaf etməyə davam edin</p>
+        <p class="mb-2">2016 journalehsan@github.io | CCbyNCND 3.0 altında nəşr edilib</p>
+        <p>TailwindCSS istifadə edərək <i class="fas fa-heart text-red-500"></i> ilə hazırlanmışdır</p>
     </footer>
 
     <script>
-        // Animate skill bars on scroll
+        // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
-            const skillBars = document.querySelectorAll('.skill-progress');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const width = entry.target.style.width;
-                        entry.target.style.width = '0';
-                        setTimeout(() => {
-                            entry.target.style.width = width;
-                        }, 100);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            skillBars.forEach(bar => {
-                observer.observe(bar);
-            });
-            
-            // Mobile menu toggle
             const menuToggle = document.getElementById('menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
             
@@ -1197,12 +1133,6 @@
                         });
                     }
                 });
-            });
-            
-            // Animate terminal lines
-            const terminalLines = document.querySelectorAll('.terminal-line');
-            terminalLines.forEach((line, index) => {
-                line.style.animationDelay = `${index * 0.5}s`;
             });
         });
     </script>

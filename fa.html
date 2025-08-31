@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ehsan Tork - Programming Journey</title>
-    <meta name="description" content="Ehsan Tork - Full-Stack Developer and Open Source Enthusiast. From Visual Basic 6 to modern Rust and TypeScript technologies.">
+    <title>احسان ترک - سفر برنامه‌نویسی</title>
+    <meta name="description" content="احسان ترک - توسعه‌دهنده فول‌استک و فعال متن‌باز. از ویژوال بیسیک ۶ تا فناوری‌های مدرن راست و تایپ‌اسکریپت.">
     <meta name="author" content="Ehsan Tork">
     <link rel="canonical" href="https://journalehsan.github.io/">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -53,6 +53,8 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sahel:wght@200;300;400;500;600;700&display=swap');
         
         :root {
             --vb: #004F9F;
@@ -75,10 +77,23 @@
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Vazirmatn', 'Sahel', 'Tahoma', sans-serif;
             background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
             color: #e2e8f0;
             scroll-behavior: smooth;
+            direction: rtl;
+        }
+        
+        .ltr-text {
+            direction: ltr;
+            text-align: left;
+            font-family: 'Inter', 'Fira Code', monospace;
+        }
+        
+        .rtl-text {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Vazirmatn', 'Sahel', 'Tahoma', sans-serif;
         }
         
         .code-font {
@@ -87,14 +102,14 @@
         
         .timeline-item {
             position: relative;
-            padding-left: 2.5rem;
+            padding-right: 2.5rem;
             margin-bottom: 3rem;
         }
         
         .timeline-item:before {
             content: '';
             position: absolute;
-            left: 0;
+            right: 0;
             top: 0.5rem;
             height: 1.5rem;
             width: 1.5rem;
@@ -105,7 +120,7 @@
         .timeline-item:after {
             content: '';
             position: absolute;
-            left: 0.7rem;
+            right: 0.7rem;
             top: 2.5rem;
             height: calc(100% + 1rem);
             width: 2px;
@@ -248,7 +263,7 @@
             justify-content: center;
             font-size: 24px;
             color: white;
-            margin-right: 16px;
+            margin-left: 16px;
         }
     </style>
 </head>
@@ -256,17 +271,17 @@
     <!-- Navigation -->
     <nav class="fixed w-full bg-gray-900 bg-opacity-90 z-50 py-4">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold gradient-text">Ehsan Tork's Journey</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
-                <a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a>
-                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
-                <a href="#rust" class="hover:text-blue-400 transition-colors">Rust Love</a>
-                <a href="#stack" class="hover:text-blue-400 transition-colors">Current Stack</a>
-                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
-                <a href="index.html" class="hover:text-blue-400 transition-colors">فا</a>
-                <a href="az.html" class="hover:text-blue-400 transition-colors">AZ</a>
+            <a href="#" class="text-xl font-bold gradient-text rtl-text">سفر احسان ترک</a>
+            <div class="hidden md:flex space-x-8 space-x-reverse">
+                <a href="#about" class="hover:text-blue-400 transition-colors rtl-text">درباره من</a>
+                <a href="#experience" class="hover:text-blue-400 transition-colors rtl-text">تجربه‌ها</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors rtl-text">مهارت‌ها</a>
+                <a href="#rust" class="hover:text-blue-400 transition-colors rtl-text">عشق به راست</a>
+                <a href="#stack" class="hover:text-blue-400 transition-colors rtl-text">استک فعلی</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors rtl-text">پروژه‌ها</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors rtl-text">تماس</a>
+                <a href="index.html" class="hover:text-blue-400 transition-colors ltr-text">EN</a>
+                <a href="az.html" class="hover:text-blue-400 transition-colors ltr-text">AZ</a>
             </div>
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-gray-300 hover:text-white">
@@ -276,15 +291,15 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-4 pt-2 pb-4">
             <div class="flex flex-col space-y-3">
-                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
-                <a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a>
-                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
-                <a href="#rust" class="hover:text-blue-400 transition-colors">Rust Love</a>
-                <a href="#stack" class="hover:text-blue-400 transition-colors">Current Stack</a>
-                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
-                <a href="fa.html" class="hover:text-blue-400 transition-colors">فا</a>
-                <a href="az.html" class="hover:text-blue-400 transition-colors">AZ</a>
+                <a href="#about" class="hover:text-blue-400 transition-colors rtl-text">درباره من</a>
+                <a href="#experience" class="hover:text-blue-400 transition-colors rtl-text">تجربه‌ها</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors rtl-text">مهارت‌ها</a>
+                <a href="#rust" class="hover:text-blue-400 transition-colors rtl-text">عشق به راست</a>
+                <a href="#stack" class="hover:text-blue-400 transition-colors rtl-text">استک فعلی</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors rtl-text">پروژه‌ها</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors rtl-text">تماس</a>
+                <a href="en.html" class="hover:text-blue-400 transition-colors ltr-text">EN</a>
+                <a href="az.html" class="hover:text-blue-400 transition-colors ltr-text">AZ</a>
             </div>
         </div>
     </nav>
@@ -293,22 +308,22 @@
     <section class="min-h-screen flex items-center justify-center pt-20 pb-12 px-4">
         <div class="max-w-4xl mx-auto text-center">
             <h1 class="text-5xl md:text-6xl font-bold mb-6">
-                <span class="gradient-text">Ehsan Tork</span>
+                <span class="gradient-text rtl-text">احسان ترک</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-4 text-gray-300">
-                Full-Stack Developer & Open Source Enthusiast
+            <p class="text-xl md:text-2xl mb-4 text-gray-300 rtl-text">
+                توسعه‌دهنده فول‌استک و فعال متن‌باز
             </p>
-            <p class="text-lg md:text-xl mb-10 text-gray-400 typewriter">
-                From Visual Basic 6 to Rust and TypeScript
+            <p class="text-lg md:text-xl mb-10 text-gray-400 rtl-text typewriter">
+                از ویژوال بیسیک ۶ تا راست و تایپ‌اسکریپت
             </p>
             <div class="animate__animated animate__fadeInUp animate__delay-1s">
-                <a href="#about" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 mx-2">
-                    About Me
-                    <i class="fas fa-arrow-down ml-2"></i>
+                <a href="#about" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 mx-2 rtl-text">
+                    درباره من
+                    <i class="fas fa-arrow-down mr-2"></i>
                 </a>
-                <a href="#contact" class="inline-block bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 mx-2">
-                    Get in Touch
-                    <i class="fas fa-envelope ml-2"></i>
+                <a href="#contact" class="inline-block bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 mx-2 rtl-text">
+                    تماس با من
+                    <i class="fas fa-envelope mr-2"></i>
                 </a>
             </div>
         </div>
@@ -317,40 +332,40 @@
     <!-- About Section -->
     <section id="about" class="py-16 px-4 bg-gray-900">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-10 text-center">Who am I?</h2>
+            <h2 class="text-3xl font-bold mb-10 text-center rtl-text">من کی هستم؟</h2>
             
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="text-center">
-                    <img src="assets/img/ehsan-tork-new.jpg" alt="Ehsan Tork" class="w-80 h-80 rounded-full mx-auto mb-6 object-cover shadow-lg">
+                    <img src="assets/img/ehsan-tork-new.jpg" alt="احسان ترک" class="w-80 h-80 rounded-full mx-auto mb-6 object-cover shadow-lg">
                 </div>
                 
                 <div class="space-y-6">
                     <div>
-                        <p class="text-gray-300 mb-4">
-                            <i class="fas fa-info-circle text-blue-400 mr-2"></i>
-                            <strong>Ehsan Tork:</strong> A Full-Stack Developer and Web Designer with Passion for Learning and Sharing
+                        <p class="text-gray-300 mb-4 rtl-text">
+                            <i class="fas fa-info-circle text-blue-400 ml-2"></i>
+                            <strong>احسان ترک:</strong> توسعه‌دهنده فول‌استک و طراح وب با اشتیاق به یادگیری و به اشتراک‌گذاری
                         </p>
-                        <p class="text-gray-300 mb-4">
-                            I'm a programmer and software developer focused on Open Source and Free Software. My favorite OS is GNU/Linux and my main distribution is Arch Linux. I love pacman and its flexibility.
+                        <p class="text-gray-300 mb-4 rtl-text">
+                            من یک برنامه‌نویس و توسعه‌دهنده نرم‌افزار هستم که روی متن‌باز و نرم‌افزار آزاد متمرکزم. سیستم‌عامل مورد علاقه‌ام گنو/لینوکس است و توزیع اصلی‌ام آرچ لینوکس است. پکمن و انعطاف‌پذیری آن را دوست دارم.
                         </p>
-                        <p class="text-gray-300 mb-4">
-                            My favorite language is C/C++ and I love Qt. Java is fine and I enjoy programming with Java, but C++ is more powerful than Java for me. In recent years, I've been focusing on Rust for backend development and Iced/Slint for native desktop applications.
+                        <p class="text-gray-300 mb-4 rtl-text">
+                            زبان مورد علاقه‌ام C/C++ است و Qt را دوست دارم. جاوا خوب است و از برنامه‌نویسی با جاوا لذت می‌برم، اما C++ برای من قدرتمندتر از جاوا است. در سال‌های اخیر، روی راست برای توسعه بک‌اند و Iced/Slint برای اپلیکیشن‌های دسکتاپ بومی متمرکز شده‌ام.
                         </p>
-                        <p class="text-gray-300 mb-4">
-                            I love Python too, but it's a little confusing when I try to write code in C++ and Python at the same time. Because of semicolons! 😄
+                        <p class="text-gray-300 mb-4 rtl-text">
+                            پایتون را هم دوست دارم، اما وقتی می‌خواهم همزمان کد C++ و پایتون بنویسم کمی گیج‌کننده است. به خاطر سمی‌کالن‌ها! 😄
                         </p>
-                        <p class="text-gray-300 mb-4">
-                            I've been using Linux since 2008. My first distribution was Red Hat 6.
+                        <p class="text-gray-300 mb-4 rtl-text">
+                            از سال ۲۰۰۸ لینوکس استفاده می‌کنم. اولین توزیعم رد هت ۶ بود.
                         </p>
                     </div>
                     
                     <div class="bg-gray-800 p-4 rounded-lg">
-                        <h3 class="text-lg font-semibold mb-3 text-blue-400">Key Facts:</h3>
-                        <ul class="space-y-2 text-gray-300">
-                            <li><i class="fas fa-check text-green-400 mr-2"></i>Co-founder of Shosa Daru, an online drugstore based in Tehran, Iran</li>
-                            <li><i class="fas fa-check text-green-400 mr-2"></i>Graduate of Bouali University in Computer Engineering</li>
-                            <li><i class="fas fa-check text-green-400 mr-2"></i>Linux user since 2008 (Started with Red Hat 6)</li>
-                            <li><i class="fas fa-check text-green-400 mr-2"></i>Open Source & Free Software advocate</li>
+                        <h3 class="text-lg font-semibold mb-3 text-blue-400 rtl-text">نکات کلیدی:</h3>
+                        <ul class="space-y-2 text-gray-300 rtl-text">
+                            <li><i class="fas fa-check text-green-400 ml-2"></i>شریک‌بنیان‌گذار شوسا دارو، داروخانه آنلاین در تهران، ایران</li>
+                            <li><i class="fas fa-check text-green-400 ml-2"></i>فارغ‌التحصیل دانشگاه بوعلی در مهندسی کامپیوتر</li>
+                            <li><i class="fas fa-check text-green-400 ml-2"></i>کاربر لینوکس از سال ۲۰۰۸ (شروع با رد هت ۶)</li>
+                            <li><i class="fas fa-check text-green-400 ml-2"></i>حامی متن‌باز و نرم‌افزار آزاد</li>
                         </ul>
                     </div>
                 </div>
@@ -361,33 +376,33 @@
     <!-- Experience Section -->
     <section id="experience" class="py-16 px-4">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-10 text-center">Professional Experience</h2>
+            <h2 class="text-3xl font-bold mb-10 text-center rtl-text">تجربه حرفه‌ای</h2>
             
             <div class="relative">
                 <!-- Vertical Timeline Line -->
-                <div class="absolute left-8 top-0 h-full w-1 bg-blue-500 ml-4 -z-10"></div>
+                <div class="absolute right-8 top-0 h-full w-1 bg-blue-500 mr-4 -z-10"></div>
                 
                 <!-- Ahoora Advertisements -->
                 <div class="timeline-item">
                     <div class="timeline-item:before border-ahoora bg-ahoora"></div>
                     <div class="timeline-item:after bg-ahoora"></div>
-                    <div class="card p-6 ml-4">
+                    <div class="card p-6 mr-4">
                         <div class="flex items-center mb-4">
                             <div class="company-logo bg-ahoora">
                                 <i class="fas fa-ad"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold">Ahoora Advertisements</h3>
-                                <p class="text-gray-400">2010 - Hamadan, Iran</p>
+                                <h3 class="text-xl font-bold rtl-text">آهورا تبلیغات</h3>
+                                <p class="text-gray-400 rtl-text">۲۰۱۰ - همدان، ایران</p>
                             </div>
                         </div>
-                        <p class="text-gray-300 mb-4">My first full-time job at an advertisement solutions company where I developed websites using WordPress/PHP and ASP.NET with Dreamweaver/Aptana Studio. Created e-books and multimedia software using VB/C# and Delphi.</p>
+                        <p class="text-gray-300 mb-4 rtl-text">اولین شغل تمام‌وقت من در یک شرکت راه‌حل‌های تبلیغاتی بود که در آن وب‌سایت‌هایی با استفاده از WordPress/PHP و ASP.NET با Dreamweaver/Aptana Studio توسعه دادم. کتاب‌های الکترونیکی و نرم‌افزارهای چندرسانه‌ای با استفاده از VB/C# و دلفی ایجاد کردم.</p>
                         <div class="mb-4">
-                            <h4 class="font-bold text-gray-300 mb-2">Key Projects:</h4>
-                            <ul class="list-disc list-inside text-gray-400 space-y-1">
-                                <li>Cross-platform e-books with HTML content displayed in custom Windows applications</li>
-                                <li>Multimedia CD collections (e.g., Harry Potter) with autorun functionality</li>
-                                <li>Hybrid applications mixing HTML and software similar to Electron</li>
+                            <h4 class="font-bold text-gray-300 mb-2 rtl-text">پروژه‌های کلیدی:</h4>
+                            <ul class="list-disc list-inside text-gray-400 space-y-1 rtl-text">
+                                <li>کتاب‌های الکترونیکی چندپلتفرمی با محتوای HTML که در اپلیکیشن‌های ویندوز سفارشی نمایش داده می‌شد</li>
+                                <li>مجموعه‌های CD چندرسانه‌ای (مثل هری پاتر) با قابلیت اجرای خودکار</li>
+                                <li>اپلیکیشن‌های ترکیبی که HTML و نرم‌افزار را شبیه به Electron ترکیب می‌کردند</li>
                             </ul>
                         </div>
                         <div class="flex flex-wrap">
@@ -656,7 +671,7 @@
     <!-- Rust Love Section -->
     <section id="rust" class="py-16 px-4 bg-gray-900">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-10 text-center">Why I Love Rust</h2>
+            <h2 class="text-3xl font-bold mb-10 text-center rtl-text">چرا راست را دوست دارم</h2>
             
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div>
