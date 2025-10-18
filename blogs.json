@@ -8,11 +8,11 @@
     "date": "2024-01-15",
     "readTime": "8 min read",
     "tags": ["Linux", "Desktop", "UX", "Ergonomics", "Design"],
-    "thumbnail": "https://via.placeholder.com/400x200/1a202c/38bdf8?text=Desktop+Ergonomics",
+    "thumbnail": "assets/img/hyperland-waybar-mine.png",
     "images": [
-      "https://via.placeholder.com/800x600/2d3748/81e6d9?text=Hyperland+Setup",
-      "https://via.placeholder.com/800x600/4a5568/38bdf8?text=Cosmic+Desktop",
-      "https://via.placeholder.com/800x600/2d3748/f7fafc?text=Code+Editor"
+      "assets/img/hyperland-waybar-mine.png",
+      "assets/img/Running-COSMIC-Desktop-in-Fedora.webp",
+      "assets/img/plasma_floating.webp"
     ],
     "content": "blog-posts/desktop-ergonomics-micro-tweaks.md",
     "published": true
@@ -26,11 +26,9 @@
     "date": "2025-01-15",
     "readTime": "15 min read",
     "tags": ["Rust", "Python", "Migration", "Enterprise", "Performance", "Iced GUI"],
-    "thumbnail": "https://via.placeholder.com/400x200/2d3748/ff6b35?text=Python+to+Rust",
+    "thumbnail": "assets/img/linu_journy.png",
     "images": [
-      "https://via.placeholder.com/800x600/1a202c/ff6b35?text=Python+App",
-      "https://via.placeholder.com/800x600/2d3748/38bdf8?text=Rust+Rewrite",
-      "https://via.placeholder.com/800x600/1a202c/10b981?text=Performance+Chart"
+      "assets/img/linu_journy.png"
     ],
     "content": "blog-posts/python-to-rust-enterprise-rewrite.md",
     "published": true
