@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "The Art of Desktop Ergonomics: Micro-Tweaks That Transform Your Workflow",
+    "slug": "desktop-ergonomics-micro-tweaks",
+    "excerpt": "Most users focus on functionality. But for those of us who live inside our desktops—architecting, coding, designing—the feel matters just as much as the function. Rounded corners, opacity shifts, panel placement, and theme harmony aren't just aesthetic—they're emotional ergonomics.",
+    "author": "Ehsan Tork",
+    "date": "2024-01-15",
+    "readTime": "8 min read",
+    "tags": ["Linux", "Desktop", "UX", "Ergonomics", "Design"],
+    "thumbnail": "https://via.placeholder.com/400x200/1a202c/38bdf8?text=Desktop+Ergonomics",
+    "images": [
+      "https://via.placeholder.com/800x600/2d3748/81e6d9?text=Hyperland+Setup",
+      "https://via.placeholder.com/800x600/4a5568/38bdf8?text=Cosmic+Desktop",
+      "https://via.placeholder.com/800x600/2d3748/f7fafc?text=Code+Editor"
+    ],
+    "content": "blog-posts/desktop-ergonomics-micro-tweaks.md",
+    "published": true
+  },
+  {
+    "id": 2,
+    "title": "From Python to Rust: The Rewrite That Shrunk an Enterprise App by 90% and Saved the Project",
+    "slug": "python-to-rust-enterprise-rewrite",
+    "excerpt": "In 2024 our team shipped a large-scale enterprise self-care desktop tool for IT staff across a telecom operator. It started as a Python/PySide app — fast to build, easy to demo. Until it wasn't. Over time it became slow, memory-hungry, crash-prone, and impossible to maintain.",
+    "author": "Ehsan Tork",
+    "date": "2025-01-15",
+    "readTime": "15 min read",
+    "tags": ["Rust", "Python", "Migration", "Enterprise", "Performance", "Iced GUI"],
+    "thumbnail": "https://via.placeholder.com/400x200/2d3748/ff6b35?text=Python+to+Rust",
+    "images": [
+      "https://via.placeholder.com/800x600/1a202c/ff6b35?text=Python+App",
+      "https://via.placeholder.com/800x600/2d3748/38bdf8?text=Rust+Rewrite",
+      "https://via.placeholder.com/800x600/1a202c/10b981?text=Performance+Chart"
+    ],
+    "content": "blog-posts/python-to-rust-enterprise-rewrite.md",
+    "published": true
+  }
+]
