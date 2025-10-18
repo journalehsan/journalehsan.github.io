@@ -32,5 +32,21 @@
     ],
     "content": "blog-posts/python-to-rust-enterprise-rewrite.md",
     "published": true
+  },
+  {
+    "id": 3,
+    "title": "The Enterprise OS Revolution: Building a Self-Healing, Read-Only Workstation Platform",
+    "slug": "enterprise-os-revolution",
+    "excerpt": "In modern enterprise environments, the typical desktop management story involves constant firefighting: security patches breaking applications, users installing unauthorized software, and IT teams spending countless hours on repetitive maintenance tasks. We envisioned something different—a self-healing, secure-by-design workstation platform that could manage itself while empowering users.",
+    "author": "Ehsan Tork",
+    "date": "2025-10-01",
+    "readTime": "10 min read",
+    "tags": ["Linux", "Enterprise", "DevOps", "Security", "Rust", "KDE"],
+    "thumbnail": "assets/img/2.jpg",
+    "images": [
+      "assets/img/2.jpg"
+    ],
+    "content": "blog-posts/enterprise-os-revolution.md",
+    "published": true
   }
 ]
