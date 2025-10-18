@@ -9,11 +9,11 @@
     "language": "Rust",
     "framework": "Tauri",
     "tags": ["Markdown", "Editor", "Cross-platform", "Tauri", "Rust"],
-    "thumbnail": "https://fastly.picsum.photos/id/400/400/200.jpg?hmac=YLB07yPNCdu_zyt5Mr1eLqUtqY7nPOmnJBvJea4s7Uc",
+    "thumbnail": "https://picsum.photos/id/400/400/200",
     "images": [
-      "https://fastly.picsum.photos/id/400/800/600.jpg?hmac=YLB07yPNCdu_zyt5Mr1eLqUtqY7nPOmnJBvJea4s7Uc",
-      "https://fastly.picsum.photos/id/401/800/600.jpg?hmac=YLB07yPNCdu_zyt5Mr1eLqUtqY7nPOmnJBvJea4s7Uc",
-      "https://fastly.picsum.photos/id/402/800/600.jpg?hmac=YLB07yPNCdu_zyt5Mr1eLqUtqY7nPOmnJBvJea4s7Uc"
+      "https://picsum.photos/id/400/800/600",
+      "https://picsum.photos/id/401/800/600",
+      "https://picsum.photos/id/402/800/600"
     ],
     "website": "https://wof-softwares.github.io/Docura/",
     "github": "https://github.com/WOF-Softwares/Docura",
@@ -46,9 +46,9 @@
     "language": "C++",
     "framework": "Qt",
     "tags": ["Subtitle", "Persian", "Encoding", "Qt", "C++"],
-    "thumbnail": "https://fastly.picsum.photos/id/403/400/200.jpg?hmac=YLB07yPNCdu_zyt5Mr1eLqUtqY7nPOmnJBvJea4s7Uc",
+    "thumbnail": "https://picsum.photos/id/403/400/200",
     "images": [
-      "https://fastly.picsum.photos/id/403/800/600.jpg?hmac=YLB07yPNCdu_zyt5Mr1eLqUtqY7nPOmnJBvJea4s7Uc"
+      "https://picsum.photos/id/403/800/600"
     ],
     "website": null,
     "github": "https://github.com/journalehsan/PersianSubtitleFixer",
@@ -80,9 +80,9 @@
     "language": "Rust",
     "framework": "Terminal",
     "tags": ["Network", "TUI", "Linux", "Rust", "CLI"],
-    "thumbnail": "https://fastly.picsum.photos/id/404/400/200.jpg?hmac=YLB07yPNCdu_zyt5Mr1eLqUtqY7nPOmnJBvJea4s7Uc",
+    "thumbnail": "https://picsum.photos/id/404/400/200",
     "images": [
-      "https://fastly.picsum.photos/id/404/800/600.jpg?hmac=YLB07yPNCdu_zyt5Mr1eLqUtqY7nPOmnJBvJea4s7Uc"
+      "https://picsum.photos/id/404/800/600"
     ],
     "website": "https://github.com/journalehsan/network_manager_ui",
     "github": "https://github.com/journalehsan/network_manager_ui",
@@ -109,9 +109,9 @@
     "language": "Rust",
     "framework": "Systemd",
     "tags": ["Process Management", "CPU", "Nice", "Rust", "Systemd"],
-    "thumbnail": "https://fastly.picsum.photos/id/405/400/200.jpg?hmac=YLB07yPNCdu_zyt5Mr1eLqUtqY7nPOmnJBvJea4s7Uc",
+    "thumbnail": "https://picsum.photos/id/405/400/200",
     "images": [
-      "https://fastly.picsum.photos/id/405/800/600.jpg?hmac=YLB07yPNCdu_zyt5Mr1eLqUtqY7nPOmnJBvJea4s7Uc"
+      "https://picsum.photos/id/405/800/600"
     ],
     "website": null,
     "github": "https://github.com/journalehsan/rust-ananicy",
@@ -143,9 +143,9 @@
     "language": "Rust",
     "framework": "GTK4 + libadwaita",
     "tags": ["File Manager", "GTK4", "Rust", "GUI", "libadwaita"],
-    "thumbnail": "https://fastly.picsum.photos/id/406/400/200.jpg?hmac=YLB07yPNCdu_zyt5Mr1eLqUtqY7nPOmnJBvJea4s7Uc",
+    "thumbnail": "https://picsum.photos/id/406/400/200",
     "images": [
-      "https://fastly.picsum.photos/id/406/800/600.jpg?hmac=YLB07yPNCdu_zyt5Mr1eLqUtqY7nPOmnJBvJea4s7Uc"
+      "https://picsum.photos/id/406/800/600"
     ],
     "website": null,
     "github": "https://github.com/journalehsan/XCopy",
@@ -177,9 +177,9 @@
     "language": "Python",
     "framework": "PySide6",
     "tags": ["USB", "ISO", "Bootable", "PySide6", "Python"],
-    "thumbnail": "https://fastly.picsum.photos/id/407/400/200.jpg?hmac=YLB07yPNCdu_zyt5Mr1eLqUtqY7nPOmnJBvJea4s7Uc",
+    "thumbnail": "https://picsum.photos/id/407/400/200",
     "images": [
-      "https://fastly.picsum.photos/id/407/800/600.jpg?hmac=YLB07yPNCdu_zyt5Mr1eLqUtqY7nPOmnJBvJea4s7Uc"
+      "https://picsum.photos/id/407/800/600"
     ],
     "website": null,
     "github": "https://github.com/journalehsan/Ventoy-Image-Writer",
