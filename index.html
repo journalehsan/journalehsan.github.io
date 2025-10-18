@@ -320,44 +320,129 @@
     <!-- About Section -->
     <section id="about" class="py-16 px-4 bg-gray-900">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-10 text-center">Who am I?</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="text-center">
-                    <img src="assets/img/ehsan-tork-new.jpg" alt="Ehsan Tork" class="w-80 h-80 rounded-full mx-auto mb-6 object-cover shadow-lg">
+            <!-- Hero Section -->
+            <div class="text-center mb-16">
+                <div class="w-40 h-40 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-8 flex items-center justify-center text-white text-4xl font-bold shadow-xl">
+                    <img src="assets/img/ehsan-tork-new.jpg" alt="Ehsan Tork" class="w-full h-full rounded-full object-cover">
                 </div>
+                <h2 class="text-5xl sm:text-6xl font-bold text-white mb-6">
+                    Ehsan Tork
+                </h2>
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-900 text-blue-200 text-sm font-medium mb-4">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
+                    Available for new projects
+                </div>
+                <p class="text-2xl text-gray-300 mb-4">
+                    Full-Stack Developer & Web Designer
+                </p>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-6">
+                    Passionate about Open Source, Free Software, and creating elegant solutions to complex problems.
+                </p>
                 
-                <div class="space-y-6">
-                    <div>
-                        <p class="text-gray-300 mb-4">
-                            <i class="fas fa-info-circle text-blue-400 mr-2"></i>
-                            <strong>Ehsan Tork:</strong> A Full-Stack Developer and Web Designer with Passion for Learning and Sharing
-                        </p>
-                        <p class="text-gray-300 mb-4">
-                            I'm a programmer and software developer focused on Open Source and Free Software. My favorite OS is GNU/Linux and my main distribution is Arch Linux. I love pacman and its flexibility.
-                        </p>
-                        <p class="text-gray-300 mb-4">
-                            My favorite language is C/C++ and I love Qt. Java is fine and I enjoy programming with Java, but C++ is more powerful than Java for me. In recent years, I've been focusing on Rust for backend development and Iced/Slint for native desktop applications.
-                        </p>
-                        <p class="text-gray-300 mb-4">
-                            I love Python too, but it's a little confusing when I try to write code in C++ and Python at the same time. Because of semicolons! 😄
-                        </p>
-                        <p class="text-gray-300 mb-4">
-                            I've been using Linux since 2008. My first distribution was Red Hat 6.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-gray-800 p-4 rounded-lg">
-                        <h3 class="text-lg font-semibold mb-3 text-blue-400">Key Facts:</h3>
-                        <ul class="space-y-2 text-gray-300">
-                            <li><i class="fas fa-check text-green-400 mr-2"></i>Co-founder of Shosa Daru, an online drugstore based in Tehran, Iran</li>
-                            <li><i class="fas fa-check text-green-400 mr-2"></i>Graduate of Bouali University in Computer Engineering</li>
-                            <li><i class="fas fa-check text-green-400 mr-2"></i>Linux user since 2008 (Started with Red Hat 6)</li>
-                            <li><i class="fas fa-check text-green-400 mr-2"></i>Open Source & Free Software advocate</li>
-                        </ul>
-                    </div>
+                <!-- Linux Experience -->
+                <div class="inline-flex items-center text-gray-400 text-sm">
+                    <i class="fas fa-clock mr-2"></i>
+                    Linux user since 2008 • Started with Red Hat 6
                 </div>
             </div>
+
+            <!-- About Sections -->
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <!-- Philosophy -->
+                <section>
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                        <span class="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
+                        My Philosophy
+                    </h3>
+                    <div class="prose prose-lg dark:prose-invert max-w-none">
+                        <p class="text-gray-300 mb-4">
+                            I'm a programmer and software developer deeply committed to 
+                            <strong class="text-blue-400">Open Source</strong> and 
+                            <strong class="text-green-400">Free Software</strong>. 
+                            I believe in the power of community-driven development and transparent technology.
+                        </p>
+                        <p class="text-gray-300">
+                            My favorite OS is GNU/Linux, and my main distribution is 
+                            <strong class="text-red-400">Arch Linux</strong>. 
+                            I love pacman and its flexibility - it just gets out of my way and lets me work.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Tech Stack -->
+                <section>
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                        <span class="w-3 h-3 bg-green-500 rounded-full mr-3"></span>
+                        Tech Stack
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-white mb-2">Core Languages</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-900 text-blue-200 rounded-full text-sm">C/C++</span>
+                                <span class="px-3 py-1 bg-orange-900 text-orange-200 rounded-full text-sm">Rust</span>
+                                <span class="px-3 py-1 bg-yellow-900 text-yellow-200 rounded-full text-sm">Python</span>
+                                <span class="px-3 py-1 bg-purple-900 text-purple-200 rounded-full text-sm">Java</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-2">Frameworks & Tools</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-900 text-blue-200 rounded-full text-sm">Qt</span>
+                                <span class="px-3 py-1 bg-orange-900 text-orange-200 rounded-full text-sm">Iced/Slint</span>
+                                <span class="px-3 py-1 bg-red-900 text-red-200 rounded-full text-sm">Arch Linux</span>
+                                <span class="px-3 py-1 bg-gray-800 text-gray-200 rounded-full text-sm">Neovim</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Journey -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-white mb-8 text-center">My Development Journey</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 rounded-lg bg-gray-800">
+                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-blue-400 font-bold">08</span>
+                        </div>
+                        <h4 class="font-semibold text-white mb-2">Linux Beginnings</h4>
+                        <p class="text-gray-300 text-sm">
+                            Started with Red Hat 6 in 2008, beginning my open source journey
+                        </p>
+                    </div>
+                    <div class="text-center p-6 rounded-lg bg-gray-800">
+                        <div class="w-12 h-12 bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-green-400 font-bold">C++</span>
+                        </div>
+                        <h4 class="font-semibold text-white mb-2">Language Love</h4>
+                        <p class="text-gray-300 text-sm">
+                            Fell in love with C++'s power and Qt's elegance for desktop applications
+                        </p>
+                    </div>
+                    <div class="text-center p-6 rounded-lg bg-gray-800">
+                        <div class="w-12 h-12 bg-orange-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-orange-400 font-bold">Rust</span>
+                        </div>
+                        <h4 class="font-semibold text-white mb-2">Modern Focus</h4>
+                        <p class="text-gray-300 text-sm">
+                            Embracing Rust for backend and Iced/Slint for modern native apps
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fun Facts -->
+            <section class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white text-center">
+                <h3 class="text-2xl font-bold mb-4">Developer Quirks</h3>
+                <p class="text-lg opacity-90 mb-4">
+                    "I love Python too, but it's a little confusing when I try to write code in C++ and Python at the same time. Because of semicolons! 😄"
+                </p>
+                <div class="flex justify-center items-center text-sm opacity-75">
+                    <i class="fas fa-clock mr-2"></i>
+                    Linux user since 2008 • Arch Linux enthusiast • Open Source advocate
+                </div>
+            </section>
         </div>
     </section>
 
