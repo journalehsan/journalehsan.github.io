@@ -48,5 +48,21 @@
     ],
     "content": "blog-posts/enterprise-os-revolution.md",
     "published": true
+  },
+  {
+    "id": 4,
+    "title": "My Journey to Neovim: From JetBrains to Cursor, Zed, and Finally Home",
+    "slug": "neovim-journey-editors-comparison",
+    "excerpt": "As a developer constantly seeking tools that enhance productivity and streamline workflows, I've navigated through various code editors and IDEs over the years. My journey began with JetBrains products, progressed through Cursor and Zed, and ultimately led me to Neovim.",
+    "author": "Ehsan Tork",
+    "date": "2025-01-20",
+    "readTime": "12 min read",
+    "tags": ["Neovim", "Editors", "Productivity", "Development", "Tools", "Comparison"],
+    "thumbnail": "https://picsum.photos/id/408/400/200",
+    "images": [
+      "https://picsum.photos/id/408/800/600"
+    ],
+    "content": "blog-posts/neovim-journey-editors-comparison.md",
+    "published": true
   }
 ]
