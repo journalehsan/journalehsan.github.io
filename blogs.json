@@ -80,5 +80,21 @@
     ],
     "content": "blog-posts/rust-enterprise-rewrite-ai-assisted.md",
     "published": true
+  },
+  {
+    "id": 6,
+    "title": "From Source to Style: Building Codex 0.53.0 and Ricing Hyperland the Rust Way",
+    "slug": "from-source-to-style-codex-hyperland",
+    "excerpt": "Building Codex 0.53.0 straight from source wasn't just about performance benchmarks—it was about forging an AI coding workflow that feels hand-tuned to my Arch + Hyperland setup, right down to the Dracula gradients and rounded shadows.",
+    "author": "Ehsan Tork",
+    "date": "2025-11-15",
+    "readTime": "9 min read",
+    "tags": ["Rust", "Codex", "Hyperland", "Desktop Ricing", "AI Tooling"],
+    "thumbnail": "assets/img/chatgpt-codex-image.png",
+    "images": [
+      "assets/img/chatgpt-codex-image.png"
+    ],
+    "content": "blog-posts/from-source-to-style-codex-hyperland.md",
+    "published": true
   }
 ]
