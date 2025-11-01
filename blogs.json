@@ -64,5 +64,21 @@
     ],
     "content": "blog-posts/neovim-journey-editors-comparison.md",
     "published": true
+  },
+  {
+    "id": 5,
+    "title": "How I Rewrote Our Enterprise Self-Care Platform in Rust — and Finished a Full AI-Assisted Data Fix in a Single Day",
+    "slug": "rust-enterprise-rewrite-ai-assisted",
+    "excerpt": "When people hear \"complete rewrite\", they think of endless migration meetings and sleepless nights. But with the right mindset — and a few good AIs — a rewrite can become a masterpiece. Our EUS Self-Care client originally used Python + PySide6. It worked… until it didn't.",
+    "author": "Ehsan Tork",
+    "date": "2025-01-25",
+    "readTime": "12 min read",
+    "tags": ["Rust", "AI-Assisted Development", "Enterprise", "Iced GUI", "PostgreSQL", "Data Engineering", "Python Migration"],
+    "thumbnail": "assets/img/lenovo-thinkpad.png",
+    "images": [
+      "assets/img/lenovo-thinkpad.png"
+    ],
+    "content": "blog-posts/rust-enterprise-rewrite-ai-assisted.md",
+    "published": true
   }
 ]
