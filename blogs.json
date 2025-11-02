@@ -112,5 +112,21 @@
     ],
     "content": "blog-posts/ultimate-dev-fleet-620.md",
     "published": true
+  },
+  {
+    "id": 8,
+    "title": "Everyday Codex Surprises: When AI Feels Like a True Rust Developer 😎",
+    "slug": "everyday-codex-surprises-medium-model",
+    "excerpt": "A single prompt to Codex's Medium model refactored an Iced + Slint desktop client, fixed clippy warnings, and even hardened our async API layer—all while explaining every decision like a seasoned Rust teammate.",
+    "author": "Ehsan Tork",
+    "date": "2025-01-28",
+    "readTime": "9 min read",
+    "tags": ["Rust", "Codex", "Iced GUI", "Slint", "AI Pair Programming"],
+    "thumbnail": "assets/img/rust-codex-gpt.png",
+    "images": [
+      "assets/img/rust-codex-gpt.png"
+    ],
+    "content": "blog-posts/everyday-codex-surprises-medium-model.md",
+    "published": true
   }
 ]
