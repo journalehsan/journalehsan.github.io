@@ -143,6 +143,21 @@ All of that showed up in the Codex session transcript. I started with “reorder
 
 ---
 
+## 🪄 Medium Model, Micro Tasks
+
+![Codex teammate illustration](assets/img/rust-codex-gpt.png)
+
+That same session reminded me how the **Medium** model shines even when the request is tiny. I tossed it a grab bag of “can you just…?” chores while the main compile ran:
+
+- Renamed a handful of telemetry fields across the repo, generated the migration draft, and left placeholders for DBA review.  
+- Turned scribbled meeting notes into a polished `CHANGELOG.md` entry with links back to the relevant Jira tickets.  
+- Drafted a quick `watch` script (`scripts/monitor-refresh.sh`) that prints live widget FPS and warns if Slint slips below 58 Hz.  
+- Rewrote a bash one-liner into a tidy `xtask` subcommand with argument parsing and help text so the rest of the team can reuse it.
+
+Each micro-task came back linted, documented, and ready to merge. It’s the kind of reliability that makes Codex feel less like a fancy autocomplete and more like a teammate who happily takes the boring jobs while you stay in flow.
+
+---
+
 ## 💬 Reflection: When AI Becomes a Teammate
 
 Codex didn’t just “follow orders.” It understood intent, nudged the architecture toward safety, and kept me in the loop the entire time. The pace felt like pairing with a senior Rust developer who:
@@ -177,4 +192,3 @@ Depicts a developer at a futuristic workstation as Codex, visualized as a glowin
 Warm tones represent creativity, safety, and the fire of Rust’s compiler spirit 🦀🔥
 
 > Illustration by ChatGPT — Codex Vision Series (2025)
-
