@@ -68,54 +68,178 @@ From any device, I can `ssh home-cloud` and immediately access my development en
 - **RAM:** 8GB LPDDR3 (soldered, non-upgradeable)
 - **Storage:** 128GB PCIe SSD
 - **Display:** 13.3" Retina (2560×1600)
-- **Battery:** Original, ~7-8 hours coding, ~4-5 hours heavy development
+- **Battery:** Original, ~6-7 hours coding on Linux
 - **Weight:** 1.37kg (3.02 lbs)
+- **Special Features:** Touch Bar (works, but I don't use it)
 
-### Why macOS for This Use Case?
+### The macOS Debacle: Why I Switched to Linux
 
-I'll be honest—this is my only non-Linux machine, and there's a reason. macOS just *works* for certain scenarios:
+I'll be honest—I used macOS for about a year. It was fine, I guess. The trackpad was nice, the Retina display was gorgeous, and things mostly "just worked."
 
-**Trackpad Excellence:** The force touch trackpad with macOS gestures is unmatched. Three-finger drag, pinch-to-zoom, and four-finger swipes make navigation fluid.
+Then disaster struck.
 
-**Sleep/Wake Reliability:** Close the lid, walk away. Open it 8 hours later, instant resume. Linux can do this, but it's never as consistent on battery-powered devices.
+After a macOS update, the machine wouldn't boot. It asked me to connect to WiFi for "a very important update." I connected, tried to update, and got an error saying it couldn't update. Then it asked for WiFi again. And again. And again.
 
-**Display Scaling:** macOS's Retina scaling is perfect. Everything looks crisp without manual tweaking.
+**Infinite loop.** 🌀
 
-**Software Ecosystem:** When I need to test cross-platform or use macOS-specific tools (like Sketch, or certain development tools), it's there.
+I was stuck in macOS recovery hell, unable to boot, unable to update, unable to do anything. After hours of troubleshooting, I said "enough."
+
+### Enter Arch Linux
+
+I wiped macOS and installed Arch Linux. Now it runs **Arch Linux with Plasma desktop** (and I've also tried COSMIC desktop—both work beautifully).
+
+### What Works (Almost Everything!)
+
+**Perfect Functionality:**
+- **Display:** Retina scaling works perfectly with Wayland
+- **Trackpad:** Full multi-touch gestures work (three-finger drag, pinch-to-zoom)
+- **Keyboard:** All keys work, including function keys
+- **Sleep/Wake:** Works reliably (with some tuning)
+- **Battery:** Good life with TLP configuration
+- **Audio:** Speakers and headphone jack work
+- **USB-C:** Charging and data transfer work
+- **WiFi/Bluetooth:** Both work out of the box
+
+**What Doesn't Work:**
+- **Webcam:** Not working (I don't need it anyway)
+- **Touch Bar:** Works, but honestly, who needs this? It's a gimmick. I disable it in software.
+
+**What I Don't Miss:**
+- macOS's forced updates and update loops
+- The glass morphism UI in macOS Sequoia (Tahoe) — seriously, what were they thinking? 🤮
+- macOS's restrictive ecosystem
+- Homebrew (pacman is so much better)
+
+### Arch Linux Setup
+
+```bash
+# Base Arch installation
+pacman -S base base-devel linux linux-firmware
+
+# Desktop environment (Plasma)
+pacman -S plasma-meta kde-applications sddm
+
+# Or COSMIC desktop (experimental, but works!)
+# Install from AUR or build from source
+
+# Essential tools
+pacman -S neovim git rust cargo wezterm
+```
+
+### Desktop Environment: Plasma & COSMIC
+
+**Plasma Desktop:**
+- **Why:** Most feature-complete Linux desktop
+- **Performance:** Smooth, ~1GB RAM usage
+- **Customization:** Endless options
+- **Wayland:** Full support, works perfectly with Retina display
+
+**COSMIC Desktop:**
+- **Why:** Modern, beautiful, optimized
+- **Performance:** Lighter than Plasma (~800MB RAM)
+- **Design:** Clean, no glass morphism nonsense
+- **Wayland:** Native support
+
+I've used both and they're both excellent. Plasma for power users, COSMIC for modern aesthetics.
 
 ### Development Setup
 
-Even on macOS, I stick to my Linux-first tooling:
+Same as my other Linux machines:
 
 ```bash
-# Homebrew for package management
-brew install neovim git rust golang
+# Rust toolchain
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# Alacritty terminal (fast, GPU-accelerated)
-brew install alacritty
+# Neovim with LSP
+pacman -S neovim nodejs npm
 
-# iTerm2 with minimal config for better tmux integration
+# Terminal: Wezterm (GPU-accelerated)
+pacman -S wezterm
+
+# Git (synced config across machines)
+pacman -S git
 ```
 
-I still use Neovim with the same config as my Linux machines. The terminal is Alacritty (or iTerm2 when I need split panes). For SSH sessions, I connect back to my Prodesk home cloud.
+### Power Management: TLP Configuration
 
-### Battery Optimization
-
-macOS's built-in power management is excellent, but I still tweak it:
+macOS had good power management, but Linux with TLP is just as good (and more transparent):
 
 ```bash
-# Disable Turbo Boost for better battery (via Turbo Boost Switcher)
-# This extends battery life by ~40% for CPU-light tasks
+# Install TLP
+pacman -S tlp tlp-rdw
 
-# Reduce screen brightness (keyboard shortcut)
-# Enable "Low Power Mode" in Energy Saver settings
+# Enable service
+systemctl enable tlp
+
+# Configure /etc/tlp.conf
+CPU_SCALING_GOVERNOR_ON_BAT=powersave
+CPU_MAX_PERF_ON_BAT=50
+CPU_BOOST_ON_BAT=0
 ```
 
-**Real-world usage:** I can code comfortably for 6-7 hours in a coffee shop, then SSH into my home cloud for heavy builds.
+**Battery Life:** 6-7 hours coding, comparable to macOS. The Retina display is power-hungry, but TLP helps manage it.
+
+### Retina Display Scaling
+
+Wayland handles Retina scaling beautifully:
+
+```bash
+# Plasma: System Settings → Display → Scale
+# Set to 200% (perfect for Retina)
+
+# Or manually in Wayland config
+export QT_WAYLAND_FORCE_DPI=192
+export GDK_SCALE=2
+```
+
+Everything looks crisp and sharp—just like macOS, but without the bloat.
+
+### The Touch Bar: Who Needs It?
+
+The Touch Bar still works (Linux drivers exist), but honestly? It's a gimmick. I disable it:
+
+```bash
+# Disable Touch Bar (use function keys instead)
+echo 'blacklist apple-ib-tb' | sudo tee -a /etc/modprobe.d/blacklist.conf
+```
+
+Function keys are faster, more reliable, and don't distract you. The Touch Bar was Apple's solution to a problem that didn't exist.
+
+### Why This Works Better Than macOS
+
+**Freedom:**
+- No forced updates
+- No update loops
+- Full control over the system
+- No gatekeeper restrictions
+
+**Performance:**
+- Faster boot times
+- Lower memory usage
+- More responsive UI
+- Better package management (pacman vs Homebrew)
+
+**Reliability:**
+- No macOS recovery hell
+- No broken updates
+- System works when I need it
+
+**Aesthetics:**
+- No glass morphism UI nonsense
+- Clean, modern interfaces (Plasma/COSMIC)
+- Customizable to my preferences
 
 ### Cost-Benefit Analysis
 
-At $250, this was a steal. A comparable new MacBook would cost $1200+. The 2017 model still runs macOS Ventura/Sonoma smoothly, handles modern development tools, and that Retina display is still gorgeous.
+At $250, this was a steal. Running Arch Linux, it's:
+- **Faster** than macOS
+- **More reliable** than macOS
+- **More customizable** than macOS
+- **More fun** than macOS
+
+The Retina display still looks gorgeous, the trackpad still works great, and I have full control over my system. What more could you want?
+
+**The only thing I miss:** Nothing. Seriously. macOS was holding me back, and I didn't realize it until I switched.
 
 ## 💻 The Comfortable Daily: Toshiba Satellite C50D-B | $120
 
@@ -542,14 +666,15 @@ My philosophy isn't about suffering with slow hardware—it's about **optimizing
 - **Wayland:** Full native support
 - **Customization:** More flexible than GNOME, less overwhelming than KDE
 
-**macOS (MacBook):**
-- **Memory:** ~1.5GB (but worth it for trackpad/display)
-- **Performance:** Excellent, but not customizable
-- **Use Case:** When I need things to "just work"
+**Plasma/COSMIC (MacBook):**
+- **Memory:** ~800MB-1GB (Plasma) or ~800MB (COSMIC)
+- **Performance:** Excellent, highly customizable
+- **Use Case:** Premium Linux experience with Retina display
+- **Why:** Switched from macOS after update loop hell—never looked back
 
 ### Editor: Neovim Everywhere
 
-I use Neovim on all machines (except macOS, where I sometimes use Cursor for AI features). Here's why:
+I use Neovim on all machines. Here's why:
 
 **Memory Comparison:**
 - **VSCode:** 1-2GB RAM
@@ -657,7 +782,7 @@ DISK_APM_LEVEL_ON_BAT=127  # Aggressive spin-down
 **Results:**
 - **Toshiba:** 4-5 hours → 6-7 hours (40% improvement)
 - **Miix 320:** 3-4 hours → 4-5 hours (25% improvement)
-- **MacBook:** Already optimized, but TLP can still help (5-10% improvement)
+- **MacBook:** 5-6 hours → 6-7 hours with TLP (20% improvement, matches macOS battery life)
 
 ### Memory Optimization Strategies
 
@@ -860,10 +985,10 @@ strace -c ./my-program
 - Can code for hours without discomfort
 
 **Coffee Shop Sessions (MacBook):**
-- Premium feel, great trackpad
-- Retina display for long reading sessions
-- Reliable sleep/wake for breaks
-- Professional appearance
+- Premium feel, great trackpad (Linux drivers work perfectly)
+- Retina display for long reading sessions (Wayland scaling is flawless)
+- Reliable sleep/wake (Linux handles it well with proper configuration)
+- Professional appearance (looks like a Mac, runs Linux—best of both worlds)
 
 **Home Office (Toshiba):**
 - Large screen for complex layouts
@@ -882,7 +1007,7 @@ strace -c ./my-program
 Each machine taught me different skills:
 
 **Prodesk:** Linux server administration, containerization, networking, systemd
-**MacBook:** macOS ecosystem, cross-platform development, professional workflows
+**MacBook:** Arch Linux on Mac hardware, Wayland/Retina scaling, Mac hardware drivers, escaping macOS update hell
 **Toshiba:** Desktop environment customization, Wayland, AMD GPU optimization
 **Miix 320:** Extreme optimization, Alpine Linux, bootloader configuration, memory management
 
