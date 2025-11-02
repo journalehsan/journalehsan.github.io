@@ -96,5 +96,21 @@
     ],
     "content": "blog-posts/from-source-to-style-codex-hyperland.md",
     "published": true
+  },
+  {
+    "id": 7,
+    "title": "How I Built My Ultimate Dev Fleet 🚀 for $620 (Less Than One Modern Laptop!)",
+    "slug": "ultimate-dev-fleet-620",
+    "excerpt": "By embracing Linux, customization, and a little tinkering, I've assembled a fleet of specialized machines that cover every possible need—all for a total of $620. That's less than the price of a single mid-range modern laptop!",
+    "author": "Ehsan Tork",
+    "date": "2025-11-02",
+    "readTime": "10 min read",
+    "tags": ["Linux", "Hardware", "Optimization", "Dev Setup", "Cost-Effective"],
+    "thumbnail": "assets/img/3.jpg",
+    "images": [
+      "assets/img/3.jpg"
+    ],
+    "content": "blog-posts/ultimate-dev-fleet-620.md",
+    "published": true
   }
 ]
