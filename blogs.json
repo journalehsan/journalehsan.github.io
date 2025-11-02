@@ -131,18 +131,18 @@
   },
   {
     "id": 9,
-    "title": "💻 From Copilot to Codex: My AI Coding Journey on Arch Linux 🐧",
-    "slug": "from-copilot-to-codex-ai-coding-journey-arch-linux",
-    "excerpt": "From Copilot’s autocomplete magic to Codex’s architectural understanding—my Arch Linux journey with AI tooling, and the small joy of smb4k mounting Samba shares natively.",
+    "title": "🍌 From Arrows to Bananas: My Funny Journey Through Mouse Cursors",
+    "slug": "from-arrows-to-bananas-cursor-journey",
+    "excerpt": "A nostalgic dive through cursor evolution — from Windows XP arrows to Aero to Breeze — and why I now use a banana cursor on Arch Linux. Because sometimes joy belongs in the smallest details.",
     "author": "Ehsan Tork",
     "date": "2025-11-02",
-    "readTime": "8 min read",
-    "tags": ["AI", "Codex", "Copilot", "Arch Linux", "Samba", "Rust"],
-    "thumbnail": "assets/img/ehsan-tork.jpg",
+    "readTime": "10 min read",
+    "tags": ["Linux", "Cursors", "UX Design", "KDE", "Customization", "Fun"],
+    "thumbnail": "assets/img/banana-cursor.png",
     "images": [
-      "assets/img/ehsan-tork.jpg"
+      "assets/img/banana-cursor.png"
     ],
-    "content": "blog-posts/from-copilot-to-codex-ai-coding-journey-arch-linux.md",
+    "content": "blog-posts/from-arrows-to-bananas-cursor-journey.md",
     "published": true
   }
 ]
