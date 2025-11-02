@@ -128,5 +128,21 @@
     ],
     "content": "blog-posts/everyday-codex-surprises-medium-model.md",
     "published": true
+  },
+  {
+    "id": 9,
+    "title": "💻 From Copilot to Codex: My AI Coding Journey on Arch Linux 🐧",
+    "slug": "from-copilot-to-codex-ai-coding-journey-arch-linux",
+    "excerpt": "From Copilot’s autocomplete magic to Codex’s architectural understanding—my Arch Linux journey with AI tooling, and the small joy of smb4k mounting Samba shares natively.",
+    "author": "Ehsan Tork",
+    "date": "2025-11-02",
+    "readTime": "8 min read",
+    "tags": ["AI", "Codex", "Copilot", "Arch Linux", "Samba", "Rust"],
+    "thumbnail": "assets/img/ehsan-tork.jpg",
+    "images": [
+      "assets/img/ehsan-tork.jpg"
+    ],
+    "content": "blog-posts/from-copilot-to-codex-ai-coding-journey-arch-linux.md",
+    "published": true
   }
 ]
