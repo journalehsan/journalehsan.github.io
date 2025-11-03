@@ -144,5 +144,21 @@
     ],
     "content": "blog-posts/from-arrows-to-bananas-cursor-journey.md",
     "published": true
+  },
+  {
+    "id": 10,
+    "title": "💻 What Clicks on You: The Real Truth About Developer Tools",
+    "slug": "what-clicks-on-you-developer-tools",
+    "excerpt": "Stop arguing about editors — start building cool stuff. The best tool isn't the one that trends or what influencers preach. It's the one that clicks on you, the one that fades away and lets your mind meet the code.",
+    "author": "Ehsan Tork",
+    "date": "2025-11-03",
+    "readTime": "8 min read",
+    "tags": ["Editors", "Development Tools", "Productivity", "Neovim", "VSCode", "Cursor", "Zed", "AI"],
+    "thumbnail": "assets/img/editor-best-for-you.png",
+    "images": [
+      "assets/img/editor-best-for-you.png"
+    ],
+    "content": "blog-posts/what-clicks-on-you-developer-tools.md",
+    "published": true
   }
 ]
