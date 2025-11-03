@@ -25,11 +25,16 @@
     "author": "Ehsan Tork",
     "date": "2025-01-15",
     "readTime": "15 min read",
-    "tags": ["Rust", "Python", "Migration", "Enterprise", "Performance", "Iced GUI"],
-    "thumbnail": "assets/img/linu_journy.png",
-    "images": [
-      "assets/img/linu_journy.png"
+    "tags": [
+      "Rust",
+      "Python",
+      "Migration",
+      "Enterprise",
+      "Performance",
+      "Iced GUI"
     ],
+    "thumbnail": "assets/img/linu_journy.png",
+    "images": ["assets/img/linu_journy.png"],
     "content": "blog-posts/python-to-rust-enterprise-rewrite.md",
     "published": true
   },
@@ -43,9 +48,7 @@
     "readTime": "10 min read",
     "tags": ["Linux", "Enterprise", "DevOps", "Security", "Rust", "KDE"],
     "thumbnail": "assets/img/2.jpg",
-    "images": [
-      "assets/img/2.jpg"
-    ],
+    "images": ["assets/img/2.jpg"],
     "content": "blog-posts/enterprise-os-revolution.md",
     "published": true
   },
@@ -57,11 +60,16 @@
     "author": "Ehsan Tork",
     "date": "2025-01-20",
     "readTime": "12 min read",
-    "tags": ["Neovim", "Editors", "Productivity", "Development", "Tools", "Comparison"],
-    "thumbnail": "assets/img/neovim.webp",
-    "images": [
-      "assets/img/neovim.webp"
+    "tags": [
+      "Neovim",
+      "Editors",
+      "Productivity",
+      "Development",
+      "Tools",
+      "Comparison"
     ],
+    "thumbnail": "assets/img/neovim.webp",
+    "images": ["assets/img/neovim.webp"],
     "content": "blog-posts/neovim-journey-editors-comparison.md",
     "published": true
   },
@@ -73,11 +81,17 @@
     "author": "Ehsan Tork",
     "date": "2025-01-25",
     "readTime": "12 min read",
-    "tags": ["Rust", "AI-Assisted Development", "Enterprise", "Iced GUI", "PostgreSQL", "Data Engineering", "Python Migration"],
-    "thumbnail": "assets/img/lenovo-thinkpad.png",
-    "images": [
-      "assets/img/lenovo-thinkpad.png"
+    "tags": [
+      "Rust",
+      "AI-Assisted Development",
+      "Enterprise",
+      "Iced GUI",
+      "PostgreSQL",
+      "Data Engineering",
+      "Python Migration"
     ],
+    "thumbnail": "assets/img/lenovo-thinkpad.png",
+    "images": ["assets/img/lenovo-thinkpad.png"],
     "content": "blog-posts/rust-enterprise-rewrite-ai-assisted.md",
     "published": true
   },
@@ -91,9 +105,7 @@
     "readTime": "9 min read",
     "tags": ["Rust", "Codex", "Hyperland", "Desktop Ricing", "AI Tooling"],
     "thumbnail": "assets/img/chatgpt-codex-image.png",
-    "images": [
-      "assets/img/chatgpt-codex-image.png"
-    ],
+    "images": ["assets/img/chatgpt-codex-image.png"],
     "content": "blog-posts/from-source-to-style-codex-hyperland.md",
     "published": true
   },
@@ -105,11 +117,15 @@
     "author": "Ehsan Tork",
     "date": "2025-11-02",
     "readTime": "10 min read",
-    "tags": ["Linux", "Hardware", "Optimization", "Dev Setup", "Cost-Effective"],
-    "thumbnail": "assets/img/3.jpg",
-    "images": [
-      "assets/img/3.jpg"
+    "tags": [
+      "Linux",
+      "Hardware",
+      "Optimization",
+      "Dev Setup",
+      "Cost-Effective"
     ],
+    "thumbnail": "assets/img/3.jpg",
+    "images": ["assets/img/3.jpg"],
     "content": "blog-posts/ultimate-dev-fleet-620.md",
     "published": true
   },
@@ -123,9 +139,7 @@
     "readTime": "9 min read",
     "tags": ["Rust", "Codex", "Iced GUI", "Slint", "AI Pair Programming"],
     "thumbnail": "assets/img/rust-codex-gpt.png",
-    "images": [
-      "assets/img/rust-codex-gpt.png"
-    ],
+    "images": ["assets/img/rust-codex-gpt.png"],
     "content": "blog-posts/everyday-codex-surprises-medium-model.md",
     "published": true
   },
@@ -139,9 +153,7 @@
     "readTime": "10 min read",
     "tags": ["Linux", "Cursors", "UX Design", "KDE", "Customization", "Fun"],
     "thumbnail": "assets/img/banana-cursor.png",
-    "images": [
-      "assets/img/banana-cursor.png"
-    ],
+    "images": ["assets/img/banana-cursor.png"],
     "content": "blog-posts/from-arrows-to-bananas-cursor-journey.md",
     "published": true
   },
@@ -153,12 +165,40 @@
     "author": "Ehsan Tork",
     "date": "2025-11-03",
     "readTime": "8 min read",
-    "tags": ["Editors", "Development Tools", "Productivity", "Neovim", "VSCode", "Cursor", "Zed", "AI"],
-    "thumbnail": "assets/img/editor-best-for-you.png",
-    "images": [
-      "assets/img/editor-best-for-you.png"
+    "tags": [
+      "Editors",
+      "Development Tools",
+      "Productivity",
+      "Neovim",
+      "VSCode",
+      "Cursor",
+      "Zed",
+      "AI"
     ],
+    "thumbnail": "assets/img/editor-best-for-you.png",
+    "images": ["assets/img/editor-best-for-you.png"],
     "content": "blog-posts/what-clicks-on-you-developer-tools.md",
+    "published": true
+  },
+  {
+    "id": 11,
+    "title": "🧭 Effortless Access to Windows Shares on Linux — with Smb4K and My Codex-Built File Manager",
+    "slug": "effortless-windows-shares-smb4k-cosmic-files",
+    "excerpt": "Discover how Smb4K and my Codex-assisted Cosmic-Files fork finally made enterprise Samba shares feel native on Hyperland — with reliable mounts, refined UX, and real Rust engineering under the hood.",
+    "author": "Ehsan Tork",
+    "date": "2025-11-05",
+    "readTime": "11 min read",
+    "tags": [
+      "Linux",
+      "Samba",
+      "Hyperland",
+      "File Manager",
+      "Rust",
+      "AI-Assisted Development"
+    ],
+    "thumbnail": "assets/img/smb4k-cosmic-files-hyperland.png",
+    "images": ["assets/img/smb4k-cosmic-files-hyperland.png"],
+    "content": "blog-posts/effortless-windows-shares-smb4k-cosmic-files.md",
     "published": true
   }
 ]
