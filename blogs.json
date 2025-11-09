@@ -200,5 +200,27 @@
     "images": ["assets/img/smb4k-cosmic-files-hyperland.png"],
     "content": "blog-posts/effortless-windows-shares-smb4k-cosmic-files.md",
     "published": true
+  },
+  {
+    "id": 12,
+    "title": "💻 The $50 Miracle Tablet: Turning a Cheap Toshiba Dynabook D45 Into a Real Linux Dev Machine",
+    "slug": "50-dollar-dynabook-linux-dev-machine",
+    "excerpt": "Most people think you can't do real development on a budget tablet. But a $50 Toshiba Dynabook D45 with Intel Celeron N4000 became one of the smoothest mini developer laptops I've ever configured. From 11-minute install to full-day dev work with external monitor support.",
+    "author": "Ehsan Tork",
+    "date": "2025-11-09",
+    "readTime": "8 min read",
+    "tags": [
+      "Linux",
+      "Hardware",
+      "Budget Setup",
+      "Hyperland",
+      "Omarchy",
+      "Development",
+      "Tablet"
+    ],
+    "thumbnail": "assets/img/dynabook.png",
+    "images": ["assets/img/dynabook.png"],
+    "content": "blog-posts/50-dollar-dynabook-linux-dev-machine.md",
+    "published": true
   }
 ]
