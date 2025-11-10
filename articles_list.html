@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - Ehsan Tork's Technical Writing</title>
+    <meta name="description" content="In-depth technical articles about Linux, development tools, hardware reviews, and software engineering by Ehsan Tork.">
+    <meta name="author" content="Ehsan Tork">
+    <link rel="canonical" href="https://journalehsan.github.io/articles">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="articles.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#8B5CF6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+        }
+        
+        .code-font {
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .article-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            background: rgba(26, 32, 44, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(66, 153, 225, 0.2);
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(66, 153, 225, 0.3);
+            border-color: rgba(66, 153, 225, 0.5);
+        }
+        
+        .article-card img {
+            transition: transform 0.5s ease;
+        }
+        
+        .article-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #38BDF8, #81E6D9, #38BDF8);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 3s linear infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            margin: 0.25rem;
+            background: rgba(66, 153, 225, 0.2);
+            border: 1px solid rgba(66, 153, 225, 0.3);
+        }
+        
+        .pagination-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .pagination-btn:hover:not(:disabled) {
+            transform: scale(1.05);
+            background: rgba(66, 153, 225, 0.3);
+        }
+        
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-gray-900 bg-opacity-90 z-50 py-4">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold gradient-text">Ehsan Tork's Journal</a>
+            <div class="flex items-center space-x-6">
+                <a href="index.html" class="hover:text-blue-400 transition-colors">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="index.html#blog" class="hover:text-blue-400 transition-colors">
+                    <i class="fas fa-blog"></i> Blog
+                </a>
+                <a href="articles.html" class="text-blue-400">
+                    <i class="fas fa-newspaper"></i> Articles
+                </a>
+                <a href="index.html#contact" class="hover:text-blue-400 transition-colors">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-32 pb-12 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                <span class="gradient-text">Technical Articles</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-4 text-gray-300">
+                In-depth explorations of Linux, development tools, and technology
+            </p>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                SEO-optimized, comprehensive articles covering hardware reviews, software engineering, 
+                and practical developer experiences.
+            </p>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="py-16 px-4" x-data="articlesApp()">
+        <div class="max-w-6xl mx-auto">
+            <!-- Articles Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <template x-for="article in paginatedArticles" :key="article.id">
+                    <div class="article-card animate__animated animate__fadeInUp">
+                        <!-- Cover Image -->
+                        <div class="overflow-hidden h-48 bg-gray-800">
+                            <img :src="article.coverImage" 
+                                 :alt="article.title" 
+                                 class="w-full h-full object-cover"
+                                 loading="lazy" />
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-6">
+                            <!-- Meta -->
+                            <div class="flex items-center text-sm text-gray-400 mb-3">
+                                <i class="far fa-calendar-alt mr-2"></i>
+                                <time :datetime="article.date" x-text="formatDate(article.date)"></time>
+                                <span class="mx-2">·</span>
+                                <i class="far fa-clock mr-2"></i>
+                                <span x-text="article.readTime"></span>
+                            </div>
+                            
+                            <!-- Title -->
+                            <h2 class="text-xl font-bold mb-3 text-white hover:text-blue-400 transition-colors">
+                                <a :href="article.url" x-text="article.title"></a>
+                            </h2>
+                            
+                            <!-- Description -->
+                            <p class="text-gray-300 mb-4 line-clamp-3" x-text="article.description"></p>
+                            
+                            <!-- Tags -->
+                            <div class="mb-4">
+                                <template x-for="tag in article.tags.slice(0, 3)" :key="tag">
+                                    <span class="tag" x-text="tag"></span>
+                                </template>
+                            </div>
+                            
+                            <!-- Read More -->
+                            <a :href="article.url" 
+                               class="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold transition-colors">
+                                Read Full Article
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center items-center space-x-4">
+                <button @click="prevPage" 
+                        :disabled="currentPage === 1"
+                        class="pagination-btn px-6 py-3 bg-gray-800 rounded-lg disabled:opacity-50">
+                    <i class="fas fa-chevron-left mr-2"></i> Previous
+                </button>
+                
+                <div class="text-gray-300">
+                    Page <span x-text="currentPage"></span> of <span x-text="totalPages"></span>
+                </div>
+                
+                <button @click="nextPage" 
+                        :disabled="currentPage === totalPages"
+                        class="pagination-btn px-6 py-3 bg-gray-800 rounded-lg disabled:opacity-50">
+                    Next <i class="fas fa-chevron-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-400 py-8 border-t border-gray-700 mt-12">
+        <p class="code-font mb-2">// Keep coding and evolving with technology</p>
+        <p class="mb-2">2016 journalehsan@github.io | Published Under CCbyNCND 3.0</p>
+        <p>Made with <i class="fas fa-heart text-red-500"></i> using TailwindCSS</p>
+    </footer>
+
+    <script>
+        function articlesApp() {
+            return {
+                articles: articlesData || [],
+                currentPage: 1,
+                articlesPerPage: 6,
+                
+                get totalPages() {
+                    return Math.ceil(this.articles.length / this.articlesPerPage);
+                },
+                
+                get paginatedArticles() {
+                    const start = (this.currentPage - 1) * this.articlesPerPage;
+                    const end = start + this.articlesPerPage;
+                    return this.articles.slice(start, end);
+                },
+                
+                nextPage() {
+                    if (this.currentPage < this.totalPages) {
+                        this.currentPage++;
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                },
+                
+                prevPage() {
+                    if (this.currentPage > 1) {
+                        this.currentPage--;
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                },
+                
+                formatDate(dateString) {
+                    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                    return new Date(dateString).toLocaleDateString('en-US', options);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

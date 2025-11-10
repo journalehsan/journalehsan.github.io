@@ -305,7 +305,23 @@
                         <a href="#stack" class="px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors">Current Stack</a>
                     </div>
                 </div>
-                <a href="#blog" class="hover:text-blue-400 transition-colors">Writing</a>
+                <div class="relative group" tabindex="0">
+                    <button type="button" aria-haspopup="true" class="inline-flex items-center gap-2 hover:text-blue-400 transition-colors focus:outline-none">
+                        Writing
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="hidden group-hover:flex group-focus-within:flex flex-col absolute left-0 mt-3 w-48 rounded-lg bg-gray-900 border border-gray-700 shadow-xl py-3">
+                        <a href="#articles" class="px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors">
+                            <i class="fas fa-newspaper mr-2"></i>Articles
+                        </a>
+                        <a href="#blog" class="px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors">
+                            <i class="fas fa-blog mr-2"></i>Blog
+                        </a>
+                        <a href="articles_list.html" class="px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors">
+                            <i class="fas fa-list mr-2"></i>All Articles
+                        </a>
+                    </div>
+                </div>
                 <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
                 <div class="relative group" tabindex="0">
                     <button type="button" aria-haspopup="true" class="inline-flex items-center gap-2 hover:text-blue-400 transition-colors focus:outline-none">
@@ -348,7 +364,23 @@
                         <a href="#stack" class="hover:text-white transition-colors">Current Stack</a>
                     </div>
                 </details>
-                <a href="#blog" class="hover:text-blue-400 transition-colors">Writing</a>
+                <details class="bg-gray-900/60 rounded-lg">
+                    <summary class="flex items-center justify-between px-4 py-2 text-gray-200 cursor-pointer hover:text-blue-300">
+                        <span>Writing</span>
+                        <i class="fas fa-chevron-down text-xs mobile-summary-icon"></i>
+                    </summary>
+                    <div class="flex flex-col px-6 pb-3 pt-2 space-y-2 text-sm text-gray-300">
+                        <a href="#articles" class="hover:text-white transition-colors">
+                            <i class="fas fa-newspaper mr-2"></i>Articles
+                        </a>
+                        <a href="#blog" class="hover:text-white transition-colors">
+                            <i class="fas fa-blog mr-2"></i>Blog
+                        </a>
+                        <a href="articles_list.html" class="hover:text-white transition-colors">
+                            <i class="fas fa-list mr-2"></i>All Articles
+                        </a>
+                    </div>
+                </details>
                 <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
                 <details class="bg-gray-900/60 rounded-lg">
                     <summary class="flex items-center justify-between px-4 py-2 text-gray-200 cursor-pointer hover:text-blue-300">
@@ -1152,6 +1184,78 @@
                     <i class="fab fa-github mr-2"></i>
                     View more on GitHub
                     <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="py-16 px-4 bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4 text-center">Featured Articles</h2>
+            <p class="text-center text-gray-400 mb-10">
+                In-depth technical writing on Linux, development tools, and hardware reviews
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <!-- Article Card 1 -->
+                <div class="card bg-gray-800 overflow-hidden group">
+                    <div class="overflow-hidden h-48 bg-gray-700">
+                        <img src="assets/img/perfect_dynabook.png" 
+                             alt="Is Dynabook Good? Full Review for Linux & Windows 11" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                             loading="lazy" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-400 mb-3">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <time datetime="2025-11-10">November 10, 2025</time>
+                            <span class="mx-2">·</span>
+                            <i class="far fa-clock mr-2"></i>
+                            <span>10-12 min</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">
+                            <a href="articles/is_dynabook_good_for_linux.html">
+                                Is Dynabook Good? Full Review for Linux & Windows 11 (+ My $50 Dynabook Story)
+                            </a>
+                        </h3>
+                        <p class="text-gray-300 mb-4">
+                            A developer's hands-on review across three Dynabook laptops—10″, 12″, and 14″—covering Linux support, Windows 11 compatibility, performance, and a $50 Dynabook success story.
+                        </p>
+                        <div class="mb-4">
+                            <span class="tech-tag text-xs">Dynabook</span>
+                            <span class="tech-tag text-xs">Linux</span>
+                            <span class="tech-tag text-xs">Hardware Review</span>
+                        </div>
+                        <a href="articles/is_dynabook_good_for_linux.html" 
+                           class="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold transition-colors">
+                            Read Full Article
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Placeholder for future articles -->
+                <div class="card bg-gray-800 p-6 flex items-center justify-center border-2 border-dashed border-gray-700">
+                    <div class="text-center text-gray-500">
+                        <i class="fas fa-plus-circle text-4xl mb-3"></i>
+                        <p>More articles coming soon...</p>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 p-6 flex items-center justify-center border-2 border-dashed border-gray-700">
+                    <div class="text-center text-gray-500">
+                        <i class="fas fa-plus-circle text-4xl mb-3"></i>
+                        <p>More articles coming soon...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="articles_list.html" 
+                   class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105">
+                    <i class="fas fa-newspaper mr-2"></i>
+                    View All Articles
                 </a>
             </div>
         </div>
