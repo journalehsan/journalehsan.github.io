@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>4 Days with Dynabook D45 – Omarchy 3.1.7 + Falkon Review</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Hands-on field report after four days of running Omarchy 3.1.7, Hyperland 0.52, and Falkon on a Dynabook D45 (Celeron N4000). Includes install steps, Fastfetch stats, browser tuning, developer tooling, and stability fixes." />
+  <meta name="keywords" content="Dynabook D45,Omarchy review,Falkon browser,Hyperland on Dynabook,Celeron N4000 Linux,Dynabook Linux review,lightweight developer laptop,EarlyOOM,Wayland laptop 2025" />
+  <link rel="canonical" href="https://journalehsan.github.io/articles/dynabook_d45_omarchy_review.html" />
+  <meta name="author" content="Ehsan Tork" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="4 Days with Dynabook D45 – Omarchy 3.1.7 + Falkon Review" />
+  <meta property="og:description" content="Revived a Dynabook D45 (Celeron N4000) with Omarchy 3.1.7, Hyperland, Falkon, and lightweight dev tooling. Real resource numbers, tweaks, and lessons after four days of uptime." />
+  <meta property="og:url" content="https://journalehsan.github.io/articles/dynabook_d45_omarchy_review.html" />
+  <meta property="og:image" content="https://journalehsan.github.io/assets/img/falkon-d4.png" />
+  <meta property="og:site_name" content="Ehsan Tork's Journal" />
+  <meta property="article:published_time" content="2025-11-18T09:30:00+03:30" />
+  <meta property="article:author" content="Ehsan Tork" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="4 Days with Dynabook D45 – Omarchy 3.1.7 + Falkon Review" />
+  <meta name="twitter:description" content="Can a 2019 Dynabook D45 still work for developers? Yes—with Omarchy 3.1.7, Hyperland, Falkon, and smart memory tuning. Here's every tweak and benchmark after 4 days." />
+  <meta name="twitter:image" content="https://journalehsan.github.io/assets/img/falkon-d4.png" />
+  <meta name="twitter:creator" content="@journalehsan" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "4 Days with Dynabook D45 – Omarchy 3.1.7 + Falkon Review",
+    "description": "A four-day field test of Omarchy 3.1.7, Hyperland, and Falkon on a Dynabook D45 (Celeron N4000, 4 GB RAM). Includes installation details, fastfetch metrics, browser tuning, and developer workflow benchmarks.",
+    "image": "https://journalehsan.github.io/assets/img/falkon-d4.png",
+    "author": { "@type": "Person", "name": "Ehsan Tork" },
+    "datePublished": "2025-11-18T09:30:00+03:30",
+    "dateModified": "2025-11-18T09:30:00+03:30",
+    "mainEntityOfPage": "https://journalehsan.github.io/articles/dynabook_d45_omarchy_review.html",
+    "keywords": "Dynabook D45,Omarchy,Falkon browser,Hyperland,EarlyOOM",
+    "wordCount": "2200"
+  }
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+      color: #e2e8f0;
+    }
+
+    article {
+      max-width: 880px;
+      margin: auto;
+      padding: 2.5rem 1.5rem 3.5rem;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.3;
+      margin: 1.8em 0 0.8em;
+      color: #fff;
+    }
+
+    h1 { font-size: 2.6rem; font-weight: 800; margin-top: 0; }
+    h2 { font-size: 1.8rem; font-weight: 700; border-bottom: 2px solid #7c3aed; padding-bottom: 0.55rem; }
+    h3 { font-size: 1.35rem; font-weight: 600; color: #cbd5f5; }
+
+    a { color: #a78bfa; transition: color 0.2s; }
+    a:hover { color: #d8b4fe; }
+
+    figure { margin: 2rem 0; }
+    figcaption {
+      font-size: 0.9rem;
+      color: #a0aec0;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 20px 35px rgba(0,0,0,0.35);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1.5rem 0;
+      background: rgba(67, 56, 202, 0.25);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid rgba(226, 232, 240, 0.08);
+      padding: 0.85rem;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(67, 56, 202, 0.35);
+      font-weight: 600;
+      color: #e9d8fd;
+    }
+
+    code, pre {
+      background: #111827;
+      border-radius: 8px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9em;
+    }
+
+    code { padding: 0.2em 0.4em; }
+    pre {
+      overflow-x: auto;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      border-left: 3px solid #7c3aed;
+    }
+
+    .toc {
+      background: rgba(67, 56, 202, 0.2);
+      padding: 1.6rem;
+      border-radius: 10px;
+      margin: 2.2rem 0;
+      border-left: 4px solid #7c3aed;
+    }
+
+    .toc a {
+      display: block;
+      margin: 0.5rem 0;
+      text-decoration: none;
+      padding: 0.15rem 0;
+      transition: transform 0.2s;
+    }
+
+    .toc a:hover { transform: translateX(6px); }
+
+    .meta {
+      color: #a0aec0;
+      font-size: 0.95rem;
+      margin: 1rem 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding: 0.5rem 1.1rem;
+      background: rgba(124, 58, 237, 0.18);
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.3s;
+      gap: 0.4rem;
+    }
+
+    .back-link:hover { background: rgba(124, 58, 237, 0.28); }
+
+    ul, ol {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    li { margin: 0.4rem 0; }
+
+    strong { color: #fff; font-weight: 600; }
+
+    blockquote {
+      margin: 1.5rem 0;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid #a855f7;
+      background: rgba(24, 24, 27, 0.6);
+      border-radius: 6px;
+    }
+
+    section { margin: 3rem 0; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.15rem; }
+      article { padding: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<article role="article" aria-labelledby="title">
+  <a href="../index.html#articles" class="back-link">
+    <i class="fas fa-arrow-left"></i> Back to Articles
+  </a>
+
+  <header>
+    <h1 id="title">4 Days with Dynabook D45 – Omarchy&nbsp;3.1.7 + Falkon Review</h1>
+    <p class="meta">
+      By <strong>Ehsan Tork</strong> ·
+      <time datetime="2025-11-18">November 18, 2025</time> ·
+      9–11 min read
+    </p>
+    <figure>
+      <img src="../assets/img/falkon-d4.png" alt="Dynabook D45 with Falkon browser on Omarchy 3.1.7 desktop" loading="lazy" />
+      <figcaption>Cover art generated in GPT-V: Falkon running on Dynabook D45 powered by Omarchy.</figcaption>
+    </figure>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <strong><i class="fas fa-list"></i> Contents</strong>
+    <a href="#quick-notes">Quick Notes & Why This Test</a>
+    <a href="#hardware-setup">Hardware & Base Setup</a>
+    <a href="#install-post">Install & Post-Install Checklist</a>
+    <a href="#browser-stack">Browser + Daily Web Stack</a>
+    <a href="#dev-workflow">Developer Workflow Benchmarks</a>
+    <a href="#observability">Observability & Metrics</a>
+    <a href="#issues-fixes">Issues, Workarounds & Remaining Gaps</a>
+    <a href="#verdict">Verdict After Four Days</a>
+  </nav>
+
+  <section id="quick-notes">
+    <h2>Quick Notes & Why This Test Exists</h2>
+    <p>
+      My <strong>Dynabook D45 (model K50/FP)</strong> has been hibernating since 2022. It is a 10-inch detachable with a
+      <code>Intel Celeron N4000</code>, <strong>4&nbsp;GB LPDDR4</strong>, and a modest eMMC that I replaced with a SATA SSD.
+      Instead of retiring it, I wanted a <strong>portable Omarchy jumpbox</strong> for browser debugging and lightweight Qt hacking.
+      Four days in, it now feels more responsive than some newer Celeron Chromebooks.
+    </p>
+    <ul>
+      <li><strong>Distribution</strong>: Omarchy 3.1.7 (Arch-based, with Hyprland 0.52.1 + Wayland).</li>
+      <li><strong>Kernel</strong>: 6.7.7-arch1-1, Zen tweaks enabled, <code>intel_pstate</code> in passive mode.</li>
+      <li><strong>Desktop</strong>: Hyprland with Gestures, Waybar, and a Dracula-tinted theme.</li>
+      <li><strong>Browser</strong>: Falkon daily, Chromium fallback, Zen Browser on ThinkPad for comparison.</li>
+      <li><strong>Memory Guard</strong>: EarlyOOM + zram-generator (2.8&nbsp;GB compressed swap) keeps the UI fluid.</li>
+    </ul>
+    <blockquote>
+      Dynabook’s magnesium & fanless chassis stays under 42 °C after hours of browsing and VS Code. The key is keeping RAM
+      churn <em>predictable</em>, not trying to turn it into an Alder Lake clone.
+    </blockquote>
+  </section>
+
+  <section id="hardware-setup">
+    <h2>Hardware &amp; Base Setup</h2>
+    <p>
+      Here is the baseline hardware after upgrades and firmware flashes. The BIOS is the latest Japanese release (2023-08),
+      secure boot disabled, VT-x on, and fan curves locked to “Quiet” so the tablet stays genuinely silent.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Details</th>
+          <th>Notes After 4 Days</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CPU</td>
+          <td>Intel Celeron N4000 (2C/2T, 6W TDP)</td>
+          <td>390 single / 610 multi in Geekbench 6. Under-volted by -45&nbsp;mV via intel-undervolt.</td>
+        </tr>
+        <tr>
+          <td>RAM</td>
+          <td>4&nbsp;GB LPDDR4 soldered</td>
+          <td>Idle: 1.6&nbsp;GB, Dev workload: 3.4&nbsp;GB. EarlyOOM kills background Falkon tabs first.</td>
+        </tr>
+        <tr>
+          <td>Storage</td>
+          <td>500&nbsp;GB SATA SSD (Crucial MX500)</td>
+          <td>Btrfs with compression=zstd:3 and 4 subvolumes (root, home, pkg, logs).</td>
+        </tr>
+        <tr>
+          <td>Display</td>
+          <td>1280x800 IPS touch @ 60 Hz</td>
+          <td>Touch works in Hyprland. Palm rejection still meh; gestures mapped to 3-finger swipes.</td>
+        </tr>
+        <tr>
+          <td>Battery</td>
+          <td>36 Wh</td>
+          <td>4h 10m mixed (Falkon + VS Code + SSH). Hyprland dimming saves ~0.6 W.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Omarchy’s kernel already ships with <code>intel-lpss</code> modules, so suspend/resume works out of the box.
+      I only had to add <code>i2c_hid</code> to <code>mkinitcpio.conf</code> HOOKS to prevent the touch digitizer from vanishing after resume.
+    </p>
+  </section>
+
+  <section id="install-post">
+    <h2>Install &amp; Post-Install Checklist</h2>
+    <p>
+      I used Ventoy on a ThinkPad to flash the latest Omarchy ISO. The entire setup, from wiping partitions to first boot, took 25 minutes.
+    </p>
+    <ol>
+      <li>Wiped the SSD with <code>sgdisk --zap-all /dev/sda</code> then created 512 MB EFI + 80 GB root + remaining home.</li>
+      <li>Mounted as Btrfs, created subvolumes, and enabled transparent compression.</li>
+      <li>Installed base packages + Hyprland profile and the “Laptop (Lite)” Omarchy meta package.</li>
+      <li>Enabled <code>systemd-boot</code> with unified kernel images so updates stay atomic.</li>
+      <li>Post install script installs EarlyOOM, tlp, powertop, falkon, chromium, nemo, zsh, zed, VS Code, Kate.</li>
+    </ol>
+    <p>
+      I keep a reproducible config (below) so the Dynabook can be re-flashed in under 15 minutes if I mess up dotfiles:
+    </p>
+    <pre><code class="language-bash">cat &lt;&lt;'EOF' &gt; ~/.config/hypr/hyprland.conf
+monitor = eDP-1,1280x800@60,0x0,1
+exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY
+exec-once = waybar &amp;
+exec-once = nm-applet --indicator
+exec-once = earlyoom -r 60 -m 5 -M 250
+input {
+  kb_layout = us
+  touchpad {
+    natural_scroll = true
+    tap = true
+  }
+}
+gestures {
+  workspace_swipe = true
+  workspace_swipe_fingers = 3
+}
+EOF</code></pre>
+    <p>
+      I also replaced Nautilus with <strong>Nemo</strong> for two reasons: (1) dual-pane view with single keystroke, (2) better SMB discovery when the Dynabook is tethered over USB-C.
+    </p>
+    <figure>
+      <img src="../assets/img/nemo-in-hyperland.png" alt="Nemo file manager with Dracula theme on Hyperland" loading="lazy" />
+      <figcaption>Nemo + Catppuccin icon pack. Waybar widgets show sensors, battery, LTE modem, and VPN status.</figcaption>
+    </figure>
+  </section>
+
+  <section id="browser-stack">
+    <h2>Browser + Daily Web Stack</h2>
+    <p>
+      I didn’t expect Falkon to become my daily driver again, but it won on this hardware. Memory accounting is predictable,
+      QtWebEngine is up-to-date (Chromium 122 base), and it renders Wayland-native windows.
+    </p>
+    <ul>
+      <li><strong>RAM usage</strong>: 180&nbsp;MB with one tab, 520&nbsp;MB with six heavy docs (GitHub, Figma mirror, JIRA).</li>
+      <li><strong>Process model</strong>: Each tab is its own QtWebEngine process, exactly like Chrome’s site isolation.</li>
+      <li><strong>Video</strong>: 720p60 YouTube uses 35–40% GPU, 48% CPU. 1080p30 is playable when laptop is plugged in.</li>
+      <li><strong>Extensions</strong>: Falkon scripts provide FoxyProxy-style per-tab proxy + uBlock equivalent.</li>
+      <li><strong>Chromium</strong>: I keep stable chromium for WebRTC-heavy meetings. Widevine works via flatpak extras.</li>
+    </ul>
+    <p>
+      Falkon profiles live under <code>~/.local/share/falkon/profiles</code>. I sync only the config folder with syncthing so cache stays local.
+    </p>
+    <h3>Network Tweaks</h3>
+    <p>
+      Dynabook’s Wi-Fi card (Intel 3165) hates crowded apartments. I forced the router into DFS channels and disabled power save:
+    </p>
+    <pre><code class="language-bash">sudo tee /etc/NetworkManager/conf.d/wifi-powersave.conf &lt;&lt;'EOF'
+[connection]
+wifi.powersave = 2
+EOF
+sudo systemctl restart NetworkManager</code></pre>
+    <p>
+      RTT to GitHub dropped from 92 ms to ~38 ms on 5 GHz once the card stopped sleeping mid-transfer.
+    </p>
+  </section>
+
+  <section id="dev-workflow">
+    <h2>Developer Workflow Benchmarks</h2>
+    <p>
+      The Dynabook is not replacing my ThinkPad T14 Gen 3, but it is now “good enough” for content edits, small Rust patches,
+      and Qt UI tweaks. Here is what I measured:
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Tooling</th>
+          <th>Duration / Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Repo sync (15k files)</td>
+          <td>git over SSH, delta</td>
+          <td>4m 12s on 40 Mbps tether, CPU-bound due to delta diffing.</td>
+        </tr>
+        <tr>
+          <td>Rust fmt + test</td>
+          <td>rustup stable, mold linker</td>
+          <td>cargo test --lib runs in 58s, fans never ramp (passive cooling).</td>
+        </tr>
+        <tr>
+          <td>VS Code + Cursor AI</td>
+          <td>OSS VS Code, cursor extension, sddm</td>
+          <td>1.1 GB RAM usage; still responsive. Copilot fix landed via Cursor plus remote SSH.</td>
+        </tr>
+        <tr>
+          <td>Kate IDE</td>
+          <td>Qt/C++ project (42 targets)</td>
+          <td>170 MB baseline, debugger + git blame + terminal + outline all open. Feels native.</td>
+        </tr>
+        <tr>
+          <td>Neovim + LazyVim</td>
+          <td>tree-sitter, lsp-zero</td>
+          <td>120 MB total; perfect for markdown + docs editing on battery.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      My container workflow uses <code>podman</code> with the <code>quadlet</code> generator so services start on login without systemd user units:
+    </p>
+    <pre><code class="language-bash">mkdir -p ~/.config/containers/systemd
+cat &lt;&lt;'EOF' &gt; ~/.config/containers/systemd/devbox.container
+[Unit]
+Description=Devcontainer for docs build
+
+[Container]
+Image=ghcr.io/journalehsan/mdbook:latest
+Volume=%h/work:/work
+WorkingDir=/work
+ContainerUser=1000
+AutoUpdate=registry
+
+[Install]
+WantedBy=default.target
+EOF
+systemctl --user enable --now devbox.container</code></pre>
+    <p>
+      On this hardware, Podman containers cold-start in 4–5 seconds. mdBook builds for my docs repo finish in ~32 seconds.
+    </p>
+  </section>
+
+  <section id="observability">
+    <h2>Observability &amp; Metrics</h2>
+    <p>
+      I captured the d4 fastfetch screen on day four. RAM + swap usage looks scary, but remember: zram is compressed and EarlyOOM provides a pressure-based kill switch.
+    </p>
+    <figure>
+      <img src="../assets/img/4th-day-d4-fastfetch.png" alt="Fastfetch output showing Dynabook D45 hardware, Omarchy, Hyperland and resource usage" loading="lazy" />
+      <figcaption>Fastfetch snapshot (18 h uptime, Omarchy 3.1.7, Hyprland 0.52.1, EarlyOOM 1.7).</figcaption>
+    </figure>
+    <p>
+      Key stats after four days of uptime:
+    </p>
+    <ul>
+      <li><strong>Boot to Hyprland</strong>: 22 s cold, 11 s after warm reboots (systemd-boot + UKI).</li>
+      <li><strong>Idle draw</strong>: 3.7 W (Wayland dim, Wi-Fi on). VS Code + Falkon pushes it to 6.2 W.</li>
+      <li><strong>Swap</strong>: 2.8 GB zram + 1.8 GB swapfile on SSD. Average compression ratio: 2.3×.</li>
+      <li><strong>Thermals</strong>: 37 °C idle, 46 °C sustained compile. Passive heatpipe is enough.</li>
+      <li><strong>Filesystem</strong>: Btrfs scrub every Sunday takes 9 minutes with negligible UI impact.</li>
+    </ul>
+    <p>
+      I graph memory pressure with Netdata cloud, but locally I rely on <code>hyprctl activewindow -j</code> + a custom Waybar module to show top offenders. Snippet:
+    </p>
+    <pre><code class="language-json">{
+  "custom/memwatch": {
+    "format": "{}",
+    "exec": "ps -eo pmem,comm --sort=-pmem | head -n 2 | tail -n 1",
+    "interval": 15,
+    "return-type": "json"
+  }
+}</code></pre>
+  </section>
+
+  <section id="issues-fixes">
+    <h2>Issues, Workarounds &amp; Remaining Gaps</h2>
+    <h3>What I fixed</h3>
+    <ul>
+      <li><strong>Touchscreen resume bug</strong>: add <code>i2c_hid</code> to initramfs + <code>udevadm trigger</code> on resume via <code>/lib/systemd/system-sleep</code> hook.</li>
+      <li><strong>Waybar battery flicker</strong>: explicit <code>BAT0</code> path in the Waybar config; Omarchy default looked for BAT1.</li>
+      <li><strong>NFC reader spam</strong>: blacklisted <code>pn533_usb</code> to avoid useless interrupts.</li>
+      <li><strong>Falkon keyring prompt</strong>: switched to KWallet via <code>qt5-webengine</code> flags so credentials sync silently.</li>
+    </ul>
+    <h3>Still rough</h3>
+    <ul>
+      <li><strong>External 4K monitor</strong>: MST hub works but Hyprland mirrors at 30 Hz. Need to test <code>wlr-randr</code> scripting.</li>
+      <li><strong>Pen digitizer</strong>: works only as a single button mouse; no pressure curve exposed.</li>
+      <li><strong>Zoom on Wayland</strong>: Electron apps still behave better on XWayland, so I keep Chromium around.</li>
+    </ul>
+  </section>
+
+  <section id="verdict">
+    <h2>Verdict After Four Days</h2>
+    <p>
+      Reviving the Dynabook D45 reminded me that <strong>architecture-aware choices beat raw specs</strong>.
+      Omarchy’s curation (Hyprland, zram, EarlyOOM, mold, pipewire) plus Falkon’s low overhead makes this tablet a totally usable field machine.
+    </p>
+    <ul>
+      <li>If you need a <strong>quiet note-taking / coding companion</strong>, this setup is excellent.</li>
+      <li>It is not for heavy Docker builds, but podman quadlets + mdBook / MkDocs tasks are fine.</li>
+      <li>The biggest win is predictable RAM behavior; no more random freezes thanks to EarlyOOM + zram.</li>
+    </ul>
+    <p>
+      Next steps: test an Intel AX210 Wi-Fi card and see if Hyprland gestures feel better with the latest libinput.
+      For now, the Dynabook is officially back in rotation—proving that <strong>good power delivery + tuned software &gt; raw benchmark flexes</strong>.
+    </p>
+  </section>
+
+  <footer class="meta" style="margin-top: 3rem; border-top: 1px solid rgba(226,232,240,0.1); padding-top: 1.5rem;">
+    <p><strong>Ehsan Tork</strong> — Field notes logged on day&nbsp;4 of uptime.</p>
+    <p>#Dynabook #Omarchy #Falkon #Hyperland #LinuxOnOldHardware</p>
+    <a class="back-link" href="../articles_list.html">
+      <i class="fas fa-newspaper"></i> Browse all articles
+    </a>
+  </footer>
+</article>
+
+<footer style="text-align:center; padding: 2rem 0; color: #94a3b8;">
+  <p>2016 journalehsan@github.io | Published under CC BY-NC-ND 3.0</p>
+  <p>Made with <i class="fas fa-heart" style="color:#ef4444;"></i> using TailwindCSS + Hyprland</p>
+</footer>
+
+</body>
+</html>
