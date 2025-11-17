@@ -172,17 +172,19 @@
         </section>
 
         <!-- Articles Grid -->
-        <section class="py-16 px-4" x-data="articlesApp()">
+        <section class="py-16 px-4" x-data="articlesApp()" x-init="init()">
             <div class="max-w-6xl mx-auto">
                 <!-- Featured Drop -->
                 <div
                     class="article-card flex flex-col md:flex-row overflow-hidden mb-12"
                 >
                     <div class="md:w-1/2 h-64 bg-gray-800">
-                        <a href="articles/dynabook_d45_omarchy_review.html">
+                        <a
+                            href="articles/best_keyboards_mice_linux_developers_2025.html"
+                        >
                             <img
-                                src="assets/img/falkon-d4.png"
-                                alt="Dynabook D45 running Omarchy 3.1.7 and Falkon"
+                                src="assets/img/keyboard_mouse_guide.png"
+                                alt="Best keyboards and mice for Linux developers"
                                 class="w-full h-full object-cover"
                                 loading="lazy"
                             />
@@ -192,44 +194,57 @@
                         <p
                             class="text-sm uppercase tracking-widest text-blue-400 mb-2"
                         >
-                            New Field Report
+                            New Hardware Guide
                         </p>
                         <h2 class="text-3xl font-bold mb-3 text-white">
-                            <a href="articles/dynabook_d45_omarchy_review.html"
-                                >4 Days with Dynabook D45 – Omarchy 3.1.7 +
-                                Falkon Review</a
+                            <a
+                                href="articles/best_keyboards_mice_linux_developers_2025.html"
+                                >Best Keyboards &amp; Mice for Developers on
+                                Linux (2025 Guide)</a
                             >
                         </h2>
                         <p class="text-gray-300 mb-4">
-                            Revived a Dynabook D45 (Celeron N4000) with Omarchy
-                            3.1.7, Hyperland, Falkon, EarlyOOM, and VS Code /
-                            Zed tests. Includes Fastfetch metrics, RAM and swap
-                            graphs, browser tuning, and workflow lessons learned
-                            after four days of uptime.
+                            Ranked the top five keyboard + mouse combos tested
+                            on Arch, Fedora, Hyprland, KDE, and GNOME. Includes
+                            scoring table, pros/cons, and recommendations for
+                            silent, mechanical, and enterprise workflows.
                         </p>
                         <div class="mb-5">
-                            <span class="tag">Dynabook</span>
-                            <span class="tag">Omarchy</span>
-                            <span class="tag">Hyperland</span>
-                            <span class="tag">Falkon</span>
+                            <span class="tag">Linux</span>
+                            <span class="tag">Hardware</span>
+                            <span class="tag">Productivity</span>
+                            <span class="tag">Ergonomics</span>
                         </div>
                         <div
                             class="flex items-center text-gray-400 text-sm mb-4"
                         >
                             <i class="far fa-calendar-alt mr-2"></i>
-                            <time datetime="2025-11-18">November 18, 2025</time>
+                            <time datetime="2025-11-24">November 24, 2025</time>
                             <span class="mx-2">·</span>
                             <i class="far fa-clock mr-2"></i>
-                            <span>9–11 min read</span>
+                            <span>8–10 min read</span>
                         </div>
                         <a
-                            href="articles/dynabook_d45_omarchy_review.html"
+                            href="articles/best_keyboards_mice_linux_developers_2025.html"
                             class="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold"
                         >
-                            Read the deep dive
+                            Read the new guide
                             <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
+                </div>
+
+                <div
+                    x-show="loading"
+                    class="text-center text-gray-400 mb-8"
+                >
+                    Loading articles...
+                </div>
+                <div
+                    x-show="!loading && !articles.length"
+                    class="text-center text-gray-400 mb-8"
+                >
+                    No articles published yet. Check back soon!
                 </div>
 
                 <!-- Articles Grid -->
@@ -351,11 +366,38 @@
         <script>
             function articlesApp() {
                 return {
-                    articles: articlesData || [],
+                    articles: window.articlesData || [],
                     currentPage: 1,
                     articlesPerPage: 6,
+                    loading: true,
+
+                    init() {
+                        if (window.articlesDataLoaded) {
+                            this.articles = window.articlesData;
+                            this.loading = false;
+                        } else if (this.articles.length) {
+                            this.loading = false;
+                        }
+
+                        document.addEventListener(
+                            "articles-data-ready",
+                            (event) => {
+                                this.articles = event.detail;
+                                this.currentPage = 1;
+                                this.loading = false;
+                            },
+                        );
+
+                        // Fallback timeout in case no event is fired
+                        setTimeout(() => {
+                            if (this.loading) {
+                                this.loading = false;
+                            }
+                        }, 1500);
+                    },
 
                     get totalPages() {
+                        if (!this.articles.length) return 1;
                         return Math.ceil(
                             this.articles.length / this.articlesPerPage,
                         );
@@ -383,6 +425,7 @@
                     },
 
                     formatDate(dateString) {
+                        if (!dateString) return "";
                         const options = {
                             year: "numeric",
                             month: "long",

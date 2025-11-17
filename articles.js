@@ -1,5 +1,25 @@
-// Articles data - Add new articles here
-const articlesData = [
+// Articles metadata loader
+window.articlesDataLoaded = false;
+window.articlesData = [
+  {
+    id: "best-keyboards-mice-linux-2025",
+    title: "Best Keyboards & Mice for Developers on Linux (2025 Guide)",
+    description:
+      "Hands-on ranking of Linux-friendly keyboard & mouse combos with scoring, pros/cons, and recommendations for silent, mechanical, and corporate workflows.",
+    author: "Ehsan Tork",
+    date: "2025-11-24",
+    readTime: "8-10 min",
+    coverImage: "assets/img/keyboard_mouse_guide.png",
+    url: "articles/best_keyboards_mice_linux_developers_2025.html",
+    tags: [
+      "Linux",
+      "Hardware",
+      "Productivity",
+      "Keychron",
+      "Logitech",
+      "Ergonomics",
+    ],
+  },
   {
     id: "dynabook-d45-omarchy-review",
     title: "4 Days with Dynabook D45 – Omarchy 3.1.7 + Falkon Review",
@@ -39,5 +59,23 @@ const articlesData = [
       "Developer Tools",
     ],
   },
-  // Add more articles here in the same format
 ];
+
+(async function loadArticlesJson() {
+  try {
+    const response = await fetch("articles.json", { cache: "no-cache" });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    const data = await response.json();
+    if (Array.isArray(data) && data.length) {
+      window.articlesData = data;
+      window.articlesDataLoaded = true;
+      document.dispatchEvent(
+        new CustomEvent("articles-data-ready", { detail: data }),
+      );
+    }
+  } catch (error) {
+    console.error("Failed to load articles.json:", error);
+  }
+})();
