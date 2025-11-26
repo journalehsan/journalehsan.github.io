@@ -2,6 +2,24 @@
 window.articlesDataLoaded = false;
 window.articlesData = [
   {
+    id: "beyond-prayers-for-peace",
+    title: "Beyond Prayers for Peace: How to Actually Build a Better World",
+    description:
+      "Opinionated field guide for swapping performative peace pleas with builder energy, trust capital, and AI-assisted civic tools that strengthen local foundations.",
+    author: "Ehsan Tork",
+    date: "2025-12-05",
+    readTime: "7-9 min",
+    coverImage: "assets/img/book-front.jpeg",
+    url: "articles/beyond_prayers_for_peace.html",
+    tags: [
+      "Builders",
+      "Trust",
+      "AI",
+      "Civic Tech",
+      "Open Source",
+    ],
+  },
+  {
     id: "best-keyboards-mice-linux-2025",
     title: "Best Keyboards & Mice for Developers on Linux (2025 Guide)",
     description:
