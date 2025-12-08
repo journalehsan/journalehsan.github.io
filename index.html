@@ -24,7 +24,7 @@
             src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
         ></script>
         <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
         <script>
             // Configure marked.js for better markdown rendering
             marked.setOptions({
@@ -2900,12 +2900,31 @@
                 
                 // Show loading state
                 btn.disabled = true;
-                btnText.textContent = 'Generating...';
+                btnText.textContent = 'Loading...';
                 btnIcon.className = 'fas fa-spinner fa-spin ml-2';
                 
-                try {
-                    const { jsPDF } = window.jspdf;
-                    const doc = new jsPDF();
+                // Wait a moment for jsPDF to fully load
+                setTimeout(() => {
+                    try {
+                        // Debug: Check what's available in window.jspdf
+                        console.log('window.jspdf:', window.jspdf);
+                        console.log('window.jspdf.jsPDF:', window.jspdf?.jsPDF);
+                        console.log('typeof window.jspdf:', typeof window.jspdf);
+                        
+                        // Check if jsPDF is loaded
+                        if (!window.jspdf) {
+                            throw new Error('jsPDF library not loaded properly. Please refresh the page and try again.');
+                        }
+                        
+                        // Try to create jsPDF instance
+                        let doc;
+                        if (window.jspdf.jsPDF) {
+                            doc = new window.jspdf.jsPDF();
+                        } else if (typeof window.jspdf === 'function') {
+                            doc = new window.jspdf();
+                        } else {
+                            throw new Error('jsPDF constructor not found');
+                        }
                 
                 // CV Data extracted from website
                 const cvData = {
@@ -3113,22 +3132,128 @@
                 doc.text("Generated from journalehsan.github.io", 20, 280);
                 doc.text(`Generated on ${new Date().toLocaleDateString()}`, 150, 280);
                 
-                // Save the PDF
-                doc.save("Ehsan_Tork_CV.pdf");
-                
-                // Reset button state
-                btn.disabled = false;
-                btnText.textContent = 'Download CV';
-                btnIcon.className = 'fas fa-download ml-2';
-                
-                } catch (error) {
-                    console.error('Error generating CV:', error);
-                    // Reset button state on error
+                    // Save the PDF
+                    doc.save("Ehsan_Tork_CV.pdf");
+                    
+                    // Reset button state
                     btn.disabled = false;
                     btnText.textContent = 'Download CV';
                     btnIcon.className = 'fas fa-download ml-2';
-                    alert('Error generating CV. Please try again.');
-                }
+                    
+                    } catch (error) {
+                        console.error('Error generating CV:', error);
+                        // Reset button state on error
+                        btn.disabled = false;
+                        btnText.textContent = 'Download CV';
+                        btnIcon.className = 'fas fa-download ml-2';
+                        // Fallback: create text-based CV
+                        if (confirm('PDF generation failed. Would you like to download a text version of your CV instead?')) {
+                            generateTextCV();
+                        } else {
+                            alert('Error generating CV: ' + error.message + '\n\nPlease try refreshing the page and clicking again.');
+                        }
+                    }
+                }, 500); // Wait 500ms for jsPDF to load
+            }
+
+            // Fallback text CV generation
+            function generateTextCV() {
+                const cvText = `
+EHsan Tork - Full-Stack Developer & Open Source Enthusiast
+
+CONTACT INFORMATION
+Email: journalehsan@gmail.com
+Phone: +98 9128571596
+Location: Tehran, Iran
+Website: journalehsan.github.io
+GitHub: github.com/journalehsan
+
+PROFESSIONAL SUMMARY
+Passionate Full-Stack Developer with 15+ years of experience in web development, desktop applications, and open source software. Specialized in Rust, TypeScript, Laravel, and modern web technologies. Linux user since 2008 with strong background in enterprise solutions.
+
+PROFESSIONAL EXPERIENCE
+
+Irancell ICI (2022 - Present)
+Vendor Developer
+Developing solutions using Python/PySide, Laravel, Rust for backend, React and TypeScript for frontend, and Iced/Slint for client-side applications across Linux, Windows, and Mac.
+Technologies: Rust, Python, PySide, Laravel, React, TypeScript, Iced, Slint, .NET Core
+
+Dena (2022)
+Full-Stack Developer
+Developed gift card solutions (Kadona) for Parsian Bank and an online shop using Laravel.
+Technologies: Laravel, E-commerce, Payment Systems, Gift Cards
+
+Shimico (2021-2022)
+Backend Developer
+Worked on a chemical market startup with a poorly designed Laravel codebase. Improved spaghetti code step by step despite time constraints.
+Technologies: Laravel, Legacy Code, Refactoring
+
+Taknet (2021 - 6 months)
+Cloud Developer
+Worked on Virak Cloud, a Digital Ocean-like cloud solution using Python, PHP/Laravel, and React.
+Technologies: Python, Laravel, React, Cloud Computing
+
+Pishkhan Iranian (2019-2021)
+Full-Stack Developer
+Developed websites and web applications for governmental offices, including registration systems and payment solutions. Created a self-hosted login system using Office ID.
+Technologies: C#, JavaScript, Firefox Extension, POS Systems, Security, SSO
+
+Tosan Motors (2017-2019)
+Software Developer
+Developed Laravel backend and Python services to communicate with electronic motorcycles. Created Android applications using Qt/C++.
+Technologies: Laravel, Python, Qt, C++, Android, IoT
+
+Karina Mobile Solution (2015-2017)
+Web Developer
+Worked on developing a Google AdSense-like platform. Built websites using WordPress and developed plugins.
+Technologies: WordPress, PHP, Plugin Development, Ad Platform
+
+Vada Company (2015)
+VAS Developer
+Worked at a VAS (Value Added Service) company managing SMS gateways, monitoring sent/unsubscription actions, and handling daily message campaigns.
+Technologies: SMS Gateway, Telecom, VAS
+
+Islamic Azad University (Part-time)
+IT Support
+Provided IT support for systems and servers at university's Hamadan branch.
+Technologies: IT Support, Server Management, System Administration
+
+Ahoora Advertisements (2010)
+Web Developer
+My first full-time job at an advertisement solutions company where I developed websites using WordPress/PHP and ASP.NET with Dreamweaver/Aptana Studio.
+Technologies: WordPress, PHP, ASP.NET, VB, C#, Delphi, Dreamweaver
+
+TECHNICAL SKILLS
+
+Programming Languages: Rust, TypeScript, Python, C#, PHP, C++, Java, Go
+Frameworks & Libraries: React, Laravel, Qt, Iced, Slint, TailwindCSS, .NET Core
+Tools & Platforms: Git, Linux, Arch Linux, Neovim, Docker, AWS
+
+ADDITIONAL INFORMATION
+Education: Linux user since 2008 • Started with Red Hat 6
+Languages: Persian (Native), English (Professional), Azeri (Native)
+
+Generated from journalehsan.github.io on ${new Date().toLocaleDateString()}
+`;
+
+                // Create and download text file
+                const blob = new Blob([cvText], { type: 'text/plain' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Ehsan_Tork_CV.txt';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+                
+                // Reset button state
+                const btn = document.getElementById('cv-download-btn');
+                const btnText = document.getElementById('cv-btn-text');
+                const btnIcon = document.getElementById('cv-btn-icon');
+                btn.disabled = false;
+                btnText.textContent = 'Download CV';
+                btnIcon.className = 'fas fa-download ml-2';
             }
         </script>
     </body>
