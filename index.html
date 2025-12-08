@@ -24,6 +24,7 @@
             src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
         ></script>
         <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
         <script>
             // Configure marked.js for better markdown rendering
             marked.setOptions({
@@ -613,6 +614,15 @@
                         Get in Touch
                         <i class="fas fa-envelope ml-2"></i>
                     </a>
+                    <button
+                        id="cv-download-btn"
+                        onclick="generateCV()"
+                        class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 mx-2"
+                        aria-label="Download CV as PDF"
+                    >
+                        <span id="cv-btn-text">Download CV</span>
+                        <i id="cv-btn-icon" class="fas fa-download ml-2"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -2880,6 +2890,245 @@
                         return html;
                     },
                 };
+            }
+
+            // CV Generation Function
+            function generateCV() {
+                const btn = document.getElementById('cv-download-btn');
+                const btnText = document.getElementById('cv-btn-text');
+                const btnIcon = document.getElementById('cv-btn-icon');
+                
+                // Show loading state
+                btn.disabled = true;
+                btnText.textContent = 'Generating...';
+                btnIcon.className = 'fas fa-spinner fa-spin ml-2';
+                
+                try {
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF();
+                
+                // CV Data extracted from website
+                const cvData = {
+                    name: "Ehsan Tork",
+                    title: "Full-Stack Developer & Open Source Enthusiast",
+                    contact: {
+                        email: "journalehsan@gmail.com",
+                        phone: "+98 9128571596",
+                        location: "Tehran, Iran",
+                        website: "journalehsan.github.io",
+                        github: "github.com/journalehsan"
+                    },
+                    summary: "Passionate Full-Stack Developer with 15+ years of experience in web development, desktop applications, and open source software. Specialized in Rust, TypeScript, Laravel, and modern web technologies. Linux user since 2008 with strong background in enterprise solutions.",
+                    experience: [
+                        {
+                            company: "Irancell ICI",
+                            position: "Vendor Developer",
+                            period: "2022 - Present",
+                            description: "Developing solutions using Python/PySide, Laravel, Rust for backend, React and TypeScript for frontend, and Iced/Slint for client-side applications across Linux, Windows, and Mac.",
+                            technologies: ["Rust", "Python", "PySide", "Laravel", "React", "TypeScript", "Iced", "Slint", ".NET Core"]
+                        },
+                        {
+                            company: "Dena",
+                            position: "Full-Stack Developer",
+                            period: "2022",
+                            description: "Developed gift card solutions (Kadona) for Parsian Bank and an online shop using Laravel.",
+                            technologies: ["Laravel", "E-commerce", "Payment Systems", "Gift Cards"]
+                        },
+                        {
+                            company: "Shimico",
+                            position: "Backend Developer",
+                            period: "2021-2022",
+                            description: "Worked on a chemical market startup with a poorly designed Laravel codebase. Improved the spaghetti code step by step despite time constraints.",
+                            technologies: ["Laravel", "Legacy Code", "Refactoring"]
+                        },
+                        {
+                            company: "Taknet",
+                            position: "Cloud Developer",
+                            period: "2021 (6 months)",
+                            description: "Worked on Virak Cloud, a Digital Ocean-like cloud solution using Python, PHP/Laravel, and React.",
+                            technologies: ["Python", "Laravel", "React", "Cloud Computing"]
+                        },
+                        {
+                            company: "Pishkhan Iranian",
+                            position: "Full-Stack Developer",
+                            period: "2019-2021",
+                            description: "Developed websites and web applications for governmental offices, including registration systems and payment solutions. Created a self-hosted login system using Office ID.",
+                            technologies: ["C#", "JavaScript", "Firefox Extension", "POS Systems", "Security", "SSO"]
+                        },
+                        {
+                            company: "Tosan Motors",
+                            position: "Software Developer",
+                            period: "2017-2019",
+                            description: "Developed Laravel backend and Python services to communicate with electronic motorcycles. Created Android applications using Qt/C++.",
+                            technologies: ["Laravel", "Python", "Qt", "C++", "Android", "IoT"]
+                        },
+                        {
+                            company: "Karina Mobile Solution",
+                            position: "Web Developer",
+                            period: "2015-2017",
+                            description: "Worked on developing a Google AdSense-like platform. Built websites using WordPress and developed plugins.",
+                            technologies: ["WordPress", "PHP", "Plugin Development", "Ad Platform"]
+                        },
+                        {
+                            company: "Vada Company",
+                            position: "VAS Developer",
+                            period: "2015",
+                            description: "Worked at a VAS (Value Added Service) company managing SMS gateways, monitoring sent/unsubscription actions, and handling daily message campaigns.",
+                            technologies: ["SMS Gateway", "Telecom", "VAS"]
+                        },
+                        {
+                            company: "Islamic Azad University",
+                            position: "IT Support",
+                            period: "Part-time",
+                            description: "Provided IT support for systems and servers at the university's Hamadan branch.",
+                            technologies: ["IT Support", "Server Management", "System Administration"]
+                        },
+                        {
+                            company: "Ahoora Advertisements",
+                            position: "Web Developer",
+                            period: "2010",
+                            description: "My first full-time job at an advertisement solutions company where I developed websites using WordPress/PHP and ASP.NET with Dreamweaver/Aptana Studio.",
+                            technologies: ["WordPress", "PHP", "ASP.NET", "VB", "C#", "Delphi", "Dreamweaver"]
+                        }
+                    ],
+                    skills: {
+                        languages: ["Rust", "TypeScript", "Python", "C#", "PHP", "C++", "Java", "Go"],
+                        frameworks: ["React", "Laravel", "Qt", "Iced", "Slint", "TailwindCSS", ".NET Core"],
+                        tools: ["Git", "Linux", "Arch Linux", "Neovim", "Docker", "AWS"]
+                    },
+                    education: "Linux user since 2008 • Started with Red Hat 6",
+                    languages: ["Persian (Native)", "English (Professional)", "Azeri (Native)"]
+                };
+
+                // PDF Generation
+                let yPosition = 20;
+                const lineHeight = 7;
+                const sectionSpacing = 10;
+                
+                // Helper function to add text with word wrap
+                function addText(text, x, y, maxWidth = 170) {
+                    const lines = doc.splitTextToSize(text, maxWidth);
+                    doc.text(lines, x, y);
+                    return lines.length * lineHeight;
+                }
+                
+                // Header
+                doc.setFontSize(24);
+                doc.setFont(undefined, 'bold');
+                doc.text(cvData.name, 20, yPosition);
+                yPosition += 10;
+                
+                doc.setFontSize(14);
+                doc.setFont(undefined, 'normal');
+                doc.text(cvData.title, 20, yPosition);
+                yPosition += 8;
+                
+                // Contact Information
+                doc.setFontSize(10);
+                doc.text(`Email: ${cvData.contact.email} | Phone: ${cvData.contact.phone}`, 20, yPosition);
+                yPosition += 5;
+                doc.text(`Location: ${cvData.contact.location} | Website: ${cvData.contact.website}`, 20, yPosition);
+                yPosition += 5;
+                doc.text(`GitHub: ${cvData.contact.github}`, 20, yPosition);
+                yPosition += sectionSpacing;
+                
+                // Summary
+                doc.setFontSize(12);
+                doc.setFont(undefined, 'bold');
+                doc.text("Professional Summary", 20, yPosition);
+                yPosition += 6;
+                doc.setFont(undefined, 'normal');
+                yPosition += addText(cvData.summary, 20, yPosition);
+                yPosition += sectionSpacing;
+                
+                // Experience
+                doc.setFont(undefined, 'bold');
+                doc.text("Professional Experience", 20, yPosition);
+                yPosition += 8;
+                
+                cvData.experience.forEach((exp, index) => {
+                    if (yPosition > 250) {
+                        doc.addPage();
+                        yPosition = 20;
+                    }
+                    
+                    doc.setFont(undefined, 'bold');
+                    doc.setFontSize(11);
+                    doc.text(`${exp.position} - ${exp.company}`, 20, yPosition);
+                    yPosition += 5;
+                    
+                    doc.setFont(undefined, 'normal');
+                    doc.setFontSize(10);
+                    doc.text(exp.period, 20, yPosition);
+                    yPosition += 5;
+                    
+                    yPosition += addText(exp.description, 20, yPosition);
+                    yPosition += 3;
+                    
+                    doc.text(`Technologies: ${exp.technologies.join(", ")}`, 20, yPosition);
+                    yPosition += 8;
+                });
+                
+                // Skills
+                if (yPosition > 220) {
+                    doc.addPage();
+                    yPosition = 20;
+                }
+                
+                doc.setFont(undefined, 'bold');
+                doc.setFontSize(12);
+                doc.text("Technical Skills", 20, yPosition);
+                yPosition += 8;
+                
+                doc.setFont(undefined, 'normal');
+                doc.setFontSize(10);
+                doc.text("Programming Languages:", 20, yPosition);
+                yPosition += 5;
+                doc.text(cvData.skills.languages.join(", "), 25, yPosition);
+                yPosition += 8;
+                
+                doc.text("Frameworks & Libraries:", 20, yPosition);
+                yPosition += 5;
+                doc.text(cvData.skills.frameworks.join(", "), 25, yPosition);
+                yPosition += 8;
+                
+                doc.text("Tools & Platforms:", 20, yPosition);
+                yPosition += 5;
+                doc.text(cvData.skills.tools.join(", "), 25, yPosition);
+                yPosition += sectionSpacing;
+                
+                // Additional Information
+                doc.setFont(undefined, 'bold');
+                doc.text("Additional Information", 20, yPosition);
+                yPosition += 6;
+                
+                doc.setFont(undefined, 'normal');
+                doc.text(`Education: ${cvData.education}`, 20, yPosition);
+                yPosition += 5;
+                doc.text(`Languages: ${cvData.languages.join(", ")}`, 20, yPosition);
+                yPosition += 8;
+                
+                // Footer
+                doc.setFontSize(8);
+                doc.text("Generated from journalehsan.github.io", 20, 280);
+                doc.text(`Generated on ${new Date().toLocaleDateString()}`, 150, 280);
+                
+                // Save the PDF
+                doc.save("Ehsan_Tork_CV.pdf");
+                
+                // Reset button state
+                btn.disabled = false;
+                btnText.textContent = 'Download CV';
+                btnIcon.className = 'fas fa-download ml-2';
+                
+                } catch (error) {
+                    console.error('Error generating CV:', error);
+                    // Reset button state on error
+                    btn.disabled = false;
+                    btnText.textContent = 'Download CV';
+                    btnIcon.className = 'fas fa-download ml-2';
+                    alert('Error generating CV. Please try again.');
+                }
             }
         </script>
     </body>
