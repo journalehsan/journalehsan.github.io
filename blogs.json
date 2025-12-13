@@ -1,5 +1,27 @@
 [
   {
+    "id": 13,
+    "title": "🌍 The Punished Developer: How AI Sanctions Target Us, Not Governments",
+    "slug": "punished-developer-ai-sanctions",
+    "excerpt": "Born in Iran, living in Germany—but my Google account is forever 'Iranian.' This is the survival guide for developers crushed by digital sanctions: how to build a sanctions-proof stack with Zed, DeepSeek, GLM-4, and OpenRouter while saving 70% on AI costs.",
+    "author": "Ehsan Tork",
+    "date": "2025-12-13",
+    "readTime": "15 min read",
+    "tags": [
+      "AI Sanctions",
+      "Developer Rights",
+      "Open Source AI",
+      "Zed Editor",
+      "DeepSeek",
+      "GLM-4",
+      "Digital Freedom"
+    ],
+    "thumbnail": "assets/img/rust-codex-gpt.png",
+    "images": ["assets/img/rust-codex-gpt.png"],
+    "content": "blog-posts/punished-developer-ai-sanctions.md",
+    "published": true
+  },
+  {
     "id": 1,
     "title": "The Art of Desktop Ergonomics: Micro-Tweaks That Transform Your Workflow",
     "slug": "desktop-ergonomics-micro-tweaks",
