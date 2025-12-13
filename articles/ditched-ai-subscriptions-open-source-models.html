@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why I Ditched $20/Month AI Subscriptions for Open Source Models (And Saved 90%)</title>
+    <meta name="description" content="How I slashed my AI costs from $50-70/month to $13-30/month by switching from premium subscriptions to open source models like DeepSeek, GLM-4, and OpenRouter.">
+    <meta name="author" content="Ehsan Tork">
+    <link rel="canonical" href="https://journalehsan.github.io/articles/ditched-ai-subscriptions-open-source-models.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3B82F6",
+                        secondary: "#8B5CF6",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        .code-font {
+            font-family: "Fira Code", monospace;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #81e6d9, #38bdf8);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 3s linear infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .prose {
+            max-width: none;
+        }
+
+        .prose h1, .prose h2, .prose h3 {
+            color: #f7fafc;
+            font-weight: 700;
+        }
+
+        .prose h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .prose h2 { font-size: 2rem; margin-top: 3rem; margin-bottom: 1.5rem; }
+        .prose h3 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; }
+
+        .prose p {
+            margin-bottom: 1.5rem;
+            color: #e2e8f0;
+        }
+
+        .prose strong {
+            color: #63b3ed;
+            font-weight: 600;
+        }
+
+        .prose ul, .prose ol {
+            margin-bottom: 1.5rem;
+            color: #e2e8f0;
+        }
+
+        .prose li {
+            margin-bottom: 0.5rem;
+        }
+
+        .prose blockquote {
+            border-left: 4px solid #4299e1;
+            padding-left: 1rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #a0aec0;
+        }
+
+        .prose code {
+            background: rgba(66, 153, 225, 0.1);
+            color: #63b3ed;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        .prose pre {
+            background: #1a202c;
+            border: 1px solid rgba(66, 153, 225, 0.2);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        .prose pre code {
+            background: none;
+            color: #e2e8f0;
+            padding: 0;
+        }
+
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #63b3ed;
+        }
+
+        .cost-box {
+            background: rgba(66, 153, 225, 0.1);
+            border: 1px solid rgba(66, 153, 225, 0.3);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            margin: 0.25rem;
+            background: rgba(66, 153, 225, 0.2);
+            border: 1px solid rgba(66, 153, 225, 0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-gray-900 bg-opacity-90 z-50 py-4">
+        <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold gradient-text">Ehsan Tork's Journal</a>
+            <div class="flex items-center space-x-6">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="index.html#blog" class="nav-link"><i class="fas fa-blog"></i> Blog</a>
+                <a href="articles.html" class="nav-link"><i class="fas fa-newspaper"></i> Articles</a>
+                <a href="index.html#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <article class="pt-32 pb-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <header class="mb-12">
+                <div class="mb-6">
+                    <span class="tag">AI Tools</span>
+                    <span class="tag">Open Source</span>
+                    <span class="tag">Cost Optimization</span>
+                    <span class="tag">Developer Workflow</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+                    Why I Ditched $20/Month AI Subscriptions for Open Source Models (And Saved 90%)
+                </h1>
+                <div class="flex items-center text-gray-400 mb-8">
+                    <i class="far fa-calendar-alt mr-2"></i>
+                    <time datetime="2025-12-13">December 13, 2025</time>
+                    <span class="mx-2">·</span>
+                    <i class="far fa-clock mr-2"></i>
+                    <span>12-15 min read</span>
+                    <span class="mx-2">·</span>
+                    <i class="fas fa-user mr-2"></i>
+                    <span>Ehsan Tork</span>
+                </div>
+            </header>
+
+            <!-- Article Body -->
+            <div class="prose prose-lg">
+                <h2>The AI Subscription Trap</h2>
+                <p>Like many developers, I used to think premium AI subscriptions were essential. I was juggling:</p>
+                <ul>
+                    <li><strong>Cursor Pro</strong>: $20/month</li>
+                    <li><strong>Claude Pro</strong>: $20/month</li>
+                    <li><strong>GitHub Copilot</strong>: $10/month</li>
+                    <li><strong>GPT-4</strong>: Pay-per-use ($10-20/month)</li>
+                    <li><strong>Total</strong>: $50-70/month with "subscription anxiety"</li>
+                </ul>
+                <p>Every time I hit a rate limit or needed "just one more complex task," I felt that familiar dread: <em>"Is this worth the tokens?"</em> I was rationing AI usage like expensive medicine.</p>
+
+                <h2>My Open Source AI Revolution</h2>
+                <p>Then I discovered the open model ecosystem. Here's my current setup:</p>
+
+                <h3>🎯 Primary Workflow (95% of tasks)</h3>
+                <ul>
+                    <li><strong>DeepSeek-V3.1-N1</strong>: Free tier through OpenRouter</li>
+                    <li><strong>GLM-4 Pro</strong>: Quarter plan ($40 for 3 months = ~$13/month)</li>
+                    <li><strong>Total base cost</strong>: ~$13/month for unlimited, anxiety-free usage</li>
+                </ul>
+
+                <h3>🚀 Specialized Boosters</h3>
+                <p>When I need extra power:</p>
+                <ul>
+                    <li><strong>DeepSeek-R1</strong>: $3.2/M for reasoning-heavy tasks (pay-as-you-go)</li>
+                    <li><strong>GPT-4o mini vision</strong>: Pennies per screenshot analysis</li>
+                    <li><strong>Total occasional cost</strong>: $5-10/month</li>
+                </ul>
+
+                <h3>🛡️ Backup Arsenal</h3>
+                <p>For those "just in case" moments:</p>
+                <ul>
+                    <li><strong>Cursor Free</strong>: When I want their specific agent features</li>
+                    <li><strong>Copilot Free</strong>: For lightweight completions</li>
+                    <li><strong>Total backup cost</strong>: $0 (used sparingly)</li>
+                </ul>
+
+                <h3>🎨 Vision Pipeline (My Secret Weapon)</h3>
+                <p>Screenshot → GPT-4o free/Grok (visual analysis) → Prompt → DeepSeek/GLM (code generation) = <strong>Professional vision AI at 10% of the cost</strong></p>
+
+                <h2>💰 The Real Cost Breakdown</h2>
+                <div class="cost-box">
+                    <pre><code>MY OLD STACK (ANXIETY INDUCING):
+- Fixed subscriptions: $50/month minimum
+- Extra token anxiety: "Should I use this?"
+- Locked into 2-3 models only
+- Annual cost: $600+ (often more)
+
+MY NEW STACK (FREEDOM):
+- GLM-4 Pro quarterly: ~$13/month
+- DeepSeek-R1 pay-as-you-go: ~$5/month (when needed)
+- Vision fallback: ~$2/month
+- Backup editors: $0-10/month (only when rushed)
+- Annual average: $30-40/month = $360-480/year
+
+SAVINGS: 40-50% immediately, 90% with careful usage</code></pre>
+                </div>
+                <p>The real magic? <strong>No subscription anxiety</strong>. I use AI freely for small questions, large refactors, and everything between.</p>
+
+                <h2>🚨 The Claude Code Reality Check</h2>
+                <p>Claude Code users face brutal limitations:</p>
+                <ul>
+                    <li><strong>$100+ monthly commitment</strong> for serious usage</li>
+                    <li><strong>Only 3 models available</strong> (locked ecosystem)</li>
+                    <li><strong>No fine-grained cost control</strong></li>
+                    <li><strong>"Sorry, exceeded context"</strong> = productivity killer</li>
+                </ul>
+                <p>Meanwhile, my open source arsenal gives me access to:</p>
+                <ul>
+                    <li><strong>Claude-3.5-Sonnet</strong> (when I really need it via OpenRouter)</li>
+                    <li><strong>Codex models</strong> with adjustable quality/cost levels</li>
+                    <li><strong>Avante, Kilo Code, Cline, OpenCode</strong> - specialized coding models</li>
+                    <li><strong>10+ different models</strong> to match specific tasks</li>
+                </ul>
+
+                <h2>🎯 Model-Switching Superpower</h2>
+                <p>The game-changer isn't any single model—it's the <strong>ability to switch instantly</strong>:</p>
+                <ol>
+                    <li><strong>DeepSeek rate limited?</strong> → Switch to GLM-4</li>
+                    <li><strong>GLM struggling with logic?</strong> → Boost to DeepSeek-R1 ($3.2/M)</li>
+                    <li><strong>Need vision?</strong> → GPT-4o mini → prompt → back to DeepSeek</li>
+                    <li><strong>Editor-specific feature?</strong> → Quick Cursor session → export code</li>
+                </ol>
+                <p>This "AI orchestra" approach means I always have the right tool, never waste tokens on the wrong model, and maintain complete cost control.</p>
+
+                <h2>📈 My Actual Usage & Savings</h2>
+                <div class="cost-box">
+                    <pre><code>2024 (PRE-OPEN SOURCE):
+- Average: $50-70/month
+- Rush months: $100+
+- Annual: ~$800
+- Constant anxiety, rationing usage
+
+2025 (OPEN SOURCE ERA):
+- Base: $13/month (GLM quarterly)
+- Average: $20-30/month (with DeepSeek pay-go)
+- Rush months: $50-60 (adding Cursor/Copilot)
+- Annual estimate: $300-400
+- Zero anxiety, free experimentation</code></pre>
+                </div>
+                <p><strong>Key insight:</strong> Some months I pay nothing beyond my GLM quarterly. Other months, when deadlines loom, I'll add Cursor ($20) and Copilot ($10) temporarily. This <strong>flexibility</strong> is impossible with locked subscriptions.</p>
+
+                <h2>🌟 The Hidden Benefits</h2>
+
+                <h3>1. No More "Demo Magic" Disappointment</h3>
+                <p>Many premium AI demos are fine-tuned on specific prompts. Real-world performance often disappoints. With open models, I can test multiple options and find what <strong>actually works</strong> for my workflow.</p>
+
+                <h3>2. Community-Powered Improvement</h3>
+                <p>Open models improve through community feedback and fine-tuning. I'm not just a consumer—I can participate in shaping the tools.</p>
+
+                <h3>3. Future-Proof Architecture</h3>
+                <p>When DeepSeek/Qwen add vision (expected 2025), my workflow gets even cheaper. I'm not locked into any vendor's roadmap.</p>
+
+                <h3>4. True "AI Craftsmanship"</h3>
+                <p>I've learned which models excel at:</p>
+                <ul>
+                    <li><strong>Debugging</strong>: DeepSeek-R1</li>
+                    <li><strong>Refactoring</strong>: GLM-4</li>
+                    <li><strong>Boilerplate</strong>: Codex-small (cheap!)</li>
+                    <li><strong>Complex logic</strong>: Mix of models</li>
+                </ul>
+                <p>This knowledge makes me more effective than any single-model subscription ever could.</p>
+
+                <h2>🚀 How to Make the Switch</h2>
+
+                <h3>Step 1: Start Free</h3>
+                <ol>
+                    <li>Sign up for OpenRouter</li>
+                    <li>Try DeepSeek-V3.1-N1 (free tier)</li>
+                    <li>Experiment for a week</li>
+                </ol>
+
+                <h3>Step 2: Add Strategic Paid</h3>
+                <ol>
+                    <li>Get GLM-4 quarterly plan ($40/3 months)</li>
+                    <li>Set up Zed editor with OpenRouter</li>
+                    <li>Create model-switching shortcuts</li>
+                </ol>
+
+                <h3>Step 3: Optimize Your Pipeline</h3>
+                <ol>
+                    <li>Screenshots → GPT-4o free → DeepSeek</li>
+                    <li>Complex tasks → DeepSeek-R1 ($3.2/M)</li>
+                    <li>Daily coding → GLM-4/DeepSeek-free</li>
+                </ol>
+
+                <h3>Step 4: Keep Premiums as "Specialty Tools"</h3>
+                <ul>
+                    <li><strong>Cursor</strong>: Only when their agents are crucial</li>
+                    <li><strong>Copilot</strong>: Only during crunch time</li>
+                    <li><strong>Claude</strong>: Via OpenRouter, pay-per-use when truly needed</li>
+                </ul>
+
+                <h2>💎 The Ultimate Realization</h2>
+                <p>I'm not paying for AI anymore—I'm <strong>investing in a toolkit</strong>. Each model is a specialized instrument. Some days I only need the free ones. Some projects require the premium boosters. But I <strong>control the costs</strong>, not the AI companies.</p>
+                <p><strong>The $20/month subscription model is dying.</strong> It's being replaced by:</p>
+                <ul>
+                    <li><strong>Open models</strong> (free/cheap)</li>
+                    <li><strong>Pay-as-you-go</strong> (real usage)</li>
+                    <li><strong>Model switching</strong> (right tool, right job)</li>
+                    <li><strong>Community intelligence</strong> (shared knowledge)</li>
+                </ul>
+
+                <h2>📢 Your Turn to Break Free</h2>
+                <p>Stop rationing your AI usage. Stop paying for "demo magic" that doesn't match reality. Stop being locked into 2-3 models when dozens exist.</p>
+                <p><strong>Try this for one week:</strong></p>
+                <ol>
+                    <li>Use DeepSeek-free for everything</li>
+                    <li>Add GLM-4 when you hit limits</li>
+                    <li>Use GPT-4o free for vision tasks</li>
+                    <li><strong>Track your satisfaction vs cost</strong></li>
+                </ol>
+                <p>I guarantee you'll discover what I did: <strong>Open source AI isn't just cheaper—it's better.</strong> Because freedom, flexibility, and control will always beat locked gardens, no matter how pretty they look.</p>
+
+                <blockquote>
+                    <p>Want my exact Zed setup, model-switching shortcuts, or cost-tracking spreadsheet? Let me know—I'm happy to share everything. The AI revolution should be open to all developers, not just those with big budgets.</p>
+                </blockquote>
+
+                <p><strong>Join the open AI movement. Your wallet—and your productivity—will thank you.</strong> 🚀</p>
+
+                <h2>🔗 Quick Start Resources:</h2>
+                <ul>
+                    <li><a href="https://openrouter.ai" style="color: #63b3ed;">OpenRouter</a> (Model marketplace)</li>
+                    <li><a href="https://platform.deepseek.com" style="color: #63b3ed;">DeepSeek</a> (Free tier)</li>
+                    <li><a href="https://zed.dev" style="color: #63b3ed;">Zed Editor</a> (Native AI integration)</li>
+                    <li><strong>My Workflow Guide</strong> (Coming soon!)</li>
+                </ul>
+
+                <p><em>P.S. Claude Code users spending $100+/month: Imagine what you could build with that $600-1200/year in your pocket instead of theirs.</em></p>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-16 pt-8 border-t border-gray-700">
+                <div class="flex justify-between items-center mb-8">
+                    <a href="articles.html" class="text-blue-400 hover:text-blue-300 font-semibold">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to Articles
+                    </a>
+                    <div class="flex space-x-4">
+                        <a href="index.html#blog" class="text-blue-400 hover:text-blue-300">
+                            <i class="fas fa-blog"></i> Blog
+                        </a>
+                        <a href="index.html#contact" class="text-blue-400 hover:text-blue-300">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center text-gray-400">
+                    <p class="code-font mb-2">// Keep coding and evolving with technology</p>
+                    <p class="mb-2">2016 journalehsan@github.io | Published Under CCbyNCND 3.0</p>
+                    <p>Made with <i class="fas fa-heart text-red-500"></i> using TailwindCSS</p>
+                </div>
+            </footer>
+        </div>
+    </article>
+</body>
+</html>

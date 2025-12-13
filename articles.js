@@ -2,6 +2,25 @@
 window.articlesDataLoaded = false;
 window.articlesData = [
   {
+    id: "ditched-ai-subscriptions-open-source-models",
+    title: "Why I Ditched $20/Month AI Subscriptions for Open Source Models (And Saved 90%)",
+    description:
+      "How I slashed my AI costs from $50-70/month to $13-30/month by switching from premium subscriptions to open source models like DeepSeek, GLM-4, and OpenRouter.",
+    author: "Ehsan Tork",
+    date: "2025-12-13",
+    readTime: "12-15 min",
+    coverImage: "assets/img/rust-codex-gpt.png",
+    url: "articles/ditched-ai-subscriptions-open-source-models.html",
+    tags: [
+      "AI Tools",
+      "Open Source",
+      "Cost Optimization",
+      "Developer Workflow",
+      "DeepSeek",
+      "GLM-4",
+    ],
+  },
+  {
     id: "beyond-prayers-for-peace",
     title: "Beyond Prayers for Peace: How to Actually Build a Better World",
     description:
