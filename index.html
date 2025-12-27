@@ -3156,183 +3156,245 @@
                     languages: ["Persian (Native)", "English (Professional)", "Azeri (Native)"]
                 };
 
-                // PDF Generation - Enhanced Layout with Profile Image
-                let yPosition = 20;
+                // PDF Generation - Enhanced Professional Layout
+                let yPosition = 0;
                 const lineHeight = 6;
                 const sectionSpacing = 12;
                 const pageWidth = 210;
                 const margin = 15;
                 const contentWidth = pageWidth - (margin * 2);
+                const primaryColor = [59, 130, 246]; // Blue
+                const secondaryColor = [30, 41, 59]; // Dark blue
+                const accentColor = [16, 185, 129]; // Green
+                const textColor = [55, 65, 81]; // Gray
+                const lightGray = [226, 232, 240]; // Light gray
 
                 // Helper function to add text with word wrap
-                function addText(text, x, y, maxWidth = contentWidth, size = 10) {
+                function addText(text, x, y, maxWidth = contentWidth, size = 10, color = textColor) {
                     doc.setFontSize(size);
+                    doc.setTextColor(color[0], color[1], color[2]);
                     const lines = doc.splitTextToSize(text, maxWidth);
                     doc.text(lines, x, y);
                     return lines.length * lineHeight;
                 }
 
-                // Add profile photo on the right side of header
-                const imgSize = 35;
-                const imgX = pageWidth - margin - imgSize;
-                try {
-                    doc.addImage(profileImg, 'JPEG', imgX, yPosition, imgSize, imgSize);
-                } catch (e) {
-                    console.log('Could not add profile image:', e);
+                // Helper function to draw rounded rectangle (simulated)
+                function drawRoundedRect(x, y, w, h, color) {
+                    doc.setFillColor(color[0], color[1], color[2]);
+                    doc.rect(x, y, w, h, 'F');
                 }
 
-                // Header section
+                // Professional Header with Background
+                const headerHeight = 50;
+                drawRoundedRect(0, 0, pageWidth, headerHeight, [59, 130, 246]);
+                yPosition = 15;
+
+                // Add profile photo with professional border effect
+                const imgSize = 42;
+                const imgX = pageWidth - margin - imgSize - 2;
+                const imgY = 4;
+                
+                // Draw white background circle for photo
+                doc.setFillColor(255, 255, 255);
+                doc.circle(imgX + imgSize/2, imgY + imgSize/2, imgSize/2 + 3, 'F');
+                
+                // Draw outer border circle (blue)
+                doc.setDrawColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+                doc.setLineWidth(2.5);
+                doc.circle(imgX + imgSize/2, imgY + imgSize/2, imgSize/2 + 2.5, 'D');
+                
+                // Draw inner white circle for clean edge
+                doc.setFillColor(255, 255, 255);
+                doc.circle(imgX + imgSize/2, imgY + imgSize/2, imgSize/2 + 0.5, 'F');
+                
+                try {
+                    // Add profile image
+                    doc.addImage(profileImg, 'JPEG', imgX + 1, imgY + 1, imgSize - 2, imgSize - 2, undefined, 'FAST');
+                } catch (e) {
+                    console.log('Could not add profile image:', e);
+                    // Draw placeholder if image fails
+                    doc.setFillColor(200, 200, 200);
+                    doc.circle(imgX + imgSize/2, imgY + imgSize/2, imgSize/2 - 1, 'F');
+                }
+
+                // Header section - Name (white text on blue background)
                 doc.setFontSize(28);
                 doc.setFont(undefined, 'bold');
-                doc.setTextColor(59, 130, 246);
-                doc.text(cvData.name, margin, yPosition + 20);
-                yPosition += 12;
+                doc.setTextColor(255, 255, 255);
+                doc.text(cvData.name, margin, yPosition);
+                yPosition += 10;
 
-                doc.setFontSize(13);
+                // Title (light text on blue background)
+                doc.setFontSize(12);
                 doc.setFont(undefined, 'normal');
-                doc.setTextColor(30, 41, 59);
-                doc.text(cvData.title, margin, yPosition + 15);
-                yPosition += 22;
+                doc.setTextColor(226, 232, 240);
+                doc.text(cvData.title, margin, yPosition);
+                yPosition = headerHeight + 10;
 
-                // Contact Information - Better layout
-                doc.setFontSize(9);
-                doc.setTextColor(75, 85, 99);
-                doc.setTextColor(59, 130, 246);
-                doc.text(`📧 ${cvData.contact.email}`, margin, yPosition + 18);
-                yPosition += 6;
-                doc.text(`📱 ${cvData.contact.phone}`, margin, yPosition + 18);
-                yPosition += 6;
-                doc.text(`📍 ${cvData.contact.location}`, margin, yPosition + 18);
-                yPosition += 6;
-                doc.text(`🌐 ${cvData.contact.website}  |  💻 ${cvData.contact.github}`, margin, yPosition + 18);
-                yPosition += sectionSpacing;
+                // Contact Information - Professional layout
+                doc.setFontSize(8.5);
+                doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+                const contactStartY = yPosition;
+                
+                // First row: Email and Phone
+                doc.text(`Email: ${cvData.contact.email}`, margin, contactStartY);
+                doc.text(`Phone: ${cvData.contact.phone}`, margin + 75, contactStartY);
+                yPosition = contactStartY + 5;
+                
+                // Second row: Location and Website
+                doc.text(`Location: ${cvData.contact.location}`, margin, yPosition);
+                doc.text(`Website: ${cvData.contact.website}`, margin + 75, yPosition);
+                yPosition += 5;
+                
+                // Third row: GitHub
+                doc.text(`GitHub: ${cvData.contact.github}`, margin, yPosition);
+                yPosition += 10;
 
-                // Horizontal line
-                doc.setDrawColor(59, 130, 246);
-                doc.setLineWidth(0.5);
+                // Professional divider line
+                doc.setDrawColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+                doc.setLineWidth(1);
                 doc.line(margin, yPosition, pageWidth - margin, yPosition);
                 yPosition += sectionSpacing;
 
-                // Professional Summary
+                // Professional Summary Section with styled header
+                const sectionHeaderHeight = 8;
+                drawRoundedRect(margin - 2, yPosition - 3, contentWidth + 4, sectionHeaderHeight, [240, 245, 250]);
                 doc.setFontSize(13);
                 doc.setFont(undefined, 'bold');
-                doc.setTextColor(30, 41, 59);
-                doc.text("PROFESSIONAL SUMMARY", margin, yPosition);
-                yPosition += 6;
+                doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+                doc.text("PROFESSIONAL SUMMARY", margin, yPosition + 5);
+                yPosition += 8;
 
                 doc.setFontSize(10);
                 doc.setFont(undefined, 'normal');
-                doc.setTextColor(55, 65, 81);
-                yPosition += addText(cvData.summary, margin, yPosition, contentWidth, 10);
+                yPosition += addText(cvData.summary, margin, yPosition, contentWidth, 10, textColor);
                 yPosition += sectionSpacing;
 
-                // Professional Experience
+                // Professional Experience Section with styled header
+                if (yPosition > 250) {
+                    doc.addPage();
+                    yPosition = 20;
+                }
+                drawRoundedRect(margin - 2, yPosition - 3, contentWidth + 4, sectionHeaderHeight, [240, 245, 250]);
                 doc.setFontSize(13);
                 doc.setFont(undefined, 'bold');
-                doc.setTextColor(30, 41, 59);
-                doc.text("PROFESSIONAL EXPERIENCE", margin, yPosition);
-                yPosition += 8;
+                doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+                doc.text("PROFESSIONAL EXPERIENCE", margin, yPosition + 5);
+                yPosition += 10;
 
                 cvData.experience.forEach((exp, index) => {
                     if (yPosition > 250) {
                         doc.addPage();
                         yPosition = 20;
-
-                        // Add photo to new page
-                        try {
-                            doc.addImage(profileImg, 'JPEG', imgX, yPosition, imgSize, imgSize);
-                        } catch (e) {}
                     }
+
+                    // Left border accent for each experience entry
+                    doc.setDrawColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+                    doc.setLineWidth(2);
+                    doc.line(margin - 2, yPosition - 2, margin - 2, yPosition + 25);
 
                     doc.setFont(undefined, 'bold');
                     doc.setFontSize(11);
-                    doc.setTextColor(30, 41, 59);
-                    doc.text(`${exp.position}`, margin, yPosition);
+                    doc.setTextColor(secondaryColor[0], secondaryColor[1], secondaryColor[2]);
+                    doc.text(`${exp.position}`, margin + 2, yPosition);
                     yPosition += 5;
 
                     doc.setFontSize(10);
-                    doc.setTextColor(59, 130, 246);
-                    doc.text(`${exp.company} | ${exp.period}`, margin, yPosition);
-                    yPosition += 5;
+                    doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+                    doc.text(`${exp.company} | ${exp.period}`, margin + 2, yPosition);
+                    yPosition += 6;
 
                     doc.setFont(undefined, 'normal');
                     doc.setFontSize(9);
-                    doc.setTextColor(75, 85, 99);
-                    yPosition += addText(exp.description, margin, yPosition, contentWidth, 9);
-                    yPosition += 4;
+                    yPosition += addText(exp.description, margin + 2, yPosition, contentWidth - 2, 9, textColor);
+                    yPosition += 5;
 
-                    doc.setFontSize(9);
-                    doc.setTextColor(107, 114, 128);
-                    doc.text(`🛠  ${exp.technologies.join(" • ")}`, margin, yPosition);
-                    yPosition += sectionSpacing;
+                    // Technologies with background highlight
+                    doc.setFontSize(8.5);
+                    doc.setFillColor(240, 245, 250);
+                    const techText = `Technologies: ${exp.technologies.join(" • ")}`;
+                    const techLines = doc.splitTextToSize(techText, contentWidth - 2);
+                    const techHeight = techLines.length * 4;
+                    doc.rect(margin + 2, yPosition - 3, contentWidth - 2, techHeight + 2, 'F');
+                    doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+                    doc.setFont(undefined, 'normal');
+                    doc.text(techLines, margin + 4, yPosition + 2);
+                    yPosition += techHeight + 8;
 
-                    doc.setDrawColor(226, 232, 240);
+                    // Subtle divider line
+                    doc.setDrawColor(lightGray[0], lightGray[1], lightGray[2]);
                     doc.setLineWidth(0.3);
                     doc.line(margin, yPosition, pageWidth - margin, yPosition);
                     yPosition += sectionSpacing / 2;
                 });
 
-                // Technical Skills
+                // Technical Skills Section
                 if (yPosition > 220) {
                     doc.addPage();
                     yPosition = 20;
                 }
-
+                drawRoundedRect(margin - 2, yPosition - 3, contentWidth + 4, sectionHeaderHeight, [240, 245, 250]);
                 doc.setFontSize(13);
                 doc.setFont(undefined, 'bold');
-                doc.setTextColor(30, 41, 59);
-                doc.text("TECHNICAL SKILLS", margin, yPosition);
-                yPosition += 8;
+                doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+                doc.text("TECHNICAL SKILLS", margin, yPosition + 5);
+                yPosition += 10;
 
                 doc.setFontSize(10);
                 doc.setFont(undefined, 'bold');
-                doc.setTextColor(59, 130, 246);
+                doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
                 doc.text("Programming Languages:", margin, yPosition);
                 yPosition += 5;
                 doc.setFont(undefined, 'normal');
-                doc.setTextColor(55, 65, 81);
-                doc.text(cvData.skills.languages.join(" • "), margin + 5, yPosition);
-                yPosition += 8;
+                yPosition += addText(cvData.skills.languages.join(" • "), margin + 2, yPosition, contentWidth - 2, 9.5, textColor);
+                yPosition += 7;
 
                 doc.setFont(undefined, 'bold');
-                doc.setTextColor(59, 130, 246);
+                doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
                 doc.text("Frameworks & Libraries:", margin, yPosition);
                 yPosition += 5;
                 doc.setFont(undefined, 'normal');
-                doc.setTextColor(55, 65, 81);
-                doc.text(cvData.skills.frameworks.join(" • "), margin + 5, yPosition);
-                yPosition += 8;
+                yPosition += addText(cvData.skills.frameworks.join(" • "), margin + 2, yPosition, contentWidth - 2, 9.5, textColor);
+                yPosition += 7;
 
                 doc.setFont(undefined, 'bold');
-                doc.setTextColor(59, 130, 246);
+                doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
                 doc.text("Tools & Platforms:", margin, yPosition);
                 yPosition += 5;
                 doc.setFont(undefined, 'normal');
-                doc.setTextColor(55, 65, 81);
-                doc.text(cvData.skills.tools.join(" • "), margin + 5, yPosition);
+                yPosition += addText(cvData.skills.tools.join(" • "), margin + 2, yPosition, contentWidth - 2, 9.5, textColor);
                 yPosition += sectionSpacing;
 
-                // Key Projects
+                // Key Projects Section
+                if (yPosition > 240) {
+                    doc.addPage();
+                    yPosition = 20;
+                }
+                drawRoundedRect(margin - 2, yPosition - 3, contentWidth + 4, sectionHeaderHeight, [240, 245, 250]);
                 doc.setFontSize(13);
                 doc.setFont(undefined, 'bold');
-                doc.setTextColor(30, 41, 59);
-                doc.text("KEY PROJECTS", margin, yPosition);
-                yPosition += 6;
+                doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+                doc.text("KEY PROJECTS", margin, yPosition + 5);
+                yPosition += 8;
 
                 cvData.projects.forEach((project, index) => {
-                    doc.setFontSize(10);
+                    doc.setFontSize(9.5);
                     doc.setFont(undefined, 'normal');
-                    doc.setTextColor(75, 85, 99);
-                    yPosition += addText(`• ${project}`, margin, yPosition, contentWidth - 10, 10);
+                    yPosition += addText(`• ${project}`, margin + 2, yPosition, contentWidth - 2, 9.5, textColor);
                 });
                 yPosition += sectionSpacing;
 
-                // Additional Information
+                // Key Achievements Section
+                if (yPosition > 240) {
+                    doc.addPage();
+                    yPosition = 20;
+                }
+                drawRoundedRect(margin - 2, yPosition - 3, contentWidth + 4, sectionHeaderHeight, [240, 245, 250]);
                 doc.setFontSize(13);
                 doc.setFont(undefined, 'bold');
-                doc.setTextColor(30, 41, 59);
-                doc.text("ADDITIONAL INFORMATION", margin, yPosition);
-                yPosition += 6;
+                doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+                doc.text("KEY ACHIEVEMENTS", margin, yPosition + 5);
+                yPosition += 8;
 
                 doc.setFontSize(9);
                 doc.setFont(undefined, 'normal');
@@ -3347,32 +3409,41 @@
                     "• Experience with telecom, banking, and e-commerce sectors"
                 ];
                 achievements.forEach(achievement => {
-                    yPosition += addText(achievement, margin, yPosition, contentWidth - 10, 9);
+                    yPosition += addText(achievement, margin + 2, yPosition, contentWidth - 2, 9, textColor);
                 });
                 yPosition += sectionSpacing;
 
-                // Additional Information
+                // Additional Information Section
+                if (yPosition > 240) {
+                    doc.addPage();
+                    yPosition = 20;
+                }
+                drawRoundedRect(margin - 2, yPosition - 3, contentWidth + 4, sectionHeaderHeight, [240, 245, 250]);
                 doc.setFontSize(13);
                 doc.setFont(undefined, 'bold');
-                doc.setTextColor(30, 41, 59);
-                doc.text("ADDITIONAL INFORMATION", margin, yPosition);
-                yPosition += 6;
-
-                doc.setFontSize(10);
-                doc.setFont(undefined, 'normal');
-                doc.setTextColor(55, 65, 81);
-                doc.text(`🎓 Background: ${cvData.education}`, margin, yPosition);
-                yPosition += 6;
-                doc.text(`🌍 Languages: ${cvData.languages.join(", ")}`, margin, yPosition);
+                doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+                doc.text("ADDITIONAL INFORMATION", margin, yPosition + 5);
                 yPosition += 8;
-                doc.text(`💻 Available for: Full-time, Contract, Remote opportunities`, margin, yPosition);
+
+                doc.setFontSize(9.5);
+                doc.setFont(undefined, 'normal');
+                yPosition += addText(`Background: ${cvData.education}`, margin + 2, yPosition, contentWidth - 2, 9.5, textColor);
+                yPosition += 5;
+                yPosition += addText(`Languages: ${cvData.languages.join(", ")}`, margin + 2, yPosition, contentWidth - 2, 9.5, textColor);
+                yPosition += 6;
+                doc.setFont(undefined, 'bold');
+                doc.setTextColor(accentColor[0], accentColor[1], accentColor[2]);
+                yPosition += addText(`Available for: Full-time, Contract, Remote opportunities`, margin + 2, yPosition, contentWidth - 2, 9.5, accentColor);
                 yPosition += sectionSpacing;
 
-                // Footer
-                doc.setFontSize(8);
-                doc.setTextColor(156, 163, 175);
+                // Professional Footer
+                doc.setDrawColor(lightGray[0], lightGray[1], lightGray[2]);
+                doc.setLineWidth(0.5);
                 doc.line(margin, yPosition, pageWidth - margin, yPosition);
-                yPosition += 6;
+                yPosition += 5;
+                doc.setFontSize(7.5);
+                doc.setTextColor(156, 163, 175);
+                doc.setFont(undefined, 'normal');
                 doc.text("Generated from journalehsan.github.io", margin, yPosition);
                 doc.text(`Updated: ${new Date().toLocaleDateString()}`, pageWidth - margin - 50, yPosition);
 
