@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BrowserOS vs Atlas: Agentic Browsers, Finally Friendly to Linux</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Compare BrowserOS and Atlas in the emerging agentic browser landscape. Discover why BrowserOS is the practical choice for Linux users seeking local, open-source AI-powered web automation."
+    />
+    <meta
+      name="keywords"
+      content="BrowserOS,Atlas,agentic browsers,AI automation,Linux,open source,web automation,AUR"
+    />
+    <link
+      rel="canonical"
+      href="https://journalehsan.github.io/articles/browseros-vs-atlas.html"
+    />
+    <meta name="author" content="Ehsan Tork" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="BrowserOS vs Atlas: Agentic Browsers, Finally Friendly to Linux"
+    />
+    <meta
+      property="og:description"
+      content="Discover why BrowserOS brings agentic browsing to Linux with native AUR support, local execution, and open-source architecture."
+    />
+    <meta
+      property="og:url"
+      content="https://journalehsan.github.io/articles/browseros-vs-atlas.html"
+    />
+    <meta
+      property="og:image"
+      content="https://journalehsan.github.io/assets/img/rust-codex-gpt.png"
+    />
+    <meta property="og:site_name" content="Ehsan Tork's Journal" />
+    <meta property="article:published_time" content="2025-12-27T09:00:00+03:30" />
+    <meta property="article:author" content="Ehsan Tork" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="BrowserOS vs Atlas: Agentic Browsers, Finally Friendly to Linux"
+    />
+    <meta
+      name="twitter:description"
+      content="Why BrowserOS is the practical choice for Linux users in the agentic browser revolution."
+    />
+    <meta
+      name="twitter:image"
+      content="https://journalehsan.github.io/assets/img/rust-codex-gpt.png"
+    />
+    <meta name="twitter:creator" content="@journalehsan" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "BrowserOS vs Atlas: Agentic Browsers, Finally Friendly to Linux",
+        "description": "Comprehensive comparison of BrowserOS and Atlas in the emerging agentic browser space, with focus on Linux compatibility, open-source nature, and practical use cases.",
+        "image": "https://journalehsan.github.io/assets/img/rust-codex-gpt.png",
+        "author": { "@type": "Person", "name": "Ehsan Tork" },
+        "datePublished": "2025-12-27T09:00:00+03:30",
+        "dateModified": "2025-12-27T09:00:00+03:30",
+        "mainEntityOfPage": "https://journalehsan.github.io/articles/browseros-vs-atlas.html",
+        "keywords": "agentic browsers,AI web automation,Linux,BrowserOS,Atlas",
+        "wordCount": "2100"
+      }
+    </script>
+
+    <!-- Styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.7;
+        background: linear-gradient(135deg, #0f172a 0%, #1f2937 100%);
+        color: #e2e8f0;
+      }
+
+      article {
+        max-width: 900px;
+        margin: auto;
+        padding: 2.5rem 1.5rem 3.5rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.3;
+        margin: 1.8em 0 0.8em;
+        color: #fff;
+      }
+
+      h1 {
+        font-size: 2.6rem;
+        font-weight: 800;
+        margin-top: 0;
+      }
+
+      h2 {
+        font-size: 1.9rem;
+        font-weight: 700;
+        border-bottom: 2px solid #3b82f6;
+        padding-bottom: 0.55rem;
+      }
+
+      h3 {
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: #cbd5f5;
+      }
+
+      a {
+        color: #60a5fa;
+        transition: color 0.2s;
+      }
+
+      a:hover {
+        color: #93c5fd;
+      }
+
+      figure {
+        margin: 2rem 0;
+      }
+
+      figcaption {
+        font-size: 0.9rem;
+        color: #94a3b8;
+        margin-top: 0.5rem;
+        font-style: italic;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.35);
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 1.5rem 0;
+        background: rgba(37, 99, 235, 0.08);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      th,
+      td {
+        border: 1px solid rgba(226, 232, 240, 0.08);
+        padding: 0.85rem;
+        text-align: left;
+      }
+
+      th {
+        background: rgba(37, 99, 235, 0.3);
+        font-weight: 600;
+        color: #e0e7ff;
+      }
+
+      code,
+      pre {
+        background: #0c111c;
+        border-radius: 8px;
+        font-family: "Fira Code", monospace;
+        font-size: 0.95em;
+      }
+
+      code {
+        padding: 0.2em 0.4em;
+      }
+
+      pre {
+        overflow-x: auto;
+        padding: 1rem 1.25rem;
+        margin: 1.25rem 0;
+        border-left: 3px solid #3b82f6;
+      }
+
+      .toc {
+        background: rgba(37, 99, 235, 0.12);
+        padding: 1.6rem;
+        border-radius: 12px;
+        margin: 2.2rem 0;
+        border-left: 4px solid #3b82f6;
+      }
+
+      .toc a {
+        display: block;
+        margin: 0.35rem 0;
+        text-decoration: none;
+        padding: 0.15rem 0;
+        transition: transform 0.2s;
+      }
+
+      .toc a:hover {
+        transform: translateX(6px);
+      }
+
+      .meta {
+        color: #94a3b8;
+        font-size: 0.95rem;
+        margin: 1rem 0;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.8rem;
+        border-radius: 20px;
+        padding: 0.2rem 0.8rem;
+        margin-right: 0.4rem;
+        background: rgba(30, 64, 175, 0.4);
+        border: 1px solid rgba(96, 165, 250, 0.4);
+      }
+
+      .callout {
+        background: rgba(59, 130, 246, 0.15);
+        border-left: 4px solid #60a5fa;
+        padding: 1rem 1.25rem;
+        border-radius: 10px;
+        margin: 1.5rem 0;
+      }
+
+      .comparison-table td:first-child {
+        font-weight: 600;
+      }
+
+      ul {
+        margin-left: 1.25rem;
+        padding-left: 0;
+      }
+
+      li {
+        margin-bottom: 0.45rem;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <a
+        href="../articles_list.html"
+        class="inline-flex items-center text-sm text-blue-300 hover:text-blue-200 mb-6"
+      >
+        <i class="fas fa-arrow-left mr-2"></i> Back to all articles
+      </a>
+
+      <header>
+        <p class="meta">
+          Published on
+          <time datetime="2025-12-27">December 27, 2025</time> · Tested on
+          Arch Linux with BrowserOS from AUR
+        </p>
+        <h1>BrowserOS vs Atlas: Agentic Browsers, Finally Friendly to Linux</h1>
+        <p>
+          For years, the idea of an <em>agentic browser</em> felt just slightly out
+          of reach for Linux users. The demos were exciting: an AI that can open
+          websites, click buttons, wait for pages, fill forms, and complete real
+          tasks using plain English. But in practice, most of those tools were
+          either cloud‑locked, Windows‑only, or tightly controlled.
+        </p>
+        <p>
+          That's why discovering <strong>BrowserOS</strong> in the AUR feels like
+          a small but important shift. It brings the agentic‑browser idea to
+          Linux in a way that actually fits how Linux users work.
+        </p>
+        <div class="meta">
+          <span class="badge"><i class="fas fa-robot mr-2"></i>Agentic AI</span>
+          <span class="badge"><i class="fab fa-linux mr-2"></i>Linux Native</span>
+          <span class="badge"><i class="fas fa-code mr-2"></i>Open Source</span>
+        </div>
+      </header>
+
+      <figure>
+        <img
+          src="../assets/img/rust-codex-gpt.png"
+          alt="AI-powered browser automation workflow visualization"
+          loading="lazy"
+        />
+        <figcaption>
+          Agentic browsers bridge the gap between AI assistants and real-world
+          web interactions, automating tasks that previously required custom
+          scripts.
+        </figcaption>
+      </figure>
+
+      <section class="toc" aria-label="Table of contents">
+        <strong class="block text-white mb-2">Jump to:</strong>
+        <a href="#what-is-agentic-browser">What Is an Agentic Browser?</a>
+        <a href="#browseros">BrowserOS at a Glance</a>
+        <a href="#atlas">Atlas at a Glance</a>
+        <a href="#comparison">Feature Comparison</a>
+        <a href="#why-browseros-linux"
+          >Why BrowserOS Makes Sense for Linux Users</a
+        >
+        <a href="#real-world-usage">Real‑World Usage</a>
+        <a href="#limitations">Limitations (So Far)</a>
+        <a href="#bigger-picture">The Bigger Picture</a>
+        <a href="#conclusion">Conclusion</a>
+      </section>
+
+      <section id="what-is-agentic-browser">
+        <h2>What Is an Agentic Browser?</h2>
+        <p>
+          An agentic browser is not just a chatbot with tabs. It is a browser
+          that:
+        </p>
+        <ul>
+          <li>Understands goals written in plain English</li>
+          <li>Navigates real websites like a human</li>
+          <li>
+            Clicks, scrolls, waits, types, and reacts to dynamic content
+          </li>
+          <li>Uses your logged‑in sessions and local context</li>
+          <li>Executes multi‑step tasks autonomously</li>
+        </ul>
+        <p>
+          Think of it as a bridge between automation tools and human browsing —
+          without writing scripts.
+        </p>
+      </section>
+
+      <section id="browseros">
+        <h2>BrowserOS at a Glance</h2>
+        <p>BrowserOS is an open‑source, AI‑native browser designed specifically
+          for agent workflows.</p>
+
+        <div class="callout">
+          <strong>Key traits:</strong>
+          <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+            <li>Open source</li>
+            <li>Runs locally on Linux</li>
+            <li>Available via AUR</li>
+            <li>Uses your existing browser sessions</li>
+            <li>Supports multiple AI models</li>
+            <li>Privacy‑first by design</li>
+          </ul>
+        </div>
+
+        <p>A common demo task looks like this:</p>
+        <blockquote>
+          <p>
+            "Go to the YC launch page, find the project, and upvote it."
+          </p>
+        </blockquote>
+        <p>
+          The agent then navigates, waits for page load, finds the correct UI
+          element, and performs the action — visually and transparently.
+        </p>
+      </section>
+
+      <section id="atlas">
+        <h2>Atlas at a Glance</h2>
+        <p>
+          Atlas popularized the modern agentic‑browser experience. It proved that:
+        </p>
+        <ul>
+          <li>LLMs can reason over DOM structures</li>
+          <li>Agents can handle real‑world web friction</li>
+          <li>Browser automation doesn't need scripts</li>
+        </ul>
+
+        <div class="callout">
+          <strong>However, for Linux users, Atlas currently has major limitations:</strong>
+          <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+            <li>No native Linux support</li>
+            <li>Closed ecosystem</li>
+            <li>Limited control over models</li>
+            <li>Cloud‑centric architecture</li>
+          </ul>
+        </div>
+
+        <p>For Linux, Atlas is more inspiration than tool.</p>
+      </section>
+
+      <section id="comparison">
+        <h2>Feature Comparison</h2>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>BrowserOS</th>
+              <th>Atlas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Linux support</td>
+              <td>✅ Native (AUR)</td>
+              <td>❌ Not available</td>
+            </tr>
+            <tr>
+              <td>Open source</td>
+              <td>✅ Yes</td>
+              <td>❌ No</td>
+            </tr>
+            <tr>
+              <td>Local execution</td>
+              <td>✅ Yes</td>
+              <td>⚠️ Mostly cloud</td>
+            </tr>
+            <tr>
+              <td>Uses logged‑in sessions</td>
+              <td>✅ Yes</td>
+              <td>✅ Yes</td>
+            </tr>
+            <tr>
+              <td>Multi‑model support</td>
+              <td>✅ Yes</td>
+              <td>❌ Limited</td>
+            </tr>
+            <tr>
+              <td>Privacy control</td>
+              <td>✅ High</td>
+              <td>⚠️ Medium</td>
+            </tr>
+            <tr>
+              <td>Hackable / extensible</td>
+              <td>✅ Very</td>
+              <td>❌ Minimal</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="why-browseros-linux">
+        <h2>Why BrowserOS Makes Sense for Linux Users</h2>
+        <p>Linux users tend to value:</p>
+        <ul>
+          <li>Control over their environment</li>
+          <li>Tool composability</li>
+          <li>Transparency over magic</li>
+          <li>The ability to swap components</li>
+        </ul>
+        <p>BrowserOS aligns naturally with that mindset. You can:</p>
+        <ul>
+          <li>Route different tasks to different models</li>
+          <li>Treat the browser as a local agent runtime</li>
+          <li>Combine it with CLI agents and scripts</li>
+          <li>Inspect behavior instead of trusting black boxes</li>
+        </ul>
+        <p>It feels less like a product demo and more like infrastructure.</p>
+      </section>
+
+      <section id="real-world-usage">
+        <h2>Real‑World Usage</h2>
+        <p>In practice, BrowserOS shines at:</p>
+        <ul>
+          <li>YC / Hacker News interactions</li>
+          <li>Admin dashboards</li>
+          <li>Internal tools</li>
+          <li>Auth‑heavy websites</li>
+          <li>Repetitive but UI‑bound workflows</li>
+        </ul>
+        <p>
+          It is especially useful where Playwright or Selenium would be overkill
+          — and where traditional automation breaks due to UI changes.
+        </p>
+      </section>
+
+      <section id="limitations">
+        <h2>Limitations (So Far)</h2>
+        <p>BrowserOS is still early:</p>
+        <ul>
+          <li>UI polish can improve</li>
+          <li>Some sites aggressively block automation</li>
+          <li>Agents still need guidance for complex flows</li>
+          <li>Debugging agent mistakes is an ongoing UX challenge</li>
+        </ul>
+        <p>
+          But these are <em>agentic‑class problems</em>, not Linux‑specific ones.
+        </p>
+      </section>
+
+      <section id="bigger-picture">
+        <h2>The Bigger Picture</h2>
+        <p>
+          BrowserOS represents something important: Agentic tools are finally
+          escaping closed demos and landing on real developer machines —
+          especially on Linux.
+        </p>
+        <p>For now:</p>
+        <ul>
+          <li><strong>Atlas</strong> remains a strong reference design</li>
+          <li><strong>BrowserOS</strong> is the usable Linux implementation</li>
+        </ul>
+        <p>And for Linux users, usability beats promises.</p>
+      </section>
+
+      <section id="conclusion">
+        <h2>Conclusion</h2>
+        <p>If you are on Linux today and want an agentic browser:</p>
+        <ul>
+          <li><strong>Atlas</strong> is something to watch</li>
+          <li><strong>BrowserOS</strong> is something to use</li>
+        </ul>
+        <p>
+          The moment an agent can live locally, respect your environment, and work
+          with your tools — it stops being a demo and starts being part of your
+          workflow.
+        </p>
+        <p>And that's where BrowserOS already stands.</p>
+      </section>
+
+      <footer>
+        <div class="meta" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(148, 163, 184, 0.2);">
+          <p>
+            <strong>Written by:</strong> Ehsan Tork<br />
+            <strong>Tags:</strong> Agentic Browsers, AI, Linux, BrowserOS, Atlas,
+            Web Automation, Open Source
+          </p>
+          <p style="margin-top: 1rem;">
+            Found this article helpful? Consider sharing it with fellow Linux
+            developers exploring AI-powered web automation.
+          </p>
+        </div>
+      </footer>
+    </article>
+  </body>
+</html>

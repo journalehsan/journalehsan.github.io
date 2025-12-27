@@ -96,6 +96,26 @@ window.articlesData = [
       "Developer Tools",
     ],
   },
+  {
+    id: "browseros-vs-atlas",
+    title: "BrowserOS vs Atlas: Agentic Browsers, Finally Friendly to Linux",
+    description:
+      "Compare BrowserOS and Atlas in the emerging agentic browser landscape. Discover why BrowserOS is the practical choice for Linux users seeking local, open-source AI-powered web automation.",
+    author: "Ehsan Tork",
+    date: "2025-12-27",
+    readTime: "8-10 min",
+    coverImage: "assets/img/rust-codex-gpt.png",
+    url: "articles/browseros-vs-atlas.html",
+    tags: [
+      "Agentic Browsers",
+      "AI",
+      "Linux",
+      "BrowserOS",
+      "Atlas",
+      "Web Automation",
+      "Open Source",
+    ],
+  },
 ];
 
 (async function loadArticlesJson() {
