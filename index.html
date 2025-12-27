@@ -3018,29 +3018,34 @@
             }
 
             // CV Generation Function
-            function generateCV() {
+            async function generateCV() {
                 const btn = document.getElementById('cv-download-btn');
                 const btnText = document.getElementById('cv-btn-text');
                 const btnIcon = document.getElementById('cv-btn-icon');
-                
+
                 // Show loading state
                 btn.disabled = true;
                 btnText.textContent = 'Loading...';
                 btnIcon.className = 'fas fa-spinner fa-spin ml-2';
-                
+
+                // Load image
+                const profileImg = new Image();
+                profileImg.crossOrigin = "Anonymous";
+                profileImg.src = "assets/img/ehsan-tork-new.jpg";
+
+                await new Promise((resolve) => {
+                    profileImg.onload = resolve;
+                    profileImg.onerror = resolve;
+                });
+
                 // Wait a moment for jsPDF to fully load
                 setTimeout(() => {
                     try {
-                        // Debug: Check what's available in window.jspdf
-                        console.log('window.jspdf:', window.jspdf);
-                        console.log('window.jspdf.jsPDF:', window.jspdf?.jsPDF);
-                        console.log('typeof window.jspdf:', typeof window.jspdf);
-                        
                         // Check if jsPDF is loaded
                         if (!window.jspdf) {
                             throw new Error('jsPDF library not loaded properly. Please refresh the page and try again.');
                         }
-                        
+
                         // Try to create jsPDF instance
                         let doc;
                         if (window.jspdf.jsPDF) {
@@ -3050,147 +3055,352 @@
                         } else {
                             throw new Error('jsPDF constructor not found');
                         }
-                
+
                 // CV Data extracted from website
                 const cvData = {
                     name: "Ehsan Tork",
-                    title: "Full-Stack Developer & Open Source Enthusiast",
+                    title: "Senior Full-Stack Developer & Open Source Enthusiast",
                     contact: {
                         email: "journalehsan@gmail.com",
-                        phone: "+98 9128571596",
+                        phone: "+98 912 857 1596",
                         location: "Tehran, Iran",
                         website: "journalehsan.github.io",
                         github: "github.com/journalehsan"
                     },
-                    summary: "Passionate Full-Stack Developer with 15+ years of experience in web development, desktop applications, and open source software. Specialized in Rust, TypeScript, Laravel, and modern web technologies. Linux user since 2008 with strong background in enterprise solutions.",
+                    summary: "Senior Full-Stack Developer with 15+ years of experience building scalable web applications, desktop software, and enterprise solutions. Expert in Rust, TypeScript, React, Laravel, and modern web technologies. Linux enthusiast since 2008 with deep expertise in cloud computing, IoT, and open-source development. Strong track record of delivering complex projects for major Iranian companies including Irancell, Tosan Motors, and Parsian Bank.",
                     experience: [
                         {
                             company: "Irancell ICI",
-                            position: "Vendor Developer",
+                            position: "Senior Vendor Developer",
                             period: "2022 - Present",
-                            description: "Developing solutions using Python/PySide, Laravel, Rust for backend, React and TypeScript for frontend, and Iced/Slint for client-side applications across Linux, Windows, and Mac.",
-                            technologies: ["Rust", "Python", "PySide", "Laravel", "React", "TypeScript", "Iced", "Slint", ".NET Core"]
+                            description: "Leading development of enterprise solutions using Rust (backend), TypeScript/React (frontend), Python/PySide (desktop), and .NET Core (services). Architecting scalable applications for one of Iran's largest telecom operators, working across Linux, Windows, and macOS platforms.",
+                            technologies: ["Rust", "TypeScript", "React", "Python", "PySide", "Laravel", "Iced", "Slint", ".NET Core", "Microservices"]
                         },
                         {
                             company: "Dena",
-                            position: "Full-Stack Developer",
+                            position: "Senior Full-Stack Developer",
                             period: "2022",
-                            description: "Developed gift card solutions (Kadona) for Parsian Bank and an online shop using Laravel.",
-                            technologies: ["Laravel", "E-commerce", "Payment Systems", "Gift Cards"]
+                            description: "Architected and developed gift card platform (Kadona) for Parsian Bank, handling high-volume transactions with Laravel. Built secure e-commerce solution with advanced payment gateway integration and fraud prevention systems.",
+                            technologies: ["Laravel", "E-commerce", "Payment Gateways", "SQL", "Redis", "Security", "API Design"]
                         },
                         {
                             company: "Shimico",
-                            position: "Backend Developer",
+                            position: "Senior Backend Developer",
                             period: "2021-2022",
-                            description: "Worked on a chemical market startup with a poorly designed Laravel codebase. Improved the spaghetti code step by step despite time constraints.",
-                            technologies: ["Laravel", "Legacy Code", "Refactoring"]
+                            description: "Led technical improvements and refactoring of a chemical marketplace's legacy Laravel codebase. Reduced technical debt significantly, improved database performance, and implemented modern development practices while maintaining system stability.",
+                            technologies: ["Laravel", "Legacy Refactoring", "SQL Optimization", "API Development", "PHP 8"]
                         },
                         {
                             company: "Taknet",
-                            position: "Cloud Developer",
+                            position: "Cloud Platform Developer",
                             period: "2021 (6 months)",
-                            description: "Worked on Virak Cloud, a Digital Ocean-like cloud solution using Python, PHP/Laravel, and React.",
-                            technologies: ["Python", "Laravel", "React", "Cloud Computing"]
+                            description: "Developed Virak Cloud, an IaaS/PaaS platform similar to Digital Ocean. Implemented infrastructure management, resource provisioning, and user management systems using Python, Laravel, and React with container orchestration.",
+                            technologies: ["Python", "Laravel", "React", "Cloud Computing", "Docker", "Virtualization", "REST APIs"]
                         },
                         {
                             company: "Pishkhan Iranian",
-                            position: "Full-Stack Developer",
+                            position: "Senior Full-Stack Developer",
                             period: "2019-2021",
-                            description: "Developed websites and web applications for governmental offices, including registration systems and payment solutions. Created a self-hosted login system using Office ID.",
-                            technologies: ["C#", "JavaScript", "Firefox Extension", "POS Systems", "Security", "SSO"]
+                            description: "Developed comprehensive governmental web applications and registration systems. Architected secure single sign-on (SSO) solution using Office ID integration, implemented POS system integration, and created Firefox extensions for enhanced functionality.",
+                            technologies: ["C#", ".NET", "JavaScript", "Firefox Extensions", "POS Integration", "Security", "SSO", "Authentication"]
                         },
                         {
                             company: "Tosan Motors",
-                            position: "Software Developer",
+                            position: "Lead Software Developer",
                             period: "2017-2019",
-                            description: "Developed Laravel backend and Python services to communicate with electronic motorcycles. Created Android applications using Qt/C++.",
-                            technologies: ["Laravel", "Python", "Qt", "C++", "Android", "IoT"]
+                            description: "Led software development for electronic motorcycle IoT platform. Built Laravel backend APIs, Python services for device communication, Qt/C++ applications for Android, and IoT protocols for real-time data transmission to electric vehicles.",
+                            technologies: ["Laravel", "Python", "Qt", "C++", "Android", "IoT", "MQTT", "REST APIs", "Embedded Systems"]
                         },
                         {
                             company: "Karina Mobile Solution",
-                            position: "Web Developer",
+                            position: "Senior Web Developer",
                             period: "2015-2017",
-                            description: "Worked on developing a Google AdSense-like platform. Built websites using WordPress and developed plugins.",
-                            technologies: ["WordPress", "PHP", "Plugin Development", "Ad Platform"]
+                            description: "Developed Google AdSense-like advertising platform from scratch. Built monetization engine, created WordPress plugins for enhanced functionality, and implemented real-time bidding and reporting systems for mobile advertising.",
+                            technologies: ["WordPress", "PHP", "Plugin Architecture", "Ad Tech", "Real-time Analytics", "MySQL"]
                         },
                         {
                             company: "Vada Company",
-                            position: "VAS Developer",
+                            position: "VAS Engineer",
                             period: "2015",
-                            description: "Worked at a VAS (Value Added Service) company managing SMS gateways, monitoring sent/unsubscription actions, and handling daily message campaigns.",
-                            technologies: ["SMS Gateway", "Telecom", "VAS"]
+                            description: "Engineered and maintained SMS gateway infrastructure for Value Added Services. Developed campaign management systems, monitored subscription/unsubscription flows, and implemented automated message queuing for high-volume telecom operations.",
+                            technologies: ["SMS Gateway", "Telecom Protocols", "VAS", "Message Queues", "Campaign Management"]
                         },
                         {
                             company: "Islamic Azad University",
-                            position: "IT Support",
-                            period: "Part-time",
-                            description: "Provided IT support for systems and servers at the university's Hamadan branch.",
-                            technologies: ["IT Support", "Server Management", "System Administration"]
+                            position: "IT Systems Administrator",
+                            period: "Part-time (2010-2015)",
+                            description: "Provided comprehensive IT support and system administration for Hamadan branch. Managed university servers, maintained computer labs, resolved hardware/software issues, and implemented backup systems for critical data.",
+                            technologies: ["System Administration", "Server Management", "Linux", "Windows Server", "Networking", "Hardware Maintenance"]
                         },
                         {
                             company: "Ahoora Advertisements",
-                            position: "Web Developer",
+                            position: "Full-Stack Developer",
                             period: "2010",
-                            description: "My first full-time job at an advertisement solutions company where I developed websites using WordPress/PHP and ASP.NET with Dreamweaver/Aptana Studio.",
-                            technologies: ["WordPress", "PHP", "ASP.NET", "VB", "C#", "Delphi", "Dreamweaver"]
+                            description: "Started professional career developing digital marketing solutions. Built WordPress websites, ASP.NET applications, and cross-platform e-books with embedded HTML. Created multimedia software using VB, C#, and Delphi for educational content delivery.",
+                            technologies: ["WordPress", "PHP", "ASP.NET", "VB6", "C#", "Delphi", "Desktop Applications", "Windows Forms"]
                         }
                     ],
                     skills: {
-                        languages: ["Rust", "TypeScript", "Python", "C#", "PHP", "C++", "Java", "Go"],
-                        frameworks: ["React", "Laravel", "Qt", "Iced", "Slint", "TailwindCSS", ".NET Core"],
-                        tools: ["Git", "Linux", "Arch Linux", "Neovim", "Docker", "AWS"]
+                        languages: ["Rust", "TypeScript", "Python", "C#", "PHP", "C++", "Java", "Go", "SQL"],
+                        frameworks: ["React", "Laravel", "Qt", "Iced", "Slint", "TailwindCSS", ".NET Core", "Redux"],
+                        tools: ["Git", "Linux", "Arch Linux", "Neovim", "Docker", "AWS", "Kubernetes", "Redis"]
                     },
+                    projects: [
+                        "Shosa Daru - Online drugstore platform connecting pharmacies with customers",
+                        "Shimico.com - Chemical products marketplace with advanced search",
+                        "VirakCloud - Digital Ocean-like cloud computing platform",
+                        "Tosan Motors IoT - Electronic motorcycle management system",
+                        "Sandbox Development Book - Technical book on development environments"
+                    ],
                     education: "Linux user since 2008 • Started with Red Hat 6",
                     languages: ["Persian (Native)", "English (Professional)", "Azeri (Native)"]
                 };
 
-                // PDF Generation
+                // PDF Generation - Enhanced Layout with Profile Image
                 let yPosition = 20;
-                const lineHeight = 7;
-                const sectionSpacing = 10;
-                
+                const lineHeight = 6;
+                const sectionSpacing = 12;
+                const pageWidth = 210;
+                const margin = 15;
+                const contentWidth = pageWidth - (margin * 2);
+
                 // Helper function to add text with word wrap
-                function addText(text, x, y, maxWidth = 170) {
+                function addText(text, x, y, maxWidth = contentWidth, size = 10) {
+                    doc.setFontSize(size);
                     const lines = doc.splitTextToSize(text, maxWidth);
                     doc.text(lines, x, y);
                     return lines.length * lineHeight;
                 }
-                
-                // Header
-                doc.setFontSize(24);
+
+                // Add profile photo on the right side of header
+                const imgSize = 35;
+                const imgX = pageWidth - margin - imgSize;
+                try {
+                    doc.addImage(profileImg, 'JPEG', imgX, yPosition, imgSize, imgSize);
+                } catch (e) {
+                    console.log('Could not add profile image:', e);
+                }
+
+                // Header section
+                doc.setFontSize(28);
                 doc.setFont(undefined, 'bold');
-                doc.text(cvData.name, 20, yPosition);
-                yPosition += 10;
-                
-                doc.setFontSize(14);
+                doc.setTextColor(59, 130, 246);
+                doc.text(cvData.name, margin, yPosition + 20);
+                yPosition += 12;
+
+                doc.setFontSize(13);
                 doc.setFont(undefined, 'normal');
-                doc.text(cvData.title, 20, yPosition);
-                yPosition += 8;
-                
-                // Contact Information
-                doc.setFontSize(10);
-                doc.text(`Email: ${cvData.contact.email} | Phone: ${cvData.contact.phone}`, 20, yPosition);
-                yPosition += 5;
-                doc.text(`Location: ${cvData.contact.location} | Website: ${cvData.contact.website}`, 20, yPosition);
-                yPosition += 5;
-                doc.text(`GitHub: ${cvData.contact.github}`, 20, yPosition);
-                yPosition += sectionSpacing;
-                
-                // Summary
-                doc.setFontSize(12);
-                doc.setFont(undefined, 'bold');
-                doc.text("Professional Summary", 20, yPosition);
+                doc.setTextColor(30, 41, 59);
+                doc.text(cvData.title, margin, yPosition + 15);
+                yPosition += 22;
+
+                // Contact Information - Better layout
+                doc.setFontSize(9);
+                doc.setTextColor(75, 85, 99);
+                doc.setTextColor(59, 130, 246);
+                doc.text(`📧 ${cvData.contact.email}`, margin, yPosition + 18);
                 yPosition += 6;
-                doc.setFont(undefined, 'normal');
-                yPosition += addText(cvData.summary, 20, yPosition);
+                doc.text(`📱 ${cvData.contact.phone}`, margin, yPosition + 18);
+                yPosition += 6;
+                doc.text(`📍 ${cvData.contact.location}`, margin, yPosition + 18);
+                yPosition += 6;
+                doc.text(`🌐 ${cvData.contact.website}  |  💻 ${cvData.contact.github}`, margin, yPosition + 18);
                 yPosition += sectionSpacing;
-                
-                // Experience
+
+                // Horizontal line
+                doc.setDrawColor(59, 130, 246);
+                doc.setLineWidth(0.5);
+                doc.line(margin, yPosition, pageWidth - margin, yPosition);
+                yPosition += sectionSpacing;
+
+                // Professional Summary
+                doc.setFontSize(13);
                 doc.setFont(undefined, 'bold');
-                doc.text("Professional Experience", 20, yPosition);
+                doc.setTextColor(30, 41, 59);
+                doc.text("PROFESSIONAL SUMMARY", margin, yPosition);
+                yPosition += 6;
+
+                doc.setFontSize(10);
+                doc.setFont(undefined, 'normal');
+                doc.setTextColor(55, 65, 81);
+                yPosition += addText(cvData.summary, margin, yPosition, contentWidth, 10);
+                yPosition += sectionSpacing;
+
+                // Professional Experience
+                doc.setFontSize(13);
+                doc.setFont(undefined, 'bold');
+                doc.setTextColor(30, 41, 59);
+                doc.text("PROFESSIONAL EXPERIENCE", margin, yPosition);
                 yPosition += 8;
-                
+
                 cvData.experience.forEach((exp, index) => {
+                    if (yPosition > 250) {
+                        doc.addPage();
+                        yPosition = 20;
+
+                        // Add photo to new page
+                        try {
+                            doc.addImage(profileImg, 'JPEG', imgX, yPosition, imgSize, imgSize);
+                        } catch (e) {}
+                    }
+
+                    doc.setFont(undefined, 'bold');
+                    doc.setFontSize(11);
+                    doc.setTextColor(30, 41, 59);
+                    doc.text(`${exp.position}`, margin, yPosition);
+                    yPosition += 5;
+
+                    doc.setFontSize(10);
+                    doc.setTextColor(59, 130, 246);
+                    doc.text(`${exp.company} | ${exp.period}`, margin, yPosition);
+                    yPosition += 5;
+
+                    doc.setFont(undefined, 'normal');
+                    doc.setFontSize(9);
+                    doc.setTextColor(75, 85, 99);
+                    yPosition += addText(exp.description, margin, yPosition, contentWidth, 9);
+                    yPosition += 4;
+
+                    doc.setFontSize(9);
+                    doc.setTextColor(107, 114, 128);
+                    doc.text(`🛠  ${exp.technologies.join(" • ")}`, margin, yPosition);
+                    yPosition += sectionSpacing;
+
+                    doc.setDrawColor(226, 232, 240);
+                    doc.setLineWidth(0.3);
+                    doc.line(margin, yPosition, pageWidth - margin, yPosition);
+                    yPosition += sectionSpacing / 2;
+                });
+
+                // Technical Skills
+                if (yPosition > 220) {
+                    doc.addPage();
+                    yPosition = 20;
+                }
+
+                doc.setFontSize(13);
+                doc.setFont(undefined, 'bold');
+                doc.setTextColor(30, 41, 59);
+                doc.text("TECHNICAL SKILLS", margin, yPosition);
+                yPosition += 8;
+
+                doc.setFontSize(10);
+                doc.setFont(undefined, 'bold');
+                doc.setTextColor(59, 130, 246);
+                doc.text("Programming Languages:", margin, yPosition);
+                yPosition += 5;
+                doc.setFont(undefined, 'normal');
+                doc.setTextColor(55, 65, 81);
+                doc.text(cvData.skills.languages.join(" • "), margin + 5, yPosition);
+                yPosition += 8;
+
+                doc.setFont(undefined, 'bold');
+                doc.setTextColor(59, 130, 246);
+                doc.text("Frameworks & Libraries:", margin, yPosition);
+                yPosition += 5;
+                doc.setFont(undefined, 'normal');
+                doc.setTextColor(55, 65, 81);
+                doc.text(cvData.skills.frameworks.join(" • "), margin + 5, yPosition);
+                yPosition += 8;
+
+                doc.setFont(undefined, 'bold');
+                doc.setTextColor(59, 130, 246);
+                doc.text("Tools & Platforms:", margin, yPosition);
+                yPosition += 5;
+                doc.setFont(undefined, 'normal');
+                doc.setTextColor(55, 65, 81);
+                doc.text(cvData.skills.tools.join(" • "), margin + 5, yPosition);
+                yPosition += sectionSpacing;
+
+                // Key Projects
+                doc.setFontSize(13);
+                doc.setFont(undefined, 'bold');
+                doc.setTextColor(30, 41, 59);
+                doc.text("KEY PROJECTS", margin, yPosition);
+                yPosition += 6;
+
+                cvData.projects.forEach((project, index) => {
+                    doc.setFontSize(10);
+                    doc.setFont(undefined, 'normal');
+                    doc.setTextColor(75, 85, 99);
+                    yPosition += addText(`• ${project}`, margin, yPosition, contentWidth - 10, 10);
+                });
+                yPosition += sectionSpacing;
+
+                // Additional Information
+                doc.setFontSize(13);
+                doc.setFont(undefined, 'bold');
+                doc.setTextColor(30, 41, 59);
+                doc.text("ADDITIONAL INFORMATION", margin, yPosition);
+                yPosition += 6;
+
+                doc.setFontSize(9);
+                doc.setFont(undefined, 'normal');
+                doc.setTextColor(55, 65, 81);
+                const achievements = [
+                    "• 15+ years of full-stack development experience",
+                    "• Expert in Rust, TypeScript, React, and Laravel",
+                    "• Strong background in enterprise solutions and cloud computing",
+                    "• Linux expert since 2008 (Arch Linux enthusiast)",
+                    "• Open source advocate and community contributor",
+                    "• IoT and desktop application development",
+                    "• Experience with telecom, banking, and e-commerce sectors"
+                ];
+                achievements.forEach(achievement => {
+                    yPosition += addText(achievement, margin, yPosition, contentWidth - 10, 9);
+                });
+                yPosition += sectionSpacing;
+
+                // Additional Information
+                doc.setFontSize(13);
+                doc.setFont(undefined, 'bold');
+                doc.setTextColor(30, 41, 59);
+                doc.text("ADDITIONAL INFORMATION", margin, yPosition);
+                yPosition += 6;
+
+                doc.setFontSize(10);
+                doc.setFont(undefined, 'normal');
+                doc.setTextColor(55, 65, 81);
+                doc.text(`🎓 Background: ${cvData.education}`, margin, yPosition);
+                yPosition += 6;
+                doc.text(`🌍 Languages: ${cvData.languages.join(", ")}`, margin, yPosition);
+                yPosition += 8;
+                doc.text(`💻 Available for: Full-time, Contract, Remote opportunities`, margin, yPosition);
+                yPosition += sectionSpacing;
+
+                // Footer
+                doc.setFontSize(8);
+                doc.setTextColor(156, 163, 175);
+                doc.line(margin, yPosition, pageWidth - margin, yPosition);
+                yPosition += 6;
+                doc.text("Generated from journalehsan.github.io", margin, yPosition);
+                doc.text(`Updated: ${new Date().toLocaleDateString()}`, pageWidth - margin - 50, yPosition);
+
+                // Save PDF
+                doc.save("Ehsan_Tork_Senior_Developer_CV.pdf");
+
+                // Reset button state
+                btn.disabled = false;
+                btnText.textContent = 'Download CV';
+                btnIcon.className = 'fas fa-download ml-2';
+
+                } catch (error) {
+                    console.error('Error generating CV:', error);
+                    // Reset button state on error
+                    btn.disabled = false;
+                    btnText.textContent = 'Download CV';
+                    btnIcon.className = 'fas fa-download ml-2';
+                    // Fallback: create text-based CV
+                    if (confirm('PDF generation failed. Would you like to download a text version of your CV instead?')) {
+                        generateTextCV();
+                    } else {
+                        alert('Error generating CV: ' + error.message + '\n\nPlease try refreshing the page and clicking again.');
+                    }
+                }
+                }, 500);
+            }
+
+            // Fallback text CV generation
                     if (yPosition > 250) {
                         doc.addPage();
                         yPosition = 20;
@@ -3284,81 +3494,140 @@
             // Fallback text CV generation
             function generateTextCV() {
                 const cvText = `
-EHsan Tork - Full-Stack Developer & Open Source Enthusiast
+╔════════════════════════════════════════════════════════════════════╗
+║                    EHsan Tork - Senior Full-Stack Developer          ║
+╚════════════════════════════════════════════════════════════════════╝
 
-CONTACT INFORMATION
-Email: journalehsan@gmail.com
-Phone: +98 9128571596
-Location: Tehran, Iran
-Website: journalehsan.github.io
-GitHub: github.com/journalehsan
+═════════════════════════════════════════════════════════════════════
+                        CONTACT INFORMATION
+═════════════════════════════════════════════════════════════════════
 
-PROFESSIONAL SUMMARY
-Passionate Full-Stack Developer with 15+ years of experience in web development, desktop applications, and open source software. Specialized in Rust, TypeScript, Laravel, and modern web technologies. Linux user since 2008 with strong background in enterprise solutions.
+📧 Email:    journalehsan@gmail.com
+📱 Phone:    +98 912 857 1596
+📍 Location:  Tehran, Iran
+🌐 Website:   journalehsan.github.io
+💻 GitHub:    github.com/journalehsan
 
-PROFESSIONAL EXPERIENCE
+═════════════════════════════════════════════════════════════════════
+                        PROFESSIONAL SUMMARY
+═════════════════════════════════════════════════════════════════════
 
-Irancell ICI (2022 - Present)
-Vendor Developer
-Developing solutions using Python/PySide, Laravel, Rust for backend, React and TypeScript for frontend, and Iced/Slint for client-side applications across Linux, Windows, and Mac.
-Technologies: Rust, Python, PySide, Laravel, React, TypeScript, Iced, Slint, .NET Core
+Senior Full-Stack Developer with 15+ years of experience building scalable
+web applications, desktop software, and enterprise solutions. Expert in Rust,
+TypeScript, React, Laravel, and modern web technologies. Linux enthusiast
+since 2008 with deep expertise in cloud computing, IoT, and open-source
+development. Strong track record of delivering complex projects for major Iranian
+companies including Irancell, Tosan Motors, and Parsian Bank.
 
-Dena (2022)
-Full-Stack Developer
-Developed gift card solutions (Kadona) for Parsian Bank and an online shop using Laravel.
-Technologies: Laravel, E-commerce, Payment Systems, Gift Cards
+═════════════════════════════════════════════════════════════════════
+                      PROFESSIONAL EXPERIENCE
+═════════════════════════════════════════════════════════════════════
 
-Shimico (2021-2022)
-Backend Developer
-Worked on a chemical market startup with a poorly designed Laravel codebase. Improved spaghetti code step by step despite time constraints.
-Technologies: Laravel, Legacy Code, Refactoring
+【 Irancell ICI 】2022 - Present】Senior Vendor Developer
+Leading development of enterprise solutions using Rust (backend), TypeScript/React
+(frontend), Python/PySide (desktop), and .NET Core (services).
+Architecting scalable applications for one of Iran's largest telecom operators.
+🛠 Technologies: Rust, TypeScript, React, Python, PySide, Laravel, Iced,
+                 Slint, .NET Core, Microservices
 
-Taknet (2021 - 6 months)
-Cloud Developer
-Worked on Virak Cloud, a Digital Ocean-like cloud solution using Python, PHP/Laravel, and React.
-Technologies: Python, Laravel, React, Cloud Computing
+【 Dena 】2022】Senior Full-Stack Developer
+Architected and developed gift card platform (Kadona) for Parsian Bank,
+handling high-volume transactions with Laravel. Built secure e-commerce solution
+with advanced payment gateway integration and fraud prevention systems.
+🛠 Technologies: Laravel, E-commerce, Payment Gateways, SQL, Redis,
+                 Security, API Design
 
-Pishkhan Iranian (2019-2021)
-Full-Stack Developer
-Developed websites and web applications for governmental offices, including registration systems and payment solutions. Created a self-hosted login system using Office ID.
-Technologies: C#, JavaScript, Firefox Extension, POS Systems, Security, SSO
+【 Shimico 】2021-2022】Senior Backend Developer
+Led technical improvements and refactoring of a chemical marketplace's legacy
+Laravel codebase. Reduced technical debt significantly, improved database
+performance, and implemented modern development practices.
+🛠 Technologies: Laravel, Legacy Refactoring, SQL Optimization, API Development,
+                 PHP 8
 
-Tosan Motors (2017-2019)
-Software Developer
-Developed Laravel backend and Python services to communicate with electronic motorcycles. Created Android applications using Qt/C++.
-Technologies: Laravel, Python, Qt, C++, Android, IoT
+【 Taknet 】2021 (6 months)】Cloud Platform Developer
+Developed Virak Cloud, an IaaS/PaaS platform similar to Digital Ocean.
+Implemented infrastructure management, resource provisioning, and user management
+systems using Python, Laravel, and React with container orchestration.
+🛠 Technologies: Python, Laravel, React, Cloud Computing, Docker,
+                 Virtualization, REST APIs
 
-Karina Mobile Solution (2015-2017)
-Web Developer
-Worked on developing a Google AdSense-like platform. Built websites using WordPress and developed plugins.
-Technologies: WordPress, PHP, Plugin Development, Ad Platform
+【 Pishkhan Iranian 】2019-2021】Senior Full-Stack Developer
+Developed comprehensive governmental web applications and registration systems. Architected
+secure single sign-on (SSO) solution using Office ID integration,
+implemented POS system integration, and created Firefox extensions.
+🛠 Technologies: C#, .NET, JavaScript, Firefox Extensions, POS Integration,
+                 Security, SSO, Authentication
 
-Vada Company (2015)
-VAS Developer
-Worked at a VAS (Value Added Service) company managing SMS gateways, monitoring sent/unsubscription actions, and handling daily message campaigns.
-Technologies: SMS Gateway, Telecom, VAS
+【 Tosan Motors 】2017-2019】Lead Software Developer
+Led software development for electronic motorcycle IoT platform. Built Laravel backend APIs,
+Python services for device communication, Qt/C++ applications for Android, and IoT
+protocols for real-time data transmission to electric vehicles.
+🛠 Technologies: Laravel, Python, Qt, C++, Android, IoT, MQTT, REST APIs,
+                 Embedded Systems
 
-Islamic Azad University (Part-time)
-IT Support
-Provided IT support for systems and servers at university's Hamadan branch.
-Technologies: IT Support, Server Management, System Administration
+【 Karina Mobile Solution 】2015-2017】Senior Web Developer
+Developed Google AdSense-like advertising platform from scratch. Built monetization
+engine, created WordPress plugins for enhanced functionality, and implemented real-time
+bidding and reporting systems for mobile advertising.
+🛠 Technologies: WordPress, PHP, Plugin Architecture, Ad Tech, Real-time Analytics,
+                 MySQL
 
-Ahoora Advertisements (2010)
-Web Developer
-My first full-time job at an advertisement solutions company where I developed websites using WordPress/PHP and ASP.NET with Dreamweaver/Aptana Studio.
-Technologies: WordPress, PHP, ASP.NET, VB, C#, Delphi, Dreamweaver
+【 Vada Company 】2015】VAS Engineer
+Engineered and maintained SMS gateway infrastructure for Value Added Services. Developed
+campaign management systems, monitored subscription/unsubscription flows, and implemented
+automated message queuing for high-volume telecom operations.
+🛠 Technologies: SMS Gateway, Telecom Protocols, VAS, Message Queues,
+                 Campaign Management
 
-TECHNICAL SKILLS
+【 Islamic Azad University 】Part-time (2010-2015)】IT Systems Administrator
+Provided comprehensive IT support and system administration for Hamadan branch. Managed
+university servers, maintained computer labs, resolved hardware/software issues, and
+implemented backup systems for critical data.
+🛠 Technologies: System Administration, Server Management, Linux, Windows Server,
+                 Networking, Hardware Maintenance
 
-Programming Languages: Rust, TypeScript, Python, C#, PHP, C++, Java, Go
-Frameworks & Libraries: React, Laravel, Qt, Iced, Slint, TailwindCSS, .NET Core
-Tools & Platforms: Git, Linux, Arch Linux, Neovim, Docker, AWS
+【 Ahoora Advertisements 】2010】Full-Stack Developer
+Started professional career developing digital marketing solutions. Built WordPress websites,
+ASP.NET applications, and cross-platform e-books with embedded HTML. Created multimedia
+software using VB, C#, and Delphi for educational content delivery.
+🛠 Technologies: WordPress, PHP, ASP.NET, VB6, C#, Delphi, Desktop
+                 Applications, Windows Forms
 
-ADDITIONAL INFORMATION
-Education: Linux user since 2008 • Started with Red Hat 6
-Languages: Persian (Native), English (Professional), Azeri (Native)
+═════════════════════════════════════════════════════════════════
+                        TECHNICAL SKILLS
+═════════════════════════════════════════════════════════════════
 
-Generated from journalehsan.github.io on ${new Date().toLocaleDateString()}
+📚 Programming Languages:
+   Rust, TypeScript, Python, C#, PHP, C++, Java, Go, SQL
+
+🏗️  Frameworks & Libraries:
+   React, Laravel, Qt, Iced, Slint, TailwindCSS, .NET Core
+
+🛠  Tools & Platforms:
+   Git, Linux, Arch Linux, Neovim, Docker, AWS, Microservices, Redis
+
+═══════════════════════════════════════════════════════════════
+                        KEY PROJECTS
+═══════════════════════════════════════════════════════════════
+
+• Shosa Daru - Online drugstore platform connecting pharmacies with customers
+• Shimico.com - Chemical products marketplace with advanced search
+• VirakCloud - Digital Ocean-like cloud computing platform
+• Tosan Motors IoT - Electronic motorcycle management system
+• Sandbox Development Book - Technical book on development environments
+
+═══════════════════════════════════════════════════════════════
+                    ADDITIONAL INFORMATION
+═══════════════════════════════════════════════════════════════
+
+🎓 Background: Linux user since 2008 • Started with Red Hat 6
+🌍 Languages: Persian (Native), English (Professional), Azeri (Native)
+💼 Available for: Full-time, Contract, and Remote opportunities
+
+═══════════════════════════════════════════════════════════════
+               Generated from journalehsan.github.io
+                 Updated: ${new Date().toLocaleDateString()}
+═══════════════════════════════════════════════════════════════
 `;
 
                 // Create and download text file
