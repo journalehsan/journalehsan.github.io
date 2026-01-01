@@ -1,5 +1,27 @@
 [
   {
+    "id": 14,
+    "title": "52 Days with Dynabook K50/FP on Omarchy",
+    "slug": "52-days-dynabook-k50-fp-omarchy",
+    "excerpt": "Fifty-two days ago, I installed Omarchy on a Toshiba Dynabook K50/FP. No dual-boot safety net, no backup laptop waiting on the desk. Just a 10-inch device, Arch-based Linux, and curiosity. What followed was not an experiment—it became daily reality.",
+    "author": "Ehsan Tork",
+    "date": "2026-01-01",
+    "readTime": "8 min read",
+    "tags": [
+      "Linux",
+      "Hardware",
+      "Dynabook",
+      "Omarchy",
+      "Hyperland",
+      "Development",
+      "Tablet"
+    ],
+    "thumbnail": "assets/img/dynabook.png",
+    "images": ["assets/img/dynabook.png"],
+    "content": "blog-posts/52-days-dynabook-k50-fp-omarchy.md",
+    "published": true
+  },
+  {
     "id": 13,
     "title": "🌍 The Punished Developer: How AI Sanctions Target Us, Not Governments",
     "slug": "punished-developer-ai-sanctions",
