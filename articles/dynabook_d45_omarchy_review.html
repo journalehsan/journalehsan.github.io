@@ -54,26 +54,26 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      line-height: 1.7;
+      line-height: 1.9;
       background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
       color: #e2e8f0;
     }
 
     article {
-      max-width: 880px;
+      max-width: 900px;
       margin: auto;
-      padding: 2.5rem 1.5rem 3.5rem;
+      padding: 3rem 2.5rem 4rem;
     }
 
     h1, h2, h3 {
       line-height: 1.3;
-      margin: 1.8em 0 0.8em;
+      margin: 2.5em 0 1em;
       color: #fff;
     }
 
-    h1 { font-size: 2.6rem; font-weight: 800; margin-top: 0; }
-    h2 { font-size: 1.8rem; font-weight: 700; border-bottom: 2px solid #7c3aed; padding-bottom: 0.55rem; }
-    h3 { font-size: 1.35rem; font-weight: 600; color: #cbd5f5; }
+    h1 { font-size: 2.7rem; font-weight: 800; margin-top: 0; letter-spacing: -0.02em; }
+    h2 { font-size: 2rem; font-weight: 700; border-bottom: 3px solid #7c3aed; padding-bottom: 0.7rem; margin-top: 3.5rem; letter-spacing: -0.01em; }
+    h3 { font-size: 1.55rem; font-weight: 600; color: #cbd5f5; margin-top: 2.5rem; letter-spacing: -0.005em; }
 
     a { color: #a78bfa; transition: color 0.2s; }
     a:hover { color: #d8b4fe; }
@@ -118,15 +118,23 @@
       background: #111827;
       border-radius: 8px;
       font-family: 'Fira Code', monospace;
-      font-size: 0.9em;
+      font-size: 0.925em;
     }
 
-    code { padding: 0.2em 0.4em; }
+    code { padding: 0.3em 0.6em; line-height: 1.5; }
     pre {
       overflow-x: auto;
-      padding: 1rem 1.25rem;
-      margin: 1.25rem 0;
-      border-left: 3px solid #7c3aed;
+      padding: 1.75rem;
+      margin: 2.5rem 0;
+      border-left: 5px solid #7c3aed;
+      border-radius: 10px;
+      font-size: 0.95rem;
+    }
+
+    pre code {
+      background: transparent;
+      padding: 0;
+      line-height: 1.7;
     }
 
     .toc {
@@ -168,29 +176,32 @@
     .back-link:hover { background: rgba(124, 58, 237, 0.28); }
 
     ul, ol {
-      margin: 1rem 0;
-      padding-left: 1.5rem;
+      margin: 2rem 0;
+      padding-left: 2.25rem;
     }
 
-    li { margin: 0.4rem 0; }
+    li { margin: 1rem 0; font-size: 1.15rem; line-height: 1.85; }
 
     strong { color: #fff; font-weight: 600; }
 
     blockquote {
-      margin: 1.5rem 0;
-      padding: 1rem 1.5rem;
-      border-left: 4px solid #a855f7;
-      background: rgba(24, 24, 27, 0.6);
-      border-radius: 6px;
+      margin: 2.5rem 0;
+      padding: 1.75rem 2rem;
+      border-left: 5px solid #a855f7;
+      background: rgba(24, 24, 27, 0.7);
+      border-radius: 0 12px 12px 0;
+      font-size: 1.2rem;
+      line-height: 1.8;
     }
 
     section { margin: 3rem 0; }
 
     @media (max-width: 768px) {
       h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.5rem; }
-      h3 { font-size: 1.15rem; }
-      article { padding: 1.4rem; }
+      h2 { font-size: 1.55rem; }
+      h3 { font-size: 1.3rem; }
+      article { padding: 2rem 1.5rem; }
+      li { font-size: 1.05rem; }
     }
   </style>
 </head>

@@ -54,26 +54,26 @@
     
     body {
       font-family: 'Inter', sans-serif;
-      line-height: 1.7;
+      line-height: 1.9;
       background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
       color: #e2e8f0;
     }
-    
+
     article {
-      max-width: 860px;
+      max-width: 900px;
       margin: auto;
-      padding: 2rem 1.5rem;
+      padding: 3rem 2.5rem 4rem;
     }
-    
+
     h1, h2, h3 {
       line-height: 1.3;
-      margin: 1.8em 0 0.8em;
+      margin: 2.5em 0 1em;
       color: #fff;
     }
-    
-    h1 { font-size: 2.5rem; font-weight: 800; margin-top: 0; }
-    h2 { font-size: 1.75rem; font-weight: 700; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem; }
-    h3 { font-size: 1.35rem; font-weight: 600; }
+
+    h1 { font-size: 2.65rem; font-weight: 800; margin-top: 0; letter-spacing: -0.02em; }
+    h2 { font-size: 1.95rem; font-weight: 700; border-bottom: 3px solid #4299e1; padding-bottom: 0.7rem; margin-top: 3.5rem; letter-spacing: -0.01em; }
+    h3 { font-size: 1.5rem; font-weight: 600; margin-top: 2.5rem; letter-spacing: -0.005em; }
     
     a { color: #63b3ed; transition: color 0.2s; }
     a:hover { color: #90cdf4; }
@@ -116,17 +116,25 @@
     
     code, pre {
       background: #1a202c;
-      border-radius: 6px;
+      border-radius: 8px;
       font-family: 'Fira Code', monospace;
-      font-size: 0.9em;
+      font-size: 0.925em;
     }
-    
-    code { padding: 0.2em 0.4em; }
+
+    code { padding: 0.3em 0.6em; line-height: 1.5; }
     pre {
       overflow-x: auto;
-      padding: 1rem;
-      margin: 1rem 0;
-      border-left: 3px solid #4299e1;
+      padding: 1.75rem;
+      margin: 2.5rem 0;
+      border-left: 5px solid #4299e1;
+      border-radius: 10px;
+      font-size: 0.95rem;
+    }
+
+    pre code {
+      background: transparent;
+      padding: 0;
+      line-height: 1.7;
     }
     
     .toc {
@@ -170,12 +178,14 @@
     }
     
     ul, ol {
-      margin: 1rem 0;
-      padding-left: 2rem;
+      margin: 2rem 0;
+      padding-left: 2.25rem;
     }
-    
+
     li {
-      margin: 0.5rem 0;
+      margin: 1rem 0;
+      font-size: 1.15rem;
+      line-height: 1.85;
     }
     
     strong {
@@ -188,10 +198,11 @@
     }
     
     @media (max-width: 768px) {
-      h1 { font-size: 2rem; }
+      h1 { font-size: 2.1rem; }
       h2 { font-size: 1.5rem; }
-      h3 { font-size: 1.2rem; }
-      article { padding: 1rem; }
+      h3 { font-size: 1.3rem; }
+      article { padding: 2rem 1.5rem; }
+      li { font-size: 1.05rem; }
     }
   </style>
 </head>

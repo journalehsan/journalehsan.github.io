@@ -28,7 +28,7 @@
             font-family: "Inter", sans-serif;
             background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
             color: #e2e8f0;
-            line-height: 1.6;
+            line-height: 1.85;
         }
 
         .code-font {
@@ -56,15 +56,18 @@
         .prose h1, .prose h2, .prose h3 {
             color: #f7fafc;
             font-weight: 700;
+            line-height: 1.3;
         }
 
-        .prose h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .prose h2 { font-size: 2rem; margin-top: 3rem; margin-bottom: 1.5rem; }
-        .prose h3 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose h1 { font-size: 2.6rem; margin-bottom: 1.2rem; letter-spacing: -0.02em; }
+        .prose h2 { font-size: 2.05rem; margin-top: 3.5rem; margin-bottom: 1.75rem; letter-spacing: -0.01em; }
+        .prose h3 { font-size: 1.55rem; margin-top: 2.5rem; margin-bottom: 1.2rem; letter-spacing: -0.005em; }
 
         .prose p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             color: #e2e8f0;
+            font-size: 1.175rem;
+            line-height: 1.85;
         }
 
         .prose strong {
@@ -73,43 +76,52 @@
         }
 
         .prose ul, .prose ol {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             color: #e2e8f0;
+            padding-left: 2.25rem;
         }
 
         .prose li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.15rem;
+            line-height: 1.85;
         }
 
         .prose blockquote {
-            border-left: 4px solid #4299e1;
-            padding-left: 1rem;
-            margin: 2rem 0;
+            border-left: 5px solid #4299e1;
+            padding: 1.75rem 2rem;
+            margin: 2.5rem 0;
             font-style: italic;
-            color: #a0aec0;
+            color: #cbd5e0;
+            background: rgba(66, 153, 225, 0.08);
+            border-radius: 0 12px 12px 0;
         }
 
         .prose code {
-            background: rgba(66, 153, 225, 0.1);
+            background: rgba(66, 153, 225, 0.15);
             color: #63b3ed;
-            padding: 0.2rem 0.4rem;
-            border-radius: 0.25rem;
-            font-size: 0.9rem;
+            padding: 0.3em 0.6em;
+            border-radius: 5px;
+            font-size: 0.925em;
+            line-height: 1.5;
         }
 
         .prose pre {
-            background: #1a202c;
-            border: 1px solid rgba(66, 153, 225, 0.2);
-            border-radius: 0.5rem;
-            padding: 1.5rem;
+            background: #0d1117;
+            border: 1px solid rgba(66, 153, 225, 0.25);
+            border-radius: 10px;
+            padding: 1.75rem;
             overflow-x: auto;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
+            font-size: 0.95rem;
+            border-left: 5px solid #4299e1;
         }
 
         .prose pre code {
             background: none;
             color: #e2e8f0;
             padding: 0;
+            line-height: 1.7;
         }
 
         .nav-link {
