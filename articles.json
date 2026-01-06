@@ -1,5 +1,16 @@
 [
   {
+    "id": "ai-models-agentic-tools-yogurt-economy",
+    "title": "AI Models, Agentic Tools, and the Great Yogurt Economy",
+    "description": "A serious technical analysis comparing Claude, Codex, Cursor, AMP, Grok, and OpenCode—focusing on token economy, developer workflow friction, and the real cost of agentic AI tools in 2026.",
+    "author": "Ehsan Tork",
+    "date": "2026-01-06",
+    "readTime": "11-13 min",
+    "coverImage": "assets/img/ai-dev-all-models.png",
+    "url": "articles/ai-models-agentic-tools-yogurt-economy.html",
+    "tags": ["AI Tools", "Developer Workflow", "Token Economy", "Codex", "Claude", "Cursor", "Agentic AI", "Cost Analysis"]
+  },
+  {
     "id": "ditched-ai-subscriptions-open-source-models",
     "title": "Why I Ditched $20/Month AI Subscriptions for Open Source Models (And Saved 90%)",
     "description": "How I slashed my AI costs from $50-70/month to $13-30/month by switching from premium subscriptions to open source models like DeepSeek, GLM-4, and OpenRouter.",

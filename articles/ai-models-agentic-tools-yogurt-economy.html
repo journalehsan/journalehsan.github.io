@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Models, Agentic Tools, and Great Yogurt Economy - Ehsan Tork</title>
+
+  <!-- SEO -->
+  <meta name="description" content="A serious technical analysis comparing Claude, Codex, Cursor, AMP, Grok, and OpenCode in 2026. Focusing on token economy, developer workflow friction, real cost of agentic AI tools, and why calm engineering beats busy agents." />
+  <meta name="keywords" content="AI models comparison,Claude vs Codex,Cursor AI,Sourcegraph AMP,Grok,OpenCode,token economy,agentic AI,developer workflow,AI tools cost,Codex,OpenRouter pricing" />
+  <link rel="canonical" href="https://journalehsan.github.io/articles/ai-models-agentic-tools-yogurt-economy.html" />
+  <meta name="author" content="Ehsan Tork" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="AI Models, Agentic Tools, and Great Yogurt Economy" />
+  <meta property="og:description" content="When AI is not magic but electricity with a billing department. Deep dive into Claude, Codex, Cursor, AMP, Grok, and OpenCode—comparing token costs, workflow friction, and developer productivity in 2026." />
+  <meta property="og:url" content="https://journalehsan.github.io/articles/ai-models-agentic-tools-yogurt-economy.html" />
+  <meta property="og:image" content="https://journalehsan.github.io/assets/img/ai-dev-all-models.png" />
+  <meta property="og:site_name" content="Ehsan Tork's Journal" />
+  <meta property="article:published_time" content="2026-01-06T12:00:00+03:30" />
+  <meta property="article:author" content="Ehsan Tork" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Models, Agentic Tools, and Great Yogurt Economy" />
+  <meta name="twitter:description" content="A serious technical analysis of Claude, Codex, Cursor, AMP, Grok, and OpenCode—focusing on real cost of agentic loops and developer workflow friction in 2026." />
+  <meta name="twitter:image" content="https://journalehsan.github.io/assets/img/ai-dev-all-models.png" />
+  <meta name="twitter:creator" content="@journalehsan" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Models, Agentic Tools, and Great Yogurt Economy",
+    "description": "A serious technical analysis comparing Claude, Codex, Cursor, AMP, Grok, and OpenCode—focusing on token economy, developer workflow friction, real cost of agentic AI tools in 2026.",
+    "image": "https://journalehsan.github.io/assets/img/ai-dev-all-models.png",
+    "author": { "@type": "Person", "name": "Ehsan Tork" },
+    "datePublished": "2026-01-06T12:00:00+03:30",
+    "dateModified": "2026-01-06T12:00:00+03:30",
+    "mainEntityOfPage": "https://journalehsan.github.io/articles/ai-models-agentic-tools-yogurt-economy.html",
+    "keywords": "AI models comparison,Claude vs Codex,Cursor AI,AMP,Grok,OpenCode,token economy,agentic AI",
+    "wordCount": "2800"
+  }
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --primary: #3b82f6;
+      --primary-light: #60a5fa;
+      --bg-dark: #1a202c;
+      --bg-lighter: #2d3748;
+      --text-main: #e2e8f0;
+      --text-muted: #a0aec0;
+      --border-color: #4a5568;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.8;
+      letter-spacing: 0.01em;
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-lighter) 100%);
+      color: var(--text-main);
+    }
+    
+    article {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    
+    h1, h2, h3 {
+      line-height: 1.3;
+      margin: 2em 0 0.8em;
+      color: #fff;
+    }
+    
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin-top: 0;
+      line-height: 1.2;
+    }
+    
+    h2 {
+      font-size: clamp(1.5rem, 3.5vw, 1.8rem);
+      font-weight: 700;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 0.6rem;
+      margin-top: 3rem;
+    }
+    
+    h3 {
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
+      font-weight: 600;
+      margin-top: 2rem;
+      color: var(--primary-light);
+    }
+    
+    p {
+      margin: 1.5rem 0;
+      font-size: 1.05rem;
+    }
+    
+    a {
+      color: var(--primary-light);
+      transition: all 0.2s;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    
+    a:hover {
+      color: #93c5fd;
+      text-decoration-thickness: 2px;
+    }
+    
+    figure {
+      margin: 2.5rem 0;
+    }
+    
+    figcaption {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      text-align: center;
+      font-style: italic;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    
+    blockquote {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+    }
+    
+    blockquote p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    
+    code {
+      background: rgba(45, 55, 72, 0.8);
+      padding: 0.2em 0.5em;
+      border-radius: 4px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9em;
+      color: #60a5fa;
+    }
+    
+    pre {
+      overflow-x: auto;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      background: #0d1117;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+    }
+    
+    pre code {
+      background: transparent;
+      padding: 0;
+      color: var(--text-main);
+      font-size: 0.95em;
+    }
+    
+    ul, ol {
+      margin: 1.5rem 0;
+      padding-left: 2rem;
+    }
+    
+    li {
+      margin: 0.75rem 0;
+      line-height: 1.7;
+    }
+    
+    strong {
+      color: #fff;
+      font-weight: 600;
+    }
+    
+    em {
+      color: var(--primary-light);
+    }
+    
+    section {
+      margin: 3rem 0;
+    }
+    
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+      margin: 3rem 0;
+    }
+    
+    /* Table of Contents */
+    .toc {
+      background: rgba(45, 55, 72, 0.6);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+      border-left: 5px solid var(--primary);
+    }
+    
+    .toc-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+    
+    .toc ul {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    
+    .toc li {
+      margin: 0.8rem 0;
+    }
+    
+    .toc a {
+      display: block;
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      transition: all 0.2s;
+      color: var(--text-main);
+    }
+    
+    .toc a:hover {
+      background: rgba(59, 130, 246, 0.2);
+      transform: translateX(5px);
+      color: #fff;
+    }
+    
+    .toc a.active {
+      background: rgba(59, 130, 246, 0.3);
+      color: #fff;
+    }
+    
+    /* Meta info */
+    .meta {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin: 1.5rem 0;
+    }
+    
+    .meta strong {
+      color: var(--primary-light);
+    }
+    
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding: 0.6rem 1.2rem;
+      background: rgba(59, 130, 246, 0.2);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s;
+      color: var(--text-main);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    
+    .back-link:hover {
+      background: rgba(59, 130, 246, 0.3);
+      transform: translateX(-3px);
+    }
+    
+    /* Highlight boxes */
+    .highlight-box {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .highlight-box strong {
+      color: #34d399;
+    }
+    
+    /* Footer */
+    .footer-note {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    
+    @media (max-width: 768px) {
+      article {
+        padding: 2rem 1.5rem;
+      }
+      
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.25rem; }
+      
+      .toc {
+        padding: 1.5rem;
+      }
+      
+      figure {
+        margin: 2rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<article role="article" aria-labelledby="title">
+  <a href="../index.html#articles" class="back-link">
+    <i class="fas fa-arrow-left"></i> Back to Articles
+  </a>
+  
+  <header>
+    <h1 id="title">AI Models, Agentic Tools, and Great Yogurt Economy</h1>
+    <p class="meta">
+      By <strong>Ehsan Tork</strong> ·
+      <time datetime="2026-01-06">January 6, 2026</time> ·
+      11–13 min read
+    </p>
+    <figure>
+      <img src="../assets/img/ai-dev-all-models.png" alt="AI development tools comparison showing multiple AI models and code interfaces" loading="eager" />
+      <figcaption>Cover: When AI is not magic but electricity with a billing department</figcaption>
+    </figure>
+  </header>
+
+  <p class="highlight-box">
+    <em>A very serious technical analysis written with a straight face.</em>
+  </p>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title"><i class="fas fa-list"></i> Contents</div>
+    <ul>
+      <li><a href="#when-i-learned-ai-is-not-magic">The Year I Learned AI Is Not Magic, It's a Meter</a></li>
+      <li><a href="#early-days">The Early Days: When AI Was Cheap and Innocent</a></li>
+      <li><a href="#agentic-ai">Agentic AI: When Tools Started Looking Busy</a></li>
+      <li><a href="#claude">Claude: The Brilliant Consultant Who Sends Invoices</a></li>
+      <li><a href="#codex">Codex: The Calm Engineer Who Respects Your Repo</a></li>
+      <li><a href="#cursor">Cursor: Heaven for New Users</a></li>
+      <li><a href="#amp">AMP: The Quiet Student Eating Yogurt Alone</a></li>
+      <li><a href="#grok">Grok: Potential, Strategy Sold Separately</a></li>
+      <li><a href="#opencode">OpenCode: Free Haircuts for Training Models</a></li>
+      <li><a href="#final-lesson">The Final Lesson</a></li>
+    </ul>
+  </nav>
+
+  <hr />
+
+  <section id="when-i-learned-ai-is-not-magic">
+    <h2>The Year I Learned AI Is Not Magic, It's a Meter</h2>
+    <p>There was a time when I thought AI was a friendly ghost living inside my editor.</p>
+    <p>You ask nicely. It helps. End of story.</p>
+    <p>Then one day my plan finished <strong>in two days</strong>.</p>
+    <p>That was the day I realized:</p>
+    <blockquote>
+      <p>AI is not magic. AI is electricity with a billing department.</p>
+    </blockquote>
+  </section>
+
+  <section id="early-days">
+    <h2>The Early Days: When AI Was Cheap and Innocent</h2>
+    <p>Back in the peaceful era, I used tools like Cody.</p>
+    <ul>
+      <li>$9 a month</li>
+      <li>Models everywhere</li>
+      <li>No anxiety</li>
+      <li>No agentic chaos</li>
+    </ul>
+    <p>I even forgot to pay once. They froze my account, gave me $4 credit, then said:</p>
+    <blockquote>
+      <p>"Okay fine, take Pro forever."</p>
+    </blockquote>
+    <p>That should have been my first warning sign.</p>
+    <p>Soon after, Cody was sunset. Only later did I understand why.</p>
+    <p>I was using AI to <strong>apply diffs carefully</strong>. Others were using AI to <strong>vibe-code startups in 10 minutes</strong>.</p>
+    <p>Guess which group gets more YouTube views.</p>
+  </section>
+
+  <section id="agentic-ai">
+    <h2>Agentic AI: When Tools Started Looking Busy</h2>
+    <p>Then came the agentic era.</p>
+    <p>Agents that:</p>
+    <ul>
+      <li>think</li>
+      <li>retry</li>
+      <li>upgrade</li>
+      <li>downgrade</li>
+      <li>check logs</li>
+      <li>generate markdown</li>
+      <li>generate more markdown</li>
+      <li>run <code>git reset</code></li>
+    </ul>
+    <p>Progress felt <em>dramatic</em>. Results felt <em>optional</em>.</p>
+    <p>One memorable session:</p>
+    <ul>
+      <li>80% of tokens</li>
+      <li>endless retries</li>
+      <li>zero net improvement</li>
+    </ul>
+    <p>But wow, the AI was <strong>working very hard</strong>.</p>
+  </section>
+
+  <section id="claude">
+    <h2>Claude: The Brilliant Consultant Who Sends Invoices</h2>
+    <p>Claude is smart. Sometimes extremely smart.</p>
+    <p>It will:</p>
+    <ul>
+      <li>read logs like a detective</li>
+      <li>loop patiently</li>
+      <li>actually find nasty bugs</li>
+    </ul>
+    <p>It will also:</p>
+    <ul>
+      <li>burn tokens politely</li>
+      <li>create files you never asked for</li>
+      <li>send you a bill that arrives emotionally before it arrives financially</li>
+    </ul>
+    <p>Claude charges you for <strong>thinking</strong>.</p>
+    <p>Sometimes that's worth it. Sometimes you just wanted the bug gone.</p>
+  </section>
+
+  <section id="codex">
+    <h2>Codex: The Calm Engineer Who Respects Your Repo</h2>
+    <p>Then I met Codex.</p>
+    <p>Codex doesn't:</p>
+    <ul>
+      <li>refactor your entire project by accident</li>
+      <li>delete half a file because it's long</li>
+      <li>generate twelve markdown documents about the change</li>
+    </ul>
+    <p>Codex:</p>
+    <ul>
+      <li>touches what you asked</li>
+      <li>keeps APIs stable</li>
+      <li>leaves quietly</li>
+    </ul>
+    <p>Most tasks take 12%. Some tasks also take 12%.</p>
+    <p>And you never feel stressed.</p>
+    <p>That's not an accident. That's product design.</p>
+  </section>
+
+  <section id="cursor">
+    <h2>Cursor: Heaven for New Users</h2>
+    <p>Cursor did something radical:</p>
+    <ul>
+      <li>Auto mode is free</li>
+      <li>500 chats</li>
+      <li>No model anxiety</li>
+      <li>No cost math</li>
+    </ul>
+    <p>Heavy task? Same counter. Light task? Same counter.</p>
+    <p>Cursor absorbs complexity so users can learn.</p>
+    <p>This is why beginners love it. This is why professionals respect it.</p>
+  </section>
+
+  <section id="amp">
+    <h2>AMP: The Quiet Student Eating Yogurt Alone</h2>
+    <p>Sourcegraph AMP is powerful. Very powerful.</p>
+    <p>It just doesn't tell you:</p>
+    <ul>
+      <li>which model it uses</li>
+      <li>how much it costs</li>
+      <li>why it chose that path</li>
+    </ul>
+    <p>No dropdown. No override. Just trust.</p>
+    <p>AMP isn't dumb. It's <strong>cost-optimized</strong>.</p>
+    <p>Internally it likely does:</p>
+    <ol>
+      <li>cheap model</li>
+      <li>medium model</li>
+      <li>expensive model (very carefully)</li>
+    </ol>
+    <p>Great for providers. Frustrating for people who value time over tokens.</p>
+    <p>AMP sits in the last row, eating yogurt, solving enterprise problems quietly.</p>
+  </section>
+
+  <section id="grok">
+    <h2>Grok: Potential, Strategy Sold Separately</h2>
+    <p>Grok has potential.</p>
+    <p>It also has:</p>
+    <ul>
+      <li>confusing plans</li>
+      <li>chat separate from code</li>
+      <li>API separate from everything</li>
+      <li>prices that look like a dare</li>
+    </ul>
+    <p>At $300/month, users expect:</p>
+    <blockquote>
+      <p>"Use me everywhere."</p>
+    </blockquote>
+    <p>Instead they get:</p>
+    <blockquote>
+      <p>"Think carefully before clicking."</p>
+    </blockquote>
+    <p>Developers don't like thinking about invoices mid-flow.</p>
+  </section>
+
+  <section id="opencode">
+    <h2>OpenCode: Free Haircuts for Training Models</h2>
+    <p>OpenCode feels… fine.</p>
+    <p>Because it's a training ground.</p>
+    <p>New models show up like junior hairdressers:</p>
+    <blockquote>
+      <p>"Free haircut! Please sit!"</p>
+    </blockquote>
+    <p>You leave with:</p>
+    <ul>
+      <li>an okay result</li>
+      <li>no bill</li>
+      <li>mild curiosity</li>
+    </ul>
+    <p>The real payment is data.</p>
+    <p>Some of these models will grow up. Some will start charging. Everyone will say they got better suddenly.</p>
+    <p>They didn't. They just finished their apprenticeship.</p>
+  </section>
+
+  <section id="final-lesson">
+    <h2>The Final Lesson</h2>
+    <p>In 2026:</p>
+    <ul>
+      <li>All major models are good</li>
+      <li>Few models are calm</li>
+      <li>The best tools respect your time</li>
+      <li>The best pricing hides anxiety, not reality</li>
+    </ul>
+    <p>The real differentiator isn't intelligence.</p>
+    <p>It's <strong>friction per task</strong>.</p>
+    <p>And if your AI tool makes you forget the meter exists…</p>
+    <p>That's real magic.</p>
+  </section>
+
+  <hr />
+
+  <footer class="footer-note">
+    <p>Written by someone who survived agentic loops, token burns, and one unforgettable <code>git reset</code>.</p>
+  </footer>
+
+</article>
+
+</body>
+</html>
